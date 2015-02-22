@@ -10,6 +10,11 @@ module.exports = function(environment) {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+        'ember-metal-is-present': true,
+        'ember-htmlbars-inline-if-helper': true,
+        'ember-htmlbars-attribute-syntax': true,
+        'ember-routing-transitioning-classes': true,
+        'new-computed-syntax': true
       }
     },
 
