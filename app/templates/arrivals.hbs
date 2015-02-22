@@ -1,5 +1,7 @@
 <ol>
   {{#each arrivals as |arrival|}}
     {{rt-arrival arrival=arrival}}
+  {{else}}
+    There are no arrivals for stop {{stopId}}
   {{/each}}
 </ol>

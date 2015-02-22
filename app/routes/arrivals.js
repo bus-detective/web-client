@@ -13,6 +13,11 @@ export default Ember.Route.extend({
     return request(`${SERVER}/arrivals/${params.stop_id}`);
   },
 
+  setupController: function(controller, model) {
+    controller.set('model', model);
+    controller.set('stopId', this.paramsFor('arrivals')['stop_id'])
+  },
+
   enqueueRefresh: function() {
     this.set('pendingRefresh', run.later(this, this.refresh, POLL_INTERVAL));
   },
