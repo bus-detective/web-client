@@ -1,0 +1,9 @@
+ember build --environment=production
+cd dist
+git init
+git add .
+git commit -m "Deploy"
+git remote add origin git@github.com:gaslight/realtime-metro-web-client
+git push origin master:refs/heads/gh-pages --force
+rm -rf .git
+cd ..

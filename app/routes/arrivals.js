@@ -3,13 +3,14 @@ import request from 'ic-ajax';
 var run = Ember.run;
 
 const POLL_INTERVAL = 15 * 1000;
+const SERVER = 'http://realtime-metro.herokuapp.com/api';
 
 export default Ember.Route.extend({
   pendingRefresh: null,
 
   model: function(params) {
     this.enqueueRefresh();
-    return request(`/api/arrivals/${params.stop_id}`);
+    return request(`${SERVER}/arrivals/${params.stop_id}`);
   },
 
   enqueueRefresh: function() {
