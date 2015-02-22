@@ -4,8 +4,12 @@ export default Ember.Service.extend({
   time: new Date,
 
   setup: Ember.on('init', function() {
+    var service = this;
+
     setInterval(function() {
-      this.set('time', new Date);
-    }.bind(this), 1000);
+      Ember.run(function() {
+        service.set('time', new Date);
+      });
+    }, 1000);
   })
 })
