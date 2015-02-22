@@ -15,7 +15,7 @@ export default Ember.Route.extend({
 
   setupController: function(controller, model) {
     controller.set('model', model);
-    controller.set('stopId', this.paramsFor('arrivals')['stop_id'])
+    controller.set('stopId', this.paramsFor('arrivals')['stop_id']);
   },
 
   enqueueRefresh: function() {
