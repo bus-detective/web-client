@@ -1,7 +1,5 @@
 <ol>
   {{#each arrivals as |arrival|}}
-    <li>
-      Route {{arrival.route_id}} - {{ago arrival.time}}
-    </li>
+    {{rt-arrival arrival=arrival}}
   {{/each}}
 </ol>
