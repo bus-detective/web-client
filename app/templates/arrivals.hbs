@@ -1,6 +1,8 @@
-<ol>
+<h1>Buses for {{stopId}}</h1>
+
+<ol class="unstyled-list">
   {{#each arrivals as |arrival|}}
-    {{rt-arrival arrival=arrival}}
+    {{rt-arrival arrival=arrival class="push-bottom push-sides"}}
   {{else}}
     There are no arrivals for stop {{stopId}}
   {{/each}}
