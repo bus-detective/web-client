@@ -1,8 +1,8 @@
-<h1>Buses for {{stopId}}</h1>
+<h1 class="page-title flush-top">Buses for {{stopId}}</h1>
 
 <ol class="unstyled-list">
   {{#each arrivals as |arrival|}}
-    {{rt-arrival arrival=arrival class="push-bottom push-sides"}}
+    {{rt-arrival arrival=arrival class="push-bottom"}}
   {{else}}
     There are no arrivals for stop {{stopId}}
   {{/each}}
