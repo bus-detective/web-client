@@ -1,9 +1,13 @@
 <h1 class="page-title flush-top">Buses for {{stopId}}</h1>
 
-<ol class="unstyled-list">
-  {{#each arrivals as |arrival|}}
-    {{rt-arrival arrival=arrival class="push-bottom"}}
-  {{else}}
-    There are no arrivals for stop {{stopId}}
-  {{/each}}
-</ol>
+{{#if isLoading}}
+  Loading stops...
+{{else if sortedArrivals}}
+  <ol class="unstyled-list">
+    {{#each sortedArrivals as |arrival|}}
+      {{rt-arrival arrival=arrival class="push-bottom"}}
+    {{/each}}
+  </ol>
+{{else}}
+  There are no arrivals for stop {{stopId}}
+{{/if}}

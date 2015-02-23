@@ -9,20 +9,31 @@ export default Ember.Route.extend({
   pendingRefresh: null,
 
   model: function(params) {
-    this.enqueueRefresh();
-    return request(`${SERVER}/arrivals/${params.stop_id}`);
+    // Eagerly load template
+    request(`${SERVER}/arrivals/${params.stop_id}`).then(run.bind(this, 'requestDidFinish'));
   },
 
-  setupController: function(controller, model) {
-    controller.set('model', model);
-    controller.set('stopId', this.paramsFor('arrivals')['stop_id']);
+  setupController: function(controller) {
+    controller.setProperties({
+      arrivals: [],
+      stopId: this.paramsFor('arrivals')['stop_id'],
+      isLoading: true
+    });
   },
 
-  enqueueRefresh: function() {
+  requestDidFinish: function(response) {
+    this.controller.setProperties({
+      arrivals: response.arrivals,
+      isLoading: false
+    });
+
+    // Enqueue a refresh
     this.set('pendingRefresh', run.later(this, this.refresh, POLL_INTERVAL));
   },
 
-  cancelRefresh: Ember.on('willTransition', function() {
-    run.cancel(this.get('pendingRefresh'));
-  })
+  actions: {
+    willTransition: function() {
+      run.cancel(this.get('pendingRefresh'));
+    }
+  }
 });
