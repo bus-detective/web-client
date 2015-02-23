@@ -1,4 +1,9 @@
 @import 'components/rt-arrival';
 @import 'components/well';
 @import 'components/page-title';
+@import 'components/list-group';
 @import 'utils';
+
+* {
+  box-sizing: border-box;
+}

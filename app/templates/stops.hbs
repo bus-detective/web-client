@@ -1,0 +1,5 @@
+<h1 class="page-title flush-top">Bus Stops</h1>
+
+{{#each stops as |stop|}}
+  {{#link-to 'arrivals' stop.id class="list-group__item"}}{{stop.name}}{{/link-to}}
+{{/each}}
