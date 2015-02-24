@@ -6,10 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('stops');
-  this.route('routes', { path: '/' }, function(){
-    this.route('route', { path: ':route_id' });
-  });
+  this.route('stops', { path: "/" });
+  this.route('routes');
+  this.route('showRoute', { path: '/route/:route_id' });
   this.route('arrivals', { path: '/:stop_id' });
 });
 
