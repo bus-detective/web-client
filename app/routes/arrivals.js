@@ -1,16 +1,16 @@
 import Ember from 'ember';
 import request from 'ic-ajax';
+import ENV from './../config/environment';
 var run = Ember.run;
 
 const POLL_INTERVAL = 15 * 1000;
-const SERVER = 'http://realtime-metro.herokuapp.com/api';
 
 export default Ember.Route.extend({
   pendingRefresh: null,
 
   model: function(params) {
     // Eagerly load template
-    request(`${SERVER}/arrivals/${params.stop_id}`).then(run.bind(this, 'requestDidFinish'));
+    request(`${ENV.APP.SERVER}/api/arrivals/${params.stop_id}`).then(run.bind(this, 'requestDidFinish'));
   },
 
   setupController: function(controller) {
