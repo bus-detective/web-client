@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
   queryParams: ['name'],
   name: null,
 
-  nameField: Ember.computed.oneWay('name'),
+  nameField: computed.oneWay('name'),
 
   actions: {
     search: function() {
