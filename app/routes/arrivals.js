@@ -9,16 +9,17 @@ export default Ember.Route.extend({
   pendingRefresh: null,
 
   model: function(params) {
-    // Eagerly load template
     request(`${ENV.APP.SERVER}/api/arrivals/${params.stop_id}`).then(run.bind(this, 'requestDidFinish'));
+
+    return {
+      arrivals: [],
+      stopId: params['stop_id'],
+      isLoading: true
+    };
   },
 
-  setupController: function(controller) {
-    controller.setProperties({
-      arrivals: [],
-      stopId: this.paramsFor('arrivals')['stop_id'],
-      isLoading: true
-    });
+  setupController: function(controller, model) {
+    controller.setProperties(model);
   },
 
   requestDidFinish: function(response) {
