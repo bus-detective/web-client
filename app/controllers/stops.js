@@ -3,7 +3,7 @@ var computed = Ember.computed;
 
 export default Ember.Controller.extend({
   queryParams: ['name'],
-  name: null,
+  name: '',
 
   nameField: computed.oneWay('name'),
 
