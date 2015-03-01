@@ -2,7 +2,7 @@
   {{#link-to 'arrivals' stop.stop_id class="stop-item__content"}}
     {{stop.stop_name}}
   {{/link-to}}
-  <div {{action 'favorite' stop}} class="stop-item__action">
-    {{fa-icon "star-o"}}
+  <div {{action 'toggleFavorite' stop}} class="stop-item__action">
+    {{fa-icon (if isFavorite 'star' 'star-o')}}
   </div>
 </div>
