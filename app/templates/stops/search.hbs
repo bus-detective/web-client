@@ -4,5 +4,12 @@
 </form>
 
 {{#each model.stops as |stop|}}
-  {{#link-to 'arrivals' stop.stop_id class="list-group__item"}}{{stop.stop_name}}{{/link-to}}
+  <div class="stop-item">
+    {{#link-to 'arrivals' stop.stop_id class="stop-item__content"}}
+      {{stop.stop_name}}
+    {{/link-to}}
+    <div class="stop-item__action">
+      {{fa-icon "star-o"}}
+    </div>
+  </div>
 {{/each}}

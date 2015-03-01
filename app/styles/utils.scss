@@ -24,3 +24,18 @@
 .pull-top {
   margin-top: -15px;
 }
+
+@mixin clearfix() {
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.clearfix {
+  @include clearfix()
+}
