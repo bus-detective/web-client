@@ -1,13 +1,13 @@
 <h1 class="page-title flush-top">Buses for {{stopId}}</h1>
 
 {{#if isLoading}}
-  Loading stops...
+  <p class="soft-sides">Loading stops...</p>
 {{else if sortedArrivals}}
-  <ol class="unstyled-list">
+  <ol class="unstyled-list pull-top">
     {{#each sortedArrivals as |arrival|}}
-      {{rt-arrival arrival=arrival class="push-bottom"}}
+      {{rt-arrival arrival=arrival}}
     {{/each}}
   </ol>
 {{else}}
-  There are no arrivals for stop {{stopId}}
+  <p class="soft-sides">There are no arrivals for stop {{stopId}}</p>
 {{/if}}
