@@ -1,6 +1,6 @@
 <div class="stop-item">
-  {{#link-to 'arrivals' stop.stop_id class="stop-item__content"}}
-    {{stop.stop_name}}
+  {{#link-to 'arrivals' stop.id class="stop-item__content"}}
+    {{stop.name}}
   {{/link-to}}
   <div {{action 'toggleFavorite' stop}} class="stop-item__action">
     {{fa-icon (if isFavorite 'star' 'star-o')}}
