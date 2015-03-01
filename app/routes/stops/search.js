@@ -1,8 +1,8 @@
 import Ember from 'ember';
 import request from 'ic-ajax';
-import ENV from './../config/environment';
+import ENV from 'realtime-metro-web-client/config/environment';
 
-export default Ember.Route.extend({ 
+export default Ember.Route.extend({
   queryParams: {
     name: {
       refreshModel: true

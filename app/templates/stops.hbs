@@ -1,10 +1,13 @@
 <h1 class="page-title flush-top">Bus Stops</h1>
 
-<form {{action "search" on="submit"}}>
-  {{input value=nameField placeholder="Street Name"}}
-  <button type="submit">Search</button>  
-</form>
+{{outlet}}
 
-{{#each model.stops as |stop|}}
-  {{#link-to 'arrivals' stop.stop_id class="list-group__item"}}{{stop.stop_name}}{{/link-to}}
-{{/each}}
+<nav class='rt-tabs'>
+  {{#link-to 'stops.search' class='rt-tabs__tab'}}
+    Search
+  {{/link-to}}
+
+  {{#link-to 'stops.favorites' class='rt-tabs__tab'}}
+    Favorites
+  {{/link-to}}
+</nav>

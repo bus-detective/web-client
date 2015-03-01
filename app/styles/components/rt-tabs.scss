@@ -1,0 +1,22 @@
+.rt-tabs {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.rt-tabs__tab {
+  width: 50%;
+  display: block;
+  float: left;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 3px;
+  text-decoration: none;
+  background-color: #eee;
+  border-bottom: 3px solid #eee;
+
+  &.active {
+    background-color: white;
+    border-color: $secondary-color;
+  }
+}

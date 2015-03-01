@@ -1,9 +1,18 @@
+@import 'variables';
 @import 'components/rt-arrival';
 @import 'components/well';
 @import 'components/page-title';
 @import 'components/list-group';
+@import 'components/rt-tabs';
 @import 'utils';
 
 * {
   box-sizing: border-box;
+}
+
+a {
+  color: $link-color;
+  &:hover {
+    color: darken($link-color, 10);
+  }
 }

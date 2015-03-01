@@ -1,0 +1,8 @@
+<form {{action "search" on="submit"}}>
+  {{input value=nameField placeholder="Street Name"}}
+  <button type="submit">Search</button>
+</form>
+
+{{#each model.stops as |stop|}}
+  {{#link-to 'arrivals' stop.stop_id class="list-group__item"}}{{stop.stop_name}}{{/link-to}}
+{{/each}}
