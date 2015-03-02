@@ -9,11 +9,11 @@
   display: block;
   float: left;
   text-align: center;
-  padding-top: 12px;
-  padding-bottom: 3px;
+  padding-top: 8px;
+  padding-bottom: 5px;
   text-decoration: none;
   background-color: #eee;
-  border-bottom: 3px solid #eee;
+  border-top: 3px solid #ddd;
 
   &.active {
     background-color: white;
