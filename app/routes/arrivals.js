@@ -8,7 +8,7 @@ export default Ember.Route.extend({
   pendingRefresh: null,
 
   model: function(params) {
-    fetchArrivalsByStopId(params.stop_id).then(run.bind(this, 'requestDidFinish'));
+    this.update();
 
     return {
       arrivals: [],
@@ -21,14 +21,19 @@ export default Ember.Route.extend({
     controller.setProperties(model);
   },
 
-  requestDidFinish: function(response) {
+  update: function() {
+    var params = this.paramsFor('arrivals');
+    fetchArrivalsByStopId(params.stop_id).then(run.bind(this, 'requestDidFinish'));
+  },
+
+  requestDidFinish: function(arrivals) {
     this.controller.setProperties({
-      arrivals: response.arrivals,
+      arrivals: arrivals,
       isLoading: false
     });
 
     // Enqueue a refresh
-    this.set('pendingRefresh', run.later(this, this.refresh, POLL_INTERVAL));
+    this.set('pendingRefresh', run.later(this, this.update, POLL_INTERVAL));
   },
 
   actions: {

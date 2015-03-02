@@ -7,5 +7,7 @@ export function searchStops(name) {
 }
 
 export function fetchArrivalsByStopId(stopId) {
-  return request(`${ENV.APP.SERVER}/api/arrivals/${stopId}`);
+  return request(`${ENV.APP.SERVER}/api/arrivals/${stopId}`).then(function(response) {
+    return response.arrivals;
+  });
 }
