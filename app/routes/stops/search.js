@@ -1,7 +1,5 @@
 import Ember from 'ember';
-import request from 'ic-ajax';
-import ENV from 'realtime-metro-web-client/config/environment';
-import serializeStops from 'realtime-metro-web-client/utils/serialize-stops';
+import { searchStops } from 'realtime-metro-web-client/utils/api';
 
 export default Ember.Route.extend({
   queryParams: {
@@ -12,7 +10,7 @@ export default Ember.Route.extend({
 
   model: function(params) {
     if (params.name) {
-      return request(`${ENV.APP.SERVER}/api/stops?name=${params.name}`).then(serializeStops);
+      return searchStops(params.name);
     } else {
       return [];
     }
