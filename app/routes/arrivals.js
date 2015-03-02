@@ -1,6 +1,5 @@
 import Ember from 'ember';
-import request from 'ic-ajax';
-import ENV from './../config/environment';
+import { fetchArrivalsByStopId } from 'realtime-metro-web-client/utils/api';
 var run = Ember.run;
 
 const POLL_INTERVAL = 15 * 1000;
@@ -9,7 +8,7 @@ export default Ember.Route.extend({
   pendingRefresh: null,
 
   model: function(params) {
-    request(`${ENV.APP.SERVER}/api/arrivals/${params.stop_id}`).then(run.bind(this, 'requestDidFinish'));
+    fetchArrivalsByStopId(params.stop_id).then(run.bind(this, 'requestDidFinish'));
 
     return {
       arrivals: [],
