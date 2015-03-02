@@ -14,14 +14,13 @@
 
 .stop-item__action {
   display: block;
-  padding: 16px 15px 15px 5px;
+  padding: 18px 15px 13px 5px;
   line-height: 0.8;
   position: absolute;
   right: 0;
   top: 0;
   cursor: pointer;
   background-color: white;
-  border-bottom: 1px solid #eee;
 
   .fa {
     color: $secondary-color;
