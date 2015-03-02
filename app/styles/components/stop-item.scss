@@ -1,26 +1,27 @@
 .stop-item {
   display: block;
   position: relative;
-  border-bottom: 1px solid #eee;
 }
 
 .stop-item__content {
   display: block;
   text-decoration: none;
-  padding: 15px 30px 14px 15px;
+  padding: 18px 30px 13px 15px;
   white-space: nowrap;
   text-overflow: hidden;
+  border-bottom: 1px solid #eee;
 }
 
 .stop-item__action {
   display: block;
-  padding: 15px 15px 14px 5px;
+  padding: 16px 15px 15px 5px;
   line-height: 0.8;
   position: absolute;
   right: 0;
   top: 0;
   cursor: pointer;
   background-color: white;
+  border-bottom: 1px solid #eee;
 
   .fa {
     color: $secondary-color;

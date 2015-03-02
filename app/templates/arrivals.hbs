@@ -1,9 +1,9 @@
-<h1 class="page-title flush-top">Buses for {{stopId}}</h1>
+<h1 class="page-title">Buses for {{stopId}}</h1>
 
 {{#if isLoading}}
   <p class="soft-sides">Loading stops...</p>
 {{else if sortedArrivals}}
-  <ol class="unstyled-list pull-top">
+  <ol class="unstyled-list flush-top">
     {{#each sortedArrivals as |arrival|}}
       {{rt-arrival arrival=arrival}}
     {{/each}}
