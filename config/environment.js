@@ -4,7 +4,6 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'realtime-metro-web-client',
     environment: environment,
-    baseURL: '/realtime-metro-web-client',
     locationType: 'hash',
     EmberENV: {
       FEATURES: {
