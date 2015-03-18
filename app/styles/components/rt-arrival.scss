@@ -1,14 +1,11 @@
 .rt-arrival {
   border-bottom: 1px solid;
   padding: 18px 15px 17px 15px;
-}
-
-.rt-arrival__headsign {
-  font-size: 14px;
+  line-height: 22px;
 }
 
 .rt-arrival__time {
-  font-size: 12px;
+  font-size: 14px;
   display: inline-block;
   whitespace: nowrap;
 }
