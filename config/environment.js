@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'realtime-metro-web-client',
+    modulePrefix: 'bus-detective',
     environment: environment,
     locationType: 'hash',
     EmberENV: {

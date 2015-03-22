@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { fetchArrivalsByStopId } from 'realtime-metro-web-client/utils/api';
+import { fetchArrivalsByStopId } from 'bus-detective/utils/api';
 var run = Ember.run;
 
 const POLL_INTERVAL = 15 * 1000;

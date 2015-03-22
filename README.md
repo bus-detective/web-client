@@ -1,4 +1,4 @@
-# Realtime-metro-web-client
+# Bus Detective - Web Client
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
@@ -59,7 +59,7 @@ To update the current revision of `index.html` served from the rails `IndexContr
 
 This will list each revision of `index.html` stored in Redis. To deploy a revision, run:
 
-    ember deploy:activate --revision realtime-metro-web-client:<REVISION KEY> --environment production
+    ember deploy:activate --revision bus-detective:<REVISION KEY> --environment production
 
 ## Further Reading / Useful Links
 

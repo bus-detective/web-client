@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { searchStops } from 'realtime-metro-web-client/utils/api';
+import { searchStops } from 'bus-detective/utils/api';
 
 export default Ember.Route.extend({
   queryParams: {

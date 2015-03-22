@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import moment from 'moment';
-import stringToHue from 'realtime-metro-web-client/utils/string-to-hue';
+import stringToHue from 'bus-detective/utils/string-to-hue';
 var inject = Ember.inject;
 
 export default Ember.Component.extend({

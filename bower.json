@@ -1,5 +1,5 @@
 {
-  "name": "realtime-metro-web-client",
+  "name": "bus-detective",
   "dependencies": {
     "jquery": "^1.11.1",
     "ember": "components/ember#70c26d4",
