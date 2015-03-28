@@ -1,3 +1,7 @@
+.push {
+  margin: 15px;
+}
+
 .push-bottom {
   margin-bottom: 15px;
 }
@@ -23,6 +27,10 @@
 
 .pull-top {
   margin-top: -15px;
+}
+
+.text-center {
+  text-align: center;
 }
 
 @mixin clearfix() {

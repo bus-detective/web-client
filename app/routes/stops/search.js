@@ -10,7 +10,7 @@ export default Ember.Route.extend({
 
   model: function(params) {
     if (params.name) {
-      return searchStops(params.name);
+      return searchStops(params);
     } else {
       return [];
     }

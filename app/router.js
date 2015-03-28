@@ -7,7 +7,8 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('stops', { path: "/" }, function() {
-    this.route('search', { path: '/' });
+    this.route('near-by', { path: '/' });
+    this.route('search');
     this.route('favorites');
   });
   this.route('routes');
