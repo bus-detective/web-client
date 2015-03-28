@@ -1,17 +1,10 @@
 import Ember from 'ember';
+var RSVP = Ember.RSVP;
 
 export default Ember.Service.extend({
-  latitude: null,
-  longitude: null,
-
-  setup: Ember.on('init', function() {
-    var service = this;
-    
-    var handleSuccess = function(position) {
-      service.set('latitude', position.coords.latitude);
-      service.set('longitude', position.coords.longitude);
-    };
-
-    navigator.geolocation.getCurrentPosition(handleSuccess);
-  })
+  fetch: function() {
+    return new RSVP.Promise(function(resolve, reject) {
+      navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
+  }
 });

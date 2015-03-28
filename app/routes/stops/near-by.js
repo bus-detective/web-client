@@ -6,9 +6,11 @@ export default Ember.Route.extend({
   currentPosition: inject.service(),
 
   model: function() {
-    searchStops({
-      latitude: this.get('currentPosition.latitude'), 
-      longitude: this.get('currentPosition.longitude')
+    return this.get('currentPosition').fetch().then(function(position){
+      return searchStops({
+        latitude: position.coords.latitude, 
+        longitude: position.coords.longitude 
+      });
     });
   },
 
