@@ -7,6 +7,10 @@
   </div>
 </form>
 
-{{#each stops as |stop|}}
-  {{rt-stop stop=stop}}
-{{/each}}
+{{#if didSearch}}
+  {{#each stops as |stop|}}
+    {{rt-stop stop=stop}}
+  {{else}}
+    <p class="text-center">No stops found</p>
+  {{/each}}
+{{/if}}

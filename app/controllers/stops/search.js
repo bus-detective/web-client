@@ -7,6 +7,8 @@ export default Ember.Controller.extend({
 
   nameField: computed.oneWay('name'),
 
+  didSearch: computed.gte('stops.length', 0),
+
   actions: {
     search: function() {
       this.set('name', this.get('nameField'));
