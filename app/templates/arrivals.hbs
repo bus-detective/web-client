@@ -1,7 +1,10 @@
-<h1 class="page-title">Buses for {{stopId}}</h1>
+<h1 class="page-title">
+  <a {{action 'goBack'}}>{{fa-icon 'chevron-left'}}</a>
+  <span>Buses for {{stopId}}</span>
+</h1>
 
 {{#if isLoading}}
-  <p class="soft-sides">Loading stops...</p>
+  <p class="text-center">Loading stops...</p>
 {{else if sortedArrivals}}
   <ol class="unstyled-list flush-top">
     {{#each sortedArrivals as |arrival|}}
