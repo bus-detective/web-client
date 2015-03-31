@@ -16,17 +16,11 @@ Router.map(function() {
   this.route('arrivals', { path: '/:stop_id' });
 
   // STATIC PAGES
-  this.route('mocks', function() {
-    this.route('home');
-    this.route('results', function() {
-      this.route('stops');
-      this.route('routes');
-    });
-    this.route('detail', function() {
-      this.route('stops');
-      this.route('routes');
-    });
-  });
+  this.route('home');
+  this.route('stop-results');
+  this.route('route-results');
+  this.route('stop-detail');
+  this.route('route-detail');
 });
 
 export default Router;
