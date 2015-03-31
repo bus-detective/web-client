@@ -8,9 +8,14 @@ export default Ember.Component.extend({
   clock: inject.service(),
   attributeBindings: ['style'],
   classNames: ['rt-arrival'],
+  classNameBindings: ['isPast:rt-arrival--past'],
 
   timeFromNow: Ember.computed('clock.time', function() {
     return moment(this.get('arrival.time')).fromNow();
+  }),
+
+  isPast: Ember.computed('clock.time', function() {
+    return new Date(this.get('arrival.time')) < new Date();
   }),
 
   style: Ember.computed('arrival.route_id', function() {
