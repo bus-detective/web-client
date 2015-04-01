@@ -7,6 +7,14 @@
   font-size: 26.66px;
   line-height: 2;
   margin: -10px 0 0;
+  .tag {
+    position: relative;
+    top: -4px;
+    width: 66px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 30px;
+  }
 }
 
 .deatil-header__distance {
