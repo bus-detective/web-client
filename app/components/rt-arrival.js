@@ -20,8 +20,8 @@ export default Ember.Component.extend({
 
   style: Ember.computed('arrival.route_id', function() {
     var hue = stringToHue(this.get('arrival.route_id').toString());
-    return `color:            hsl(${hue}, 60%, 25%);
-            background-color: hsl(${hue}, 40%, 95%);
-            border-color:     hsl(${hue}, 40%, 80%);`;
+    return `color:            hsl(${hue}, 60%, 100%);
+            background-color: hsl(${hue}, 50%, 55%);
+            border-color:     hsl(${hue}, 50%, 55%);`;
   })
 });
