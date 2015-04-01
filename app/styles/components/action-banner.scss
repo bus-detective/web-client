@@ -7,9 +7,10 @@
   .search-bar {
     @include clearfix;
     position: relative;
+    float: left;
     display: inline-block;
     margin: 0 $padding;
-    width: calc(100% - 110px);
+    width: calc(100% - 100px);
     & > input {
       float: left;
       height: 40px;
@@ -20,5 +21,8 @@
     .bd-button {
       float: right;
     }
+  }
+  .bd-button {
+    float: left;
   }
 }

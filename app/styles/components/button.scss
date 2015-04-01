@@ -16,6 +16,9 @@
   background-color: transparentize(#fff, 0.1);
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+  .bd-icon {
+    line-height: inherit;
+  }
 }
 
 .button--return {

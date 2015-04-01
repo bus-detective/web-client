@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'utils';
+@import 'bd-icons';
 @import 'components/rt-arrival';
 @import 'components/well';
 @import 'components/page-title';
@@ -22,6 +23,7 @@
 
 a {
   color: $link-color;
+  text-decoration: none;
   &:hover {
     color: darken($link-color, 10);
   }
