@@ -17,8 +17,11 @@
   }
 }
 
-.deatil-header__distance {
-  float: right;
+.deatil-header__distance, .deatil-header__location {
   line-height: 20px;
   color: $bd-gray;
+}
+
+.deatil-header__distance {
+  float: right;
 }
