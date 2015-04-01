@@ -7,6 +7,21 @@
   position: relative;
 }
 
+.event--past {
+  opacity: 0.5;
+}
+
+.event--current {
+  .event__time {
+    color: $bd-dark-gray;
+  }
+  .event__marker {
+    border: 2px solid $bd-dark-gray;
+    background-color: $bd-dark-gray;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 2px #fff inset;
+  }
+}
+
 .event__time {
   float: left;
   width: 23.6%;
