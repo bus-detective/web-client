@@ -1,0 +1,24 @@
+.action-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: $padding;
+  .search-bar {
+    @include clearfix;
+    position: relative;
+    display: inline-block;
+    margin: 0 $padding;
+    width: calc(100% - 110px);
+    & > input {
+      float: left;
+      height: 40px;
+      width: calc(100% - 40px);
+      // FOR MOCKS \\
+      opacity: 0;
+    }
+    .bd-button {
+      float: right;
+    }
+  }
+}
