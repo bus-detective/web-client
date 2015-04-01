@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Cooper Hewitt';
+  src: url('../fonts/CooperHewitt/CooperHewitt-Bold-webfont.eot');
+  src: url('../fonts/CooperHewitt/CooperHewitt-Bold-webfont.eot?#iefix') format("embedded-opentype"), url('../fonts/CooperHewitt/CooperHewitt-Bold-webfont.woff2') format("woff2"), url('../fonts/CooperHewitt/CooperHewitt-Bold-webfont.woff') format("woff"), url('../fonts/CooperHewitt/CooperHewitt-Bold-webfont.ttf') format("truetype"), url('../fonts/CooperHewitt/CooperHewitt-Bold-webfont.svg#cooper_hewittbold') format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt';
+  src: url('../fonts/CooperHewitt/CooperHewitt-Light-webfont.eot');
+  src: url('../fonts/CooperHewitt/CooperHewitt-Light-webfont.eot?#iefix') format("embedded-opentype"), url('../fonts/CooperHewitt/CooperHewitt-Light-webfont.woff2') format("woff2"), url('../fonts/CooperHewitt/CooperHewitt-Light-webfont.woff') format("woff"), url('../fonts/CooperHewitt/CooperHewitt-Light-webfont.ttf') format("truetype"), url('../fonts/CooperHewitt/CooperHewitt-Light-webfont.svg#cooper_hewittlight') format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt';
+  src: url('../fonts/CooperHewitt/CooperHewitt-Medium-webfont.eot');
+  src: url('../fonts/CooperHewitt/CooperHewitt-Medium-webfont.eot?#iefix') format("embedded-opentype"), url('../fonts/CooperHewitt/CooperHewitt-Medium-webfont.woff2') format("woff2"), url('../fonts/CooperHewitt/CooperHewitt-Medium-webfont.woff') format("woff"), url('../fonts/CooperHewitt/CooperHewitt-Medium-webfont.ttf') format("truetype"), url('../fonts/CooperHewitt/CooperHewitt-Medium-webfont.svg#cooper_hewittmedium') format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt';
+  src: url('../fonts/CooperHewitt/CooperHewitt-Book-webfont.eot');
+  src: url('../fonts/CooperHewitt/CooperHewitt-Book-webfont.eot?#iefix') format("embedded-opentype"), url('../fonts/CooperHewitt/CooperHewitt-Book-webfont.woff2') format("woff2"), url('../fonts/CooperHewitt/CooperHewitt-Book-webfont.woff') format("woff"), url('../fonts/CooperHewitt/CooperHewitt-Book-webfont.ttf') format("truetype"), url('../fonts/CooperHewitt/CooperHewitt-Book-webfont.svg#cooper_hewittbook') format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Cooper Hewitt', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: $bd-dark-gray;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, p {
+  font-family: 'Cooper Hewitt', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+p {
+  font-weight: 500;
+}
