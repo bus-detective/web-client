@@ -5,6 +5,9 @@
 .timeline__event {
   @include clearfix;
   position: relative;
+  &:last-of-type .event__event-details {
+    border-color: transparent;
+  }
 }
 
 .event--past {
