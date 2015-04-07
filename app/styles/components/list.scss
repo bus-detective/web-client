@@ -1,0 +1,11 @@
+.list {
+  padding: 83px $padding $padding;
+  background-color: $bd-lighter-gray;
+}
+
+.list-item {
+  margin-bottom: $padding;
+  padding: $padding;
+  background-color: #fff;
+  box-shadow: $box-shadow;
+}

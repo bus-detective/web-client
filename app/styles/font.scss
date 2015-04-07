@@ -53,4 +53,13 @@ h1, p {
 
 h1 {
   font-weight: 600;
+  font-size: 26.66px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 13px;
+  color: $bd-gray;
+  text-transform: uppercase;
+  letter-spacing: 0.066em;
 }
