@@ -37,29 +37,3 @@
   font-weight: 700;
   font-style: normal;
 }
-
-body {
-  font-family: 'Cooper Hewitt', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: $bd-dark-gray;
-  font-weight: 400;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased; 
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, p {
-  font-family: 'Cooper Hewitt', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-h1 {
-  font-weight: 600;
-  font-size: 26.66px;
-}
-
-h2 {
-  font-weight: 700;
-  font-size: 11px;
-  color: $bd-gray;
-  text-transform: uppercase;
-  letter-spacing: 0.066em;
-}
