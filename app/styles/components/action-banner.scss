@@ -44,6 +44,7 @@
 }
 
 .action-banner--search {
+  position: fixed;
   background-color: #FFF;
   box-shadow: 0 0px 2px 2px transparentize($bd-dark-gray, 0.85);
   .search-bar {
