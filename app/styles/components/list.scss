@@ -1,7 +1,7 @@
 .list {
   padding: 83px $padding $padding;
   background-color: $bd-lighter-gray;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .list-item {
