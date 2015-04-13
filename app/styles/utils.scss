@@ -37,6 +37,13 @@
   text-align: center;
 }
 
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @mixin clearfix() {
   &:before, &:after {
     content: " ";

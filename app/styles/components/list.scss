@@ -25,7 +25,16 @@
   font-size: 18px;
   line-height: 1.5;
   margin: 0;
-  .tag {
+}
+
+.list-item__title {
+  @extend .truncate;
+  // 36px is equal to double the font size
+  width: calc(100% - 36px);
+  padding-right: $padding;
+}
+
+.list-item__title .tag {
     position: relative;
     top: -4px;
     width: 44px;
@@ -33,7 +42,6 @@
     font-size: 14px;
     line-height: 210px;
   }
-}
 
 .list-item__details .tag{
   width: 30px;
