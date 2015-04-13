@@ -1,8 +1,16 @@
-<div class="stop-item">
-  {{#link-to 'arrivals' stop.id class="stop-item__content"}}
-    {{stop.name}}
-  {{/link-to}}
-  <div {{action 'toggleFavorite' stop}} class="stop-item__action">
-    {{fa-icon (if isFavorite 'star' 'star-o')}}
+{{#link-to 'arrivals' stop.id class="list-item"}}
+  <span {{action 'toggleFavorite' stop bubbles=false}} class="list-item__button list-item__button button--fav">
+    {{bd-icon (if isFavorite 'heart' 'heart-o')}}
+  </span>
+  <h1 class="list-item__title">{{stop.name}}</h1>
+  <div class="list-item__details">
+    <span class="tag tag--blue"> 11 </span>
+    <span class="tag tag--green"> 12x </span>
+    <span class="tag tag--purple"> 17 </span>
+    <span class="tag tag--red"> 74x </span>
+    <span class="list-item__distance">
+      <i class="bd-icon bd-icon--walk"></i>
+      0.5mi
+    </span>
   </div>
-</div>
+{{/link-to}}
