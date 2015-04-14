@@ -1,0 +1,69 @@
+.action-banner {
+  @include clearfix;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: $padding;
+  .bd-button {
+    float: left;
+  }
+}
+
+.action-banner .search-bar {
+  @include clearfix;
+  position: relative;
+  float: left;
+  display: inline-block;
+  margin: 0 $padding;
+  width: calc(100% - 100px);
+  & > input {
+    float: right;
+    height: 40px;
+    width: calc(100% - 60px);
+    padding: 0 ($padding * 2.5);
+    background-color: rgba(255,255,255,0.85);
+    border: none;
+    border-radius: $border-radius 0 0 $border-radius;
+    box-shadow: -1px 1px 2px rgba(77, 77, 77, 0.25);
+    opacity: 0;
+    transition: all 0.2s $ease;
+    &:focus {
+      outline: none;
+    }
+  }
+  .bd-button {
+    float: right;
+    &:hover {
+      border-radius: 0 $border-radius $border-radius 0;
+      + input {
+        opacity: 1;
+        padding: 0 $padding;
+        width: calc(100% - 40px);
+      }
+    }
+  }
+}
+
+.action-banner--search {
+  position: fixed;
+  background-color: #FFF;
+  box-shadow: 0 0px 2px 2px transparentize($bd-dark-gray, 0.85);
+  .search-bar {
+    width: calc(100% - 40px);
+    margin: 0;
+    & > input {
+      opacity: 1;
+      padding: 0 $padding;
+      width: calc(100% - 40px);
+      box-shadow: none;
+    }
+  }
+  .bd-button {
+    box-shadow: none;
+  }
+  .button--return {
+    color: $bd-blue;
+    background-color: transparent;
+  }
+}

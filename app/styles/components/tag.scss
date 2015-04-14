@@ -1,0 +1,27 @@
+.tag {
+  display: inline-block;
+  width: 44px;
+  height: 20px;
+  border-radius: $border-radius;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.tag--blue {
+  background-color: $bd-blue;
+}
+
+.tag--green {
+  background-color: $bd-green;
+}
+
+.tag--purple {
+  background-color: $bd-purple;
+}
+
+.tag--red {
+  background-color: $bd-red;
+}

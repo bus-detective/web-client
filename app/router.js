@@ -14,6 +14,13 @@ Router.map(function() {
   this.route('routes');
   this.route('showRoute', { path: '/route/:route_id' });
   this.route('arrivals', { path: '/:stop_id' });
+
+  // STATIC PAGES
+  this.route('home');
+  this.route('stop-results');
+  this.route('route-results');
+  this.route('stop-detail');
+  this.route('route-detail');
 });
 
 export default Router;

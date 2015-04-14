@@ -1,0 +1,62 @@
+.list {
+  padding: 83px $padding $padding;
+  background-color: $bd-lighter-gray;
+  min-height: 100vh;
+}
+
+.list-item {
+  margin-bottom: $padding;
+  padding: $padding;
+  background-color: #fff;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+
+.list-item__button {
+  float: right;
+  color: $bd-light-gray;
+  &.button--fav {
+    color: $bd-red;
+    background-color: #fff;
+  }
+}
+
+.list-item__title, .list-item__button {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.list-item__title {
+  @extend .truncate;
+  // 36px is equal to double the font size
+  width: calc(100% - 36px);
+  padding-right: $padding;
+}
+
+.list-item__title .tag {
+    position: relative;
+    top: -4px;
+    width: 44px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 210px;
+  }
+
+.list-item__details .tag{
+  width: 30px;
+  height: 14px;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.list-item__distance, .list-item__location {
+  margin-top: 5px;
+  line-height: 14px;
+  color: $bd-gray;
+}
+
+.list-item__distance {
+  float: right;
+  font-size: 12px;
+}

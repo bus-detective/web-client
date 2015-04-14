@@ -1,0 +1,25 @@
+.hero-header {
+  width: 100%;
+  // based on the golden ratio
+  height: 43.75vh;
+  // 43.75% of the web view on iPhone 6
+  max-height: 293.563px;
+  padding: 3.635vh;
+}
+
+.hero-header__logo {
+  //width: clac(100% - 7.27vh);
+  width: 244.781px;
+  height: 100%;
+  margin: auto;
+  padding: 14.15%;
+  background-color: $bd-lighter-gray;
+  border-radius: 50%;
+  box-shadow: $box-shadow;
+  & > img {
+    width: 100%;
+    height: 100%;
+    // half the size of the amount that magnifying glass protrudes from the bus
+    transform: translate(9.562%, 0)
+  }
+}
