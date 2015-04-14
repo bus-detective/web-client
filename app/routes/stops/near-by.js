@@ -12,9 +12,5 @@ export default Ember.Route.extend({
         longitude: position.coords.longitude 
       });
     });
-  },
-
-  setupController: function(controller, model) {
-    controller.set('stops', model);
   }
 });

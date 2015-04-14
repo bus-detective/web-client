@@ -1,3 +1,11 @@
-{{#each stops as |stop|}}
-  {{rt-stop stop=stop}}
-{{/each}}
+<div class="list">
+  <section class="section">
+    <h2 class="light">
+      <i class="bd-icon bd-icon--pin"></i>
+      Stops Near You
+    </h2>
+    {{#each model as |stop|}}
+      {{rt-stop stop=stop}}
+    {{/each}}
+  </section>
+</div>
