@@ -15,6 +15,7 @@
   </div>  
 
   <div class="nav">
-    <a class="bd-button"><i class="bd-icon bd-icon--pin"></i>Nearest Stops</a><a class="bd-button"><i class="bd-icon bd-icon--heart"></i>Favorite Stops</a>
+    {{#link-to 'stops.near-by' class="bd-button"}}<i class="bd-icon bd-icon--pin"></i>Nearest Stops{{/link-to}}
+    {{#link-to 'stops.favorites' class="bd-button"}}<i class="bd-icon bd-icon--heart"></i>Favorite Stops{{/link-to}}
   </div>
 </div>

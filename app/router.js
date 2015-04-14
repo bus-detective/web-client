@@ -6,7 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('stops', { path: "/" }, function() {
+  this.route('home', { path: "/" });
+
+  this.route('stops', function() {
     this.route('search');
     this.route('near-by');
     this.route('favorites');
@@ -16,7 +18,6 @@ Router.map(function() {
   this.route('arrivals', { path: '/:stop_id' });
 
   // STATIC PAGES
-  this.route('home');
   this.route('stop-results');
   this.route('route-results');
   this.route('stop-detail');
