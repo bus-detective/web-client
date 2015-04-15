@@ -3,7 +3,8 @@ export default function serializeStops(response) {
     return {
       id: stop.stop_id,
       name: stop.name,
-      headsign: stop.headsign
+      headsign: stop.headsign,
+      routes: stop.routes
     };
   });
 }

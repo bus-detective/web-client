@@ -4,10 +4,9 @@
   </span>
   <h1 class="list-item__title">{{stop.name}}</h1>
   <div class="list-item__details">
-    <span class="tag tag--blue"> 11 </span>
-    <span class="tag tag--green"> 12x </span>
-    <span class="tag tag--purple"> 17 </span>
-    <span class="tag tag--red"> 74x </span>
+    {{#each stop.routes as |route|}}
+      {{bd-route-tag route=route}}
+    {{/each}}
     <span class="list-item__distance">
       <i class="bd-icon bd-icon--walk"></i>
       0.5mi
