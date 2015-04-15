@@ -1,18 +1,10 @@
-<div class="rt-tabs__navigated-content">
-  <h1 class="page-title">Bus Stops</h1>
-  {{outlet}}
+<div class="action-banner action-banner--search">
+  <div class="search-bar">
+    <a href="#" class="bd-button">
+      <i class="bd-icon bd-icon--search"></i>
+    </a>
+    <input type="text" title="search_input" placeholder="Search" class="search-bar__text-field">
+  </div>
 </div>
 
-<nav class='rt-tabs'>
-  {{#link-to 'stops.search' class='rt-tabs__tab'}}
-    Search
-  {{/link-to}}
-
-  {{#link-to 'stops.near-by' class='rt-tabs__tab'}}
-    Near By
-  {{/link-to}}
-
-  {{#link-to 'stops.favorites' class='rt-tabs__tab'}}
-    Favorites
-  {{/link-to}}
-</nav>
+{{outlet}}
