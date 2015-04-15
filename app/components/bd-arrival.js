@@ -7,8 +7,8 @@ export default Ember.Component.extend({
   tagName: 'li',
   clock: inject.service(),
   attributeBindings: ['style'],
-  classNames: ['rt-arrival'],
-  classNameBindings: ['isPast:rt-arrival--past'],
+  classNames: ['arrival'],
+  classNameBindings: ['isPast:arrival--past'],
 
   timeFromNow: Ember.computed('clock.time', function() {
     return moment(this.get('arrival.time')).fromNow();
