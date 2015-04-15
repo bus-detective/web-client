@@ -2,7 +2,7 @@
   <span {{action 'toggleFavorite' stop bubbles=false}} class="list-item__button button--fav">
     {{bd-icon (if isFavorite 'heart' 'heart-o')}}
   </span>
-  <h1 class="list-item__title">{{stop.name}}</h1>
+  <h1 class="list-item__title">{{stop.name}} <small>{{stop.direction}}</small></h1>
   <div class="list-item__details">
     {{#each stop.routes as |route|}}
       {{bd-route-tag route=route}}
