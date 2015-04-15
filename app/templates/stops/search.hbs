@@ -1,16 +1,17 @@
-<form {{action "search" on="submit"}} class="push-sides">
-  <div class="input-group">
-    {{input value=nameField placeholder="Street Name" class="text-field"}}
-    <div class="input-group__button">
-      <button type="submit" class="button">Search</button>
-    </div>
-  </div>
-</form>
-
-{{#if didSearch}}
-  {{#each stops as |stop|}}
-    {{rt-stop stop=stop}}
-  {{else}}
-    <p class="text-center">No stops found</p>
-  {{/each}}
-{{/if}}
+<div class="list">
+  <section class="section">
+    <h2 class="light">
+      <i class="bd-icon bd-icon--search"></i>
+      Search results 
+    </h2>
+    {{#if isLoading}}
+      <p class="text-center">Loading stops...</p>
+    {{else}}
+      {{#each model as |stop|}}
+        {{rt-stop stop=stop}}
+      {{else}}
+        <p class="text-center">No stops found</p>
+      {{/each}}
+    {{/if}}
+  </section>
+</div>
