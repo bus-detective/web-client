@@ -7,19 +7,13 @@
   padding: $padding;
 }
 
-.action-banner--search {
+.action-banner--fixed-top {
   position: fixed;
   background-color: #FFF;
   box-shadow: 0 0px 2px 2px transparentize($bd-dark-gray, 0.85);
-  .search-bar {
-    width: calc(100% - 40px);
-    margin: 0;
-    & > input {
-      opacity: 1;
-      padding: 0 $padding;
-      width: calc(100% - 40px);
-      box-shadow: none;
-    }
+  z-index: 10;
+  .search__query {
+    box-shadow: none;
   }
   .bd-button {
     box-shadow: none;
