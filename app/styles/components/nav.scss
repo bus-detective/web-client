@@ -11,6 +11,7 @@
     padding-top: ($padding / 2);
     line-height: 1.5;
     color: $bd-blue;
+    box-shadow: $box-shadow, 0 1px 2px #FFF inset;
     &:first-of-type {
       margin-right: $padding;
     }
