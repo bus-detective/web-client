@@ -12,14 +12,14 @@
   background-color: #FFF;
   box-shadow: 0 0px 2px 2px transparentize($bd-dark-gray, 0.85);
   z-index: 10;
+  .search {
+    float: right;
+    width: calc(100% - 50px);
+  }
   .search__query {
     box-shadow: none;
   }
   .bd-button {
     box-shadow: none;
-  }
-  .button--return {
-    color: $bd-blue;
-    background-color: transparent;
   }
 }
