@@ -33,4 +33,4 @@ $ease: cubic-bezier(0.455, 0.030, 0.515, 0.955);
 $primary-color: #0094BA;
 $secondary-color: #FF7B00;
 
-$link-color: darken($primary-color, 10);
+$link-color: $bd-dark-gray;
