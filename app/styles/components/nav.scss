@@ -3,12 +3,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: calc(13.23vh + 20px);
+  height: 100px;
   padding: $padding;
   .bd-button {
     width: calc(50% - 5px);
     height: 100%;
-    padding-top: 0.75em;
+    padding-top: ($padding / 2);
     line-height: 1.5;
     color: $bd-blue;
     &:first-of-type {
