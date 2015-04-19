@@ -7,7 +7,7 @@
     {{#if isLoading}}
       <p class="text-center">Loading stops...</p>
     {{else}}
-      {{#each model as |stop|}}
+      {{#each model.results as |stop|}}
         {{bd-stop stop=stop}}
       {{else}}
         <p class="text-center">No stops found</p>

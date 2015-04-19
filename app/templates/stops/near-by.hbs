@@ -4,7 +4,7 @@
       <i class="bd-icon bd-icon--pin"></i>
       Stops Near You
     </h2>
-    {{#each model as |stop|}}
+    {{#each model.results as |stop|}}
       {{bd-stop stop=stop}}
     {{/each}}
   </section>
