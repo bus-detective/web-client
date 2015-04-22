@@ -9,10 +9,12 @@
     width: $hh-height - ($hh-padding * 2);
     height: 100%;
     margin: auto;
-    padding: 14.15%;
     background-color: $bd-lighter-gray;
     border-radius: 50%;
     box-shadow: $box-shadow;
+    // Pad the container 17.5% of its diameter
+    // keeps the proportions of the logo to the container consistant accross all screen sizes
+    padding: ($hh-height - ($hh-padding * 2)) * 0.175;
   }
 }
 
