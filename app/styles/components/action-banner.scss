@@ -8,6 +8,12 @@
   & > .button:not(.button--return) {
     float: right;
   }
+  // WORKAROUND - remove when full detail header is available
+  & > .detail-header__title {
+    margin: 0 0 -10px;
+    line-height: 1.7;
+    padding-left: 55px;
+  }
 }
 
 .action-banner--fixed-top {

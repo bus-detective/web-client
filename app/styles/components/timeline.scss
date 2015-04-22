@@ -1,5 +1,7 @@
 .timeline {
   padding: ($padding * 2.5) $padding;
+  // WORKAROUND - remove when full detail header is available
+  margin-top: 75px;
 }
 
 .timeline__event {
