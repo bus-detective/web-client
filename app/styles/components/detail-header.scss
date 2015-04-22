@@ -1,6 +1,12 @@
 .detail-header {
   padding: $padding;
   box-shadow: 0 0px 2px 2px transparentize($bd-dark-gray, 0.85);
+  // FIX
+  // remove when map header is implemented
+  padding: 20px 10px 5px 65px;
+  .detail-header__title {
+    line-height: 1.75;
+  }
 }
 
 .detail-header__title {

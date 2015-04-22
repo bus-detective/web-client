@@ -1,7 +1,14 @@
-<h1 class="page-title">
-  {{#link-to 'stops'}}{{fa-icon 'chevron-left'}}{{/link-to}}
-  <span>Buses for {{stopId}}</span>
-</h1>
+<div class="action-banner">
+  {{#link-to 'stops' class="bd-button button--return"}}
+    <i class="bd-icon bd-icon--arrow-left"></i>
+  {{/link-to}}
+</div>
+
+
+<div class="detail-header">
+  <h1 class="detail-header__title"> {{stopId}} </h1>
+</div>
+
 
 {{#if isLoading}}
   <p class="text-center">Loading stops...</p>
@@ -12,5 +19,5 @@
     {{/each}}
   </ol>
 {{else}}
-  <p class="soft-sides">There are no arrivals for stop {{stopId}}</p>
+  <p class="light soft-sides">There are no arrivals for stop {{stopId}}</p>
 {{/if}}
