@@ -7,7 +7,7 @@ export default Ember.Component.extend({
   tagName: 'li',
   clock: inject.service(),
   attributeBindings: ['style'],
-  classNames: ['arrival'],
+  classNames: ['timeline__event'],
   classNameBindings: ['isPast:arrival--past'],
 
   timeFromNow: Ember.computed('clock.time', function() {
