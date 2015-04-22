@@ -8,10 +8,10 @@ export default Ember.Component.extend({
   clock: inject.service(),
   attributeBindings: ['style'],
   classNames: ['timeline__event'],
-  classNameBindings: ['isPast:arrival--past'],
+  classNameBindings: ['isPast:event--past'],
 
   timeFromNow: Ember.computed('clock.time', function() {
-    return moment(this.get('arrival.time')).fromNow('mm');
+    return moment(this.get('arrival.time')).fromNow();
   }),
 
   arrivalTime: Ember.computed('clock.time', function () {
