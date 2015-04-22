@@ -1,2 +1,11 @@
-<span class="arrival__headsign">{{arrival.headsign}}</span>
-<span class="arrival__time">{{timeFromNow}}</span>
+<div class="event__time"> {{arrivalTime}} </div>
+<div class="event__marker"></div>
+<div class="event__event-details">
+  <p>{{bd-route-tag route=route}} {{arrival.headsign}} </p>
+  <div class="event-details__metadata">
+    <span class="metadata__time">
+      <i class="bd-icon bd-icon--clock"></i>
+      {{timeFromNow}}
+    </span>
+  </div>
+</div>

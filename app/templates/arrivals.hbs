@@ -4,16 +4,14 @@
   {{/link-to}}
 </div>
 
-
 <div class="detail-header">
   <h1 class="detail-header__title"> {{stopId}} </h1>
 </div>
 
-
 {{#if isLoading}}
   <p class="text-center">Loading stops...</p>
 {{else if sortedArrivals}}
-  <ol class="unstyled-list flush-top">
+  <ol class="timeline">
     {{#each sortedArrivals as |arrival|}}
       {{bd-arrival arrival=arrival}}
     {{/each}}
