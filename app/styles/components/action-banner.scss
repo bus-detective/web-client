@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   padding: $padding;
-  & > .bd-button:not(.button--return) {
+  & > .button:not(.button--return) {
     float: right;
   }
 }
@@ -22,7 +22,7 @@
   .search__query {
     box-shadow: none;
   }
-  .bd-button {
+  .button {
     box-shadow: none;
   }
 }
