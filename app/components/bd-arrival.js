@@ -15,7 +15,7 @@ export default Ember.Component.extend({
   }),
 
   arrivalTime: Ember.computed('clock.time', function () {
-    return moment(this.get('arrival.time')).format('hh:mm');
+    return moment(this.get('arrival.time')).format('h:mm');
   }),
 
   isPast: Ember.computed('clock.time', function() {
