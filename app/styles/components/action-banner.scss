@@ -5,6 +5,9 @@
   left: 0;
   width: 100%;
   padding: $padding;
+  & > .bd-button:not(.button--return) {
+    float: right;
+  }
 }
 
 .action-banner--fixed-top {
