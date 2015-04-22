@@ -11,7 +11,7 @@ export default Ember.Component.extend({
   classNameBindings: ['isPast:arrival--past'],
 
   timeFromNow: Ember.computed('clock.time', function() {
-    return moment(this.get('arrival.time')).fromNow();
+    return moment(this.get('arrival.time')).fromNow('mm');
   }),
 
   isPast: Ember.computed('clock.time', function() {
