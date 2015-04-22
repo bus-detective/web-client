@@ -4,6 +4,7 @@
 
 .timeline__event {
   @include clearfix;
+  display: block;
   position: relative;
   &:last-of-type .event__event-details {
     border-color: transparent;
@@ -56,6 +57,7 @@
   padding-bottom: ($padding * 3.33);
   border-left: 3px solid #BFBFBF;
   & > p {
+    @extend .truncate;
     font-size: 17px;
     line-height: 20px;
     margin-top: 0;
