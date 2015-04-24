@@ -1,4 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
   font-family: 'Cooper Hewitt', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: $bd-dark-gray;
   font-weight: 400;
@@ -18,4 +25,13 @@ h2 {
   color: $bd-gray;
   text-transform: uppercase;
   letter-spacing: 0.066em;
+}
+
+a {
+  text-decoration: none;
+  color: $bd-dark-gray;
+}
+
+button {
+  border: none;
 }

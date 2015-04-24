@@ -2,7 +2,7 @@
 
 @import 'variables';
 @import 'font';
-@import 'type';
+@import 'elements';
 @import 'utils';
 @import 'bd-icons';
 @import 'components/arrival';
@@ -24,16 +24,3 @@
 @import 'components/search';
 @import 'components/nav';
 
-
-* {
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-  color: $bd-dark-gray;
-}
-
-button {
-  border: none;
-}
