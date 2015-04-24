@@ -18,14 +18,10 @@ Router.map(function() {
     this.route('departures', { path: '/' });
   });
 
-  this.route('routes');
-  this.route('showRoute', { path: '/route/:route_id' });
-
-  // STATIC PAGES
-  this.route('stop-results');
-  this.route('route-results');
-  this.route('stop-detail');
-  this.route('route-detail');
+  // STATIC MOCKS
+  this.route('mocks', function(){
+    this.route('route-detail');
+  });
 });
 
 export default Router;
