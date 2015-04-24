@@ -13,9 +13,13 @@ Router.map(function() {
     this.route('near-by');
     this.route('favorites');
   });
+
+  this.route('stop', { path: 'stops/:stop_id' }, function(){
+    this.route('departures', { path: '/' });
+  });
+
   this.route('routes');
   this.route('showRoute', { path: '/route/:route_id' });
-  this.route('arrivals', { path: '/:stop_id' });
 
   // STATIC PAGES
   this.route('stop-results');

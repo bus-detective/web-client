@@ -1,0 +1,82 @@
+<div class="action-banner">
+  {{#link-to 'stops.search' title="back" class="bd-button button--return"}}
+    <i class="bd-icon bd-icon--arrow-left"></i>
+  {{/link-to}}
+
+  {{bd-search action="search"}}
+  
+  <a href="#" class="bd-button button--fav">
+    <i class="bd-icon bd-icon--heart"></i>
+  </a>
+</div>
+
+<div class="map-header"></div>
+
+<div class="detail-header">
+  <h1 class="detail-header__title">{{model.name}}</h1>
+  <div class="detail-header__details">
+    {{#each model.routes as |route|}}
+      {{bd-route-tag route=route}}
+    {{/each}}
+  </div>
+</div>
+
+<div class="timeline">
+  <div class="timeline__event event--past">
+    <div class="event__time"> 12:25p </div>
+    <div class="event__marker"></div>
+    <div class="event__event-details">
+      <p><span class="tag tag--blue"> 11 </span> Hyde Park - Erie Ave </p>
+      <p><span class="tag tag--green"> 12x </span> Madisonville Express </p>
+      <div class="event-details__metadata">
+        <span class="metadata__time">
+          <i class="bd-icon bd-icon--clock"></i>
+          5m ago
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline__event event--current">
+    <div class="event__time"> 12:30p </div>
+    <div class="event__marker"></div>
+    <div class="event__event-details">
+      <p><span class="tag tag--blue"> 11 </span> Hyde Park - Erie Ave </p>
+      <p><span class="tag tag--green"> 12x </span> Madisonville Express </p>
+      <div class="event-details__metadata">
+        <span class="metadata__time">
+          <i class="bd-icon bd-icon--clock"></i>
+          now
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline__event">
+    <div class="event__time"> 12:45p </div>
+    <div class="event__marker"></div>
+    <div class="event__event-details">
+      <p><span class="tag tag--blue"> 11 </span> Hyde Park - Erie Ave </p>
+      <div class="event-details__metadata">
+        <span class="metadata__time">
+          <i class="bd-icon bd-icon--clock"></i>
+          15m
+        </span>
+      </div>
+    </div>
+  </div>
+  {{!-- FUTURE EVENT --}}
+  <div class="timeline__event">
+    <div class="event__time"> 1:00p </div>
+    <div class="event__marker"></div>
+    <div class="event__event-details">
+      <p><span class="tag tag--green"> 12x </span> Madisonville Express </p>
+      <div class="event-details__metadata">
+        <span class="metadata__time">
+          <i class="bd-icon bd-icon--clock"></i>
+          30m
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
