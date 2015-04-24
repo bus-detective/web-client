@@ -2,12 +2,8 @@
   {{#link-to 'stops.search' title="back" class="bd-button button--return"}}
     <i class="bd-icon bd-icon--arrow-left"></i>
   {{/link-to}}
-
   {{bd-search action="search"}}
-  
-  <a href="#" class="bd-button button--fav">
-    <i class="bd-icon bd-icon--heart"></i>
-  </a>
+  {{bd-toggle-favorite stop=model class="bd-button button--fav"}}
 </div>
 
 <div class="map-header"></div>

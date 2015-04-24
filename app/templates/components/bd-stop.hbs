@@ -1,7 +1,5 @@
 {{#link-to 'stop' stop.id class="list-item"}}
-  <span {{action 'toggleFavorite' stop bubbles=false}} class="list-item__button button--fav">
-    {{bd-icon (if isFavorite 'heart' 'heart-o')}}
-  </span>
+  {{bd-toggle-favorite stop=stop class="stop-item__toggle-favorite"}}
   <h1 class="list-item__title">{{stop.name}} <small>{{stop.direction}}</small></h1>
   <div class="list-item__details">
     {{#each stop.routes as |route|}}
