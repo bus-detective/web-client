@@ -1,6 +1,6 @@
 .tag {
   display: inline-block;
-  width: 44px;
+  min-width: 44px;
   height: 20px;
   border-radius: $border-radius;
   color: #FFFFFF;
@@ -8,6 +8,7 @@
   font-size: 12px;
   font-weight: 700;
   line-height: 20px;
+  padding: 0 2px;
 }
 
 .tag--blue {

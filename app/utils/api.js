@@ -17,8 +17,7 @@ export function fetchStop(stopId) {
   return request(`${ENV.APP.SERVER}/api/stops/${stopId}`).then(extractOne);
 }
 
-export function fetchArrivalsByStopId(stopId) {
-  return request(`${ENV.APP.SERVER}/api/arrivals/${stopId}`).then(function(response) {
-    return response.arrivals;
-  });
+export function fetchDepartures(stopId) {
+  var paramString = stringifyParams({ stop_id: stopId });
+  return request(`${ENV.APP.SERVER}/api/departures?${paramString}`).then(extractOne);
 }

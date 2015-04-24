@@ -1,0 +1,17 @@
+<div class="event__time">{{moment departure.time 'h:mmp'}}</div>
+<div class="event__marker"></div>
+<div class="event__event-details">
+  <p>
+    {{bd-route-tag route=departure.route}} 
+    <span>{{departure.route.long_name}}</span>
+    {{#if departure.realtime}}
+      <span class="tag tag--green">realtime</span>
+    {{/if}}
+  </p>
+  <div class="event-details__metadata">
+    <span class="metadata__time">
+      <i class="bd-icon bd-icon--clock"></i>
+      {{timeFromNow}}
+    </span>
+  </div>
+</div>

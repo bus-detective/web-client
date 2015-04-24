@@ -1,0 +1,11 @@
+<div class="timeline">
+  {{#if isLoading}}
+    <p class="text-center">Loading departures...</p>
+  {{else}}
+    {{#each model.departures as |departure|}}
+      {{bd-departure departure=departure class="timeline__event"}}
+    {{else}}
+      <p class="text-center">No departures found</p>
+    {{/each}}
+  {{/if}}
+</div>
