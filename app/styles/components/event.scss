@@ -39,8 +39,11 @@
     margin-bottom: ($padding * 0.75);
   }
   .tag {
+    float: none;
     position: relative;
     top: -2px;
+    width: 22.85%;
+    margin-bottom: 0;
   }
 }
 

@@ -1,4 +1,5 @@
 .detail-header {
+  @include clearfix;
   position: relative;
   padding: $padding;
   box-shadow: 0 0px 2px 2px transparentize($bd-dark-gray, 0.85);

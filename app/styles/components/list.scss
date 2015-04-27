@@ -5,6 +5,7 @@
 }
 
 .list-item {
+  @include clearfix;
   display: block;
   margin-bottom: $padding;
   padding: $padding;
@@ -34,14 +35,14 @@
 .list-item__title .tag {
     position: relative;
     top: -4px;
-    width: 44px;
+    width: 15.85%;
     height: 20px;
     font-size: 14px;
-    line-height: 210px;
+    line-height: 20px;
   }
 
 .list-item__details .tag{
-  width: 30px;
+  width: 15.82%;
   height: 14px;
   font-size: 10px;
   line-height: 14px;

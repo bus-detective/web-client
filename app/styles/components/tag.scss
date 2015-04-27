@@ -1,7 +1,10 @@
 .tag {
+  float: left;
   display: inline-block;
-  min-width: 44px;
+  width: 15.82%;
   height: 20px;
+  margin-right: 1%;
+  margin-bottom: 2px;
   border-radius: $border-radius;
   color: #FFFFFF;
   text-align: center;
@@ -9,6 +12,9 @@
   font-weight: 700;
   line-height: 20px;
   padding: 0 2px;
+  &:nth-of-type(6n) {
+    margin-right: 0;
+  }
 }
 
 .tag--blue {
