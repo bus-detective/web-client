@@ -2,7 +2,7 @@ import Ember from 'ember';
 var inject = Ember.inject;
 
 export default Ember.Component.extend({
-  tagName: 'span',
+  tagName: 'a',
   classNameBindings: [':toggle-favorite', 'isFavorite:toggle-favorite--favorite'],
   favoriteStops: inject.service(),
 
