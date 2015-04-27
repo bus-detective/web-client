@@ -3,7 +3,7 @@
 <div class="event__event-details">
   <p>
     {{bd-route-tag route=departure.route}} 
-    <span>{{departure.route.long_name}}</span>
+    <span>{{departure.trip.headsign}}</span>
     {{#if departure.realtime}}
       <span class="tag tag--green">realtime</span>
     {{/if}}
