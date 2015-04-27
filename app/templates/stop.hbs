@@ -1,12 +1,17 @@
+{{google-map
+  lat=model.latitude
+  lng=model.longitude
+  zoom=18
+  gopt_zoomControl=false
+  markers=markers
+  class="map-header"}}
+
 <div class="action-banner">
   {{#link-to 'stops.search' title="back" class="bd-button button--return"}}
     <i class="bd-icon bd-icon--arrow-left"></i>
   {{/link-to}}
-  {{bd-search action="search"}}
   {{bd-toggle-favorite stop=model class="bd-button button--fav"}}
 </div>
-
-<div class="map-header"></div>
 
 <div class="detail-header">
   <h1 class="detail-header__title">{{model.name}}</h1>

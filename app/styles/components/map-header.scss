@@ -7,5 +7,9 @@
   // 30.52% of the web view on iPhone 6
   max-height: 195px;
   background-color: $bd-light-gray;
-  background:transparent url('../images/map-placeholder.png') center no-repeat;
+}
+
+.map-canvas {
+  height: 100%;
+  width: 100%;
 }
