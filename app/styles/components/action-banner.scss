@@ -5,9 +5,6 @@
   left: 0;
   width: 100%;
   padding: $padding;
-  & > .button:not(.button--return) {
-    float: right;
-  }
   // WORKAROUND - remove when full detail header is available
   & > .detail-header__title {
     margin: 0 0 -10px;

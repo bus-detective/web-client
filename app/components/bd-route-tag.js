@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import stringToHue from 'bus-detective/utils/string-to-hue';
 
 export default Ember.Component.extend({
   attributeBindings: ['style'],
