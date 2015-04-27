@@ -5,7 +5,7 @@ var inject = Ember.inject;
 export default Ember.Component.extend({
   clock: inject.service(),
   classNames: ['event'],
-  classNameBindings: ['isPast:event--past'],
+  classNameBindings: ['isPast:event--past:event--future'],
 
   timeFromNow: Ember.computed('clock.time', function() {
     return moment(this.get('departure.time')).fromNow();

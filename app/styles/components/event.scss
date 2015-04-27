@@ -2,17 +2,6 @@
   opacity: 0.5;
 }
 
-.event--current {
-  .event__time {
-    color: $bd-dark-gray;
-  }
-  .event__marker {
-    border: 2px solid $bd-dark-gray;
-    background-color: $bd-dark-gray;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 3px #fff inset;
-  }
-}
-
 .event__time {
   float: left;
   width: 23.6%;
@@ -60,3 +49,14 @@
   color: $bd-gray;
 }
 
+// http://stackoverflow.com/a/13287975
+.event--future:first-child, :not(.event--future) + .event--future {
+  .event__time {
+    color: $bd-dark-gray;
+  }
+  .event__marker {
+    border: 2px solid $bd-dark-gray;
+    background-color: $bd-dark-gray;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px #fff inset;
+  }
+}
