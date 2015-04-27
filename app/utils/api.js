@@ -1,16 +1,23 @@
 import request from 'ic-ajax';
 import ENV from 'bus-detective/config/environment';
-import { extractSearchResult } from 'bus-detective/utils/deserializer';
+import { extractOne } from 'bus-detective/utils/deserializer';
+
+var stringifyParams = function(params) {
+  return Object.keys(params).map(function(key) { 
+    return `${key}=${params[key]}`;
+  }).join('&');
+};
 
 export function searchStops(params) {
-  var paramStrings = Object.keys(params).map(function(key) { 
-    return `${key}=${params[key]}`;
-  });
-  return request(`${ENV.APP.SERVER}/api/stops?${paramStrings.join('&')}`).then(extractSearchResult);
+  var paramString = stringifyParams(params);
+  return request(`${ENV.APP.SERVER}/api/stops?${paramString}`).then(extractOne);
 }
 
-export function fetchArrivalsByStopId(stopId) {
-  return request(`${ENV.APP.SERVER}/api/arrivals/${stopId}`).then(function(response) {
-    return response.arrivals;
-  });
+export function fetchStop(stopId) {
+  return request(`${ENV.APP.SERVER}/api/stops/${stopId}`).then(extractOne);
+}
+
+export function fetchDepartures(stopId) {
+  var paramString = stringifyParams({ stop_id: stopId });
+  return request(`${ENV.APP.SERVER}/api/departures?${paramString}`).then(extractOne);
 }

@@ -16,10 +16,6 @@
 .list-item__button {
   float: right;
   color: $bd-light-gray;
-  &.button--fav {
-    color: $bd-red;
-    background-color: #fff;
-  }
 }
 
 .list-item__title, .list-item__button {

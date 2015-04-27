@@ -1,5 +1,0 @@
-<h1 class="page-title flush-top">Bus Routes</h1>
-
-{{#each model.routes as |route|}}
-  {{#link-to 'showRoute' route.route_id class="list-group__item"}}{{route.route_id}}: {{route.route_long_name}}{{/link-to}}
-{{/each}}

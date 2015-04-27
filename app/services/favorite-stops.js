@@ -17,7 +17,7 @@ export default Ember.Service.extend({
   },
 
   hasStop: function(stop) {
-    return this.get('all').findBy('id', stop.id);
+    return !!this.get('all').findBy('id', stop.id);
   },
 
   all: Ember.computed(function() {
