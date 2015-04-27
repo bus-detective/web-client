@@ -2,14 +2,11 @@
   position: relative;
   padding: $padding;
   box-shadow: 0 0px 2px 2px transparentize($bd-dark-gray, 0.85);
-  .detail-header__title {
-    line-height: 1.75;
-  }
 }
 
 .detail-header__title {
   font-size: 26.66px;
-  line-height: 2;
+  line-height: 2.15;
   margin: -10px 0 0;
   .tag {
     position: relative;
