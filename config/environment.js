@@ -20,7 +20,7 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      ENV.APP.SERVER: process.env['API_HOST'] || ''
+      SERVER: process.env['API_HOST'] || ''
     }
   };
 
@@ -58,7 +58,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.SERVER = ''
+    ENV.APP.SERVER = '';
   }
 
   return ENV;
