@@ -6,18 +6,21 @@ const POLL_INTERVAL = 15 * 1000;
 
 export default Ember.Route.extend({
   pendingRefresh: null,
-
-  setupController: function(controller) {
-    controller.setProperties({ model: null, isLoading: true });
-    this.update();
+  
+  model: function() {
+    return this.update();
   },
 
   update: function() {
-    fetchDepartures(this.modelFor('stop').get('id')).then(run.bind(this, 'requestDidFinish'));
+    this.controllerFor('stop.departures').set('isLoading', true);
+    return fetchDepartures(this.modelFor('stop').get('id')).then(run.bind(this, 'requestDidFinish'));
   },
 
   requestDidFinish: function(departure) {
-    this.controller.setProperties({ model: departure, isLoading: false });
+    this.controllerFor('stop.departures').setProperties({
+      model: departure, 
+      isLoading: false 
+    });
 
     // Enqueue a refresh
     this.set('pendingRefresh', run.later(this, this.update, POLL_INTERVAL));

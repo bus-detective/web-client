@@ -4,14 +4,10 @@
       <i class="bd-icon bd-icon--search"></i>
       Search results 
     </h2>
-    {{#if isLoading}}
-      <p class="text-center">Loading stops...</p>
+    {{#each model.results as |stop|}}
+      {{bd-stop stop=stop}}
     {{else}}
-      {{#each model.results as |stop|}}
-        {{bd-stop stop=stop}}
-      {{else}}
-        <p class="text-center">No stops found</p>
-      {{/each}}
-    {{/if}}
+      <p class="text-center">No stops found</p>
+    {{/each}}
   </section>
 </div>
