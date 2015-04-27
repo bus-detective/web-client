@@ -20,7 +20,6 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      SERVER: process.env['API_HOST'] || ''
     }
   };
 
@@ -43,6 +42,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     // ENV.APP.SERVER = 'http://localhost:5000'
 
+    ENV.APP.SERVER = process.env['API_HOST'] || ''
   }
 
   if (environment === 'test') {
