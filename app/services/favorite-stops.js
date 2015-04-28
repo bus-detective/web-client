@@ -1,5 +1,5 @@
 import Ember from 'ember';
-var Obj = Ember.Object;
+import { wrap } from 'bus-detective/utils/deserializer';
 
 export default Ember.Service.extend({
   storeKey: "favoriteStops",
@@ -23,7 +23,7 @@ export default Ember.Service.extend({
 
   all: Ember.computed(function() {
     var stops = this.store[this.storeKey];
-    return stops ? JSON.parse(stops).map( s => Obj.create(s)) : [];
+    return stops ? JSON.parse(stops).map(wrap) : [];
   }),
 
   replaceStops: function(stops) {
