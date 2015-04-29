@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   classNames: ['search'],
   searchQuery: inject.service(),
   currentQuery: computed.oneWay('searchQuery.value'),
+  autofocus: false,
 
   actions: {
     search() {
