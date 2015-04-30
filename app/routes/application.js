@@ -33,10 +33,10 @@ export default Ember.Route.extend({
     error: function(error) {
       switch (error.errorThrown) {
         case "Not Found":
-          this.transitionTo('/404');
+          this.transitionTo('404');
           break;
         default:
-          this.transitionTo('/500');
+          this.transitionTo('500');
       }
     }
   }
