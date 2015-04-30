@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('home', { path: "/" });
+  this.route('home', { path: '/' });
 
   this.route('stops', function() {
     this.route('search');
@@ -22,6 +22,9 @@ Router.map(function() {
   this.route('mocks', function(){
     this.route('route-detail');
   });
+
+  this.route('500');
+  this.route('404', { path: '/*path' });
 });
 
 export default Router;

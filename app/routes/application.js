@@ -28,6 +28,16 @@ export default Ember.Route.extend({
     search: function() {
       var params = { query: this.get('searchQuery.value') };
       this.transitionTo('stops.search', { queryParams: params });
+    },
+
+    error: function(error) {
+      switch (error.errorThrown) {
+        case "Not Found":
+          this.transitionTo('/404');
+          break;
+        default:
+          this.transitionTo('/500');
+      }
     }
   }
 });
