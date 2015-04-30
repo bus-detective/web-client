@@ -18,6 +18,7 @@ export default Ember.Route.extend({
     goBack: function() {
       var previousTransition = this.get('history.previous');
       if (previousTransition) {
+        this.get('history').capture(previousTransition);
         previousTransition.retry();
       } else {
         this.transitionTo('home');
