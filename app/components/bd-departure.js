@@ -7,6 +7,11 @@ export default Ember.Component.extend({
   classNames: ['event'],
   classNameBindings: ['isPast:event--past:event--future'],
 
+  time: Ember.computed('departure.time', function() {
+    var time = moment(this.get('departure.time'));
+    return time.format('h:mm') + time.format('a')[0];
+  }),
+
   timeFromNow: Ember.computed('clock.time', function() {
     return moment(this.get('departure.time')).fromNow();
   }),
