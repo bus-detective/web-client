@@ -1,16 +1,21 @@
 <div class="landing-container">
   <div class="hero-header">
     <div class="hero-header__logo">
-      <img src="../images/bus-detective-icon.png">
+      <img src="/images/bus-detective-icon.png">
     </div>
+  </div>
+
+  <div class="text-center text--invert">
+    <h1 class="flush--top">Bus Detective</h1>
   </div>
 
   <div class="action-banner">
     {{bd-search action="search"}}
-  </div>  
+  </div>
 
   <div class="nav nav--fixed-bottom">
-    {{#link-to 'stops.nearby' class="button"}}<i class="bd-icon bd-icon--pin"></i>Nearest Stops{{/link-to}}<!--
-    -->{{#link-to 'stops.favorites' class="button"}}<i class="bd-icon bd-icon--heart"></i>Favorite Stops{{/link-to}}
+    {{#link-to 'stops.nearby' class="nav__button button"}}<i class="bd-icon bd-icon--pin"></i>Nearest Stops{{/link-to}}<!--
+    -->{{#link-to 'stops.favorites' class="nav__button button"}}<i class="bd-icon bd-icon--heart"></i>Favorite Stops{{/link-to}}
+    <a class="nav__attribution" href="http://teamgaslight.com"><img src="/images/gaslight-icon.png"/><span>Made with love by Gaslight</span></a>
   </div>
 </div>

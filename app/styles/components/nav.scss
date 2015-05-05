@@ -3,22 +3,35 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 100px;
+  height: 140px;
   padding: $padding;
-  .button {
-    width: calc(50% - 5px);
-    height: 100%;
-    padding-top: ($padding / 2);
-    line-height: 1.5;
-    color: $bd-blue;
-    box-shadow: $box-shadow, 0 1px 2px #FFF inset;
-    &:first-of-type {
-      margin-right: $padding;
-    }
-    .bd-icon {
-      display: block;
-      font-size: 28px;
-    }
+}
+
+.nav__button {
+  width: calc(50% - 5px);
+  height: 80px;
+  padding-top: ($padding / 2);
+  line-height: 1.5;
+  color: $bd-blue;
+  box-shadow: $box-shadow, 0 1px 2px #FFF inset;
+  &:first-of-type {
+    margin-right: $padding;
+  }
+  .bd-icon {
+    display: block;
+    font-size: 28px;
   }
 }
 
+.nav__attribution {
+  display: block;
+  margin-top: 12px;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  img {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: -5px;
+  }
+}

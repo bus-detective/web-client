@@ -19,7 +19,7 @@
   margin-right: 15px;
 }
 
-.flush-top {
+.flush-top, .flush--top {
   margin-top: 0;
 }
 
@@ -37,8 +37,12 @@
   margin-top: -15px;
 }
 
-.text-center {
+.text-center, .text--center {
   text-align: center;
+}
+
+.text--invert {
+  color: #fff
 }
 
 .pull--left {
