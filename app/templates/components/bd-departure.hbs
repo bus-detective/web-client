@@ -4,14 +4,12 @@
   <p>
     {{bd-route-tag route=departure.route}} 
     <span>{{departure.trip.headsign}}</span>
-    {{#if departure.realtime}}
-      <span class="tag tag--green">realtime</span>
-    {{/if}}
   </p>
   <div class="event-details__metadata">
     <span class="metadata__time">
       <i class="bd-icon bd-icon--clock"></i>
       {{timeFromNow}}
+      {{#unless departure.realtime}}(scheduled){{/unless}}
     </span>
   </div>
 </div>
