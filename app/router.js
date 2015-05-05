@@ -10,7 +10,7 @@ Router.map(function() {
 
   this.route('stops', function() {
     this.route('search');
-    this.route('near-by');
+    this.route('nearby');
     this.route('favorites');
   });
 
