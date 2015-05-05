@@ -56,6 +56,10 @@
   text-overflow: ellipsis;
 }
 
+.unstyled {
+  color: $bd-dark-gray;
+}
+
 @mixin clearfix() {
   &:before, &:after {
     content: " ";

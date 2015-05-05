@@ -1,7 +1,9 @@
 <section class="push text-center">
-  <h1 class="push--bottom">Sorry, but the page you're looking for could not be found.</h1>
-  {{fa-icon "frown-o" size=5}}
-  <div class="push">
-    {{#link-to 'home'}}home{{/link-to}}
+  <div class="hero-header">
+    <div class="hero-header__logo">
+      <img class="" src="/images/404.png"/>
+    </div>
   </div>
+  <h1 class="push--bottom">Even the bus detective couldn’t find that page.</h1>
+  <p>Try cruising over to the {{#link-to 'home'}}homepage{{/link-to}} or your {{#link-to 'stops.favorites'}}favorites{{/link-to}} instead.</p>
 </section>
