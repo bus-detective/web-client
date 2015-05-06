@@ -24,20 +24,14 @@ module.exports = function(environment) {
     }
   };
 
-  // Browser-update.org
-  //
-  ENV.browserUpdate = {
-    vs: { i:8, f:2 , o:9.63, s:2, c:10 }
-  };
-
   // Google Maps
 
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
-    'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com",
+    'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com browser-update.org",
     'font-src': "'self' fonts.gstatic.com",
     'connect-src': "'self' maps.gstatic.com",
-    'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com",
+    'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com browser-update.org",
     'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
   };
 
