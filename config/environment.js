@@ -59,6 +59,11 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.APP.SERVER = '';
+
+    // Google Analytics
+    ENV.googleAnalytics = {
+      webPropertyId: process.env['GOOGLE_ANALYTICS_KEY']
+    };
   }
 
   return ENV;
