@@ -27,8 +27,8 @@ module.exports = function(environment) {
   // Browser-update.org
   //
   ENV.browserUpdate = {
-    vs: { i:8, f:2 , o:9.63, s:2, c:10 },
-  },
+    vs: { i:8, f:2 , o:9.63, s:2, c:10 }
+  };
 
   // Google Maps
 
