@@ -24,8 +24,6 @@ module.exports = function(environment) {
     }
   };
 
-  // Google Maps
-
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
     'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com browser-update.org",
@@ -33,6 +31,10 @@ module.exports = function(environment) {
     'connect-src': "'self' maps.gstatic.com",
     'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com browser-update.org",
     'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
+  };
+
+  ENV.googleAnalytics = {
+    webPropertyId: process.env['GOOGLE_ANALYTICS_KEY']
   };
 
   if (environment === 'development') {
@@ -59,11 +61,6 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.APP.SERVER = '';
-
-    // Google Analytics
-    ENV.googleAnalytics = {
-      webPropertyId: process.env['GOOGLE_ANALYTICS_KEY']
-    };
   }
 
   return ENV;
