@@ -1,7 +1,6 @@
 # Bus Detective - Web Client
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Bus Detective allows you to see real-time data for the Cincinnati Metro busses.
 
 ## Prerequisites
 
@@ -12,6 +11,8 @@ You will need the following things properly installed on your computer.
 * [Bower](http://bower.io/)
 * [Ember CLI](http://www.ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
+* [Bus Detective Server](https://github.com/gaslight/bus-detective)
+* [Redis](http://redis.io)
 
 ## Installation
 
@@ -19,11 +20,16 @@ You will need the following things properly installed on your computer.
 * change into the new directory
 * `npm install`
 * `bower install`
+* `cp .env.example .env`
+** Modify the .env to match your environment
+*** API_HOST should point to localhost for development
+*** REDIS_* Should point to youre local config
 
 ## Running / Development
 
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
+* You'll probably need to be running the server and redis. See the bus-detective app and use `foreman start -f Procfile.dev`
 
 ### Code Generators
 
