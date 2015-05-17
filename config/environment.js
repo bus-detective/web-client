@@ -6,17 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
-    EmberENV: {
-      FEATURES: {
-        // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
-        'ember-metal-is-present': true,
-        'ember-htmlbars-inline-if-helper': true,
-        'ember-htmlbars-attribute-syntax': true,
-        'ember-routing-transitioning-classes': true,
-        'new-computed-syntax': true
-      }
-    },
+    EmberENV: {},
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -29,7 +19,7 @@ module.exports = function(environment) {
     'default-src': "'none'",
     'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com browser-update.org",
     'font-src': "'self' fonts.gstatic.com",
-    'connect-src': "'self' maps.gstatic.com",
+    'connect-src': "'self' *.busdetective.com maps.gstatic.com",
     'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com browser-update.org",
     'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
   };
