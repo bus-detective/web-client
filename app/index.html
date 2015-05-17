@@ -10,19 +10,21 @@
 
     {{content-for 'head'}}
 
-    <link rel="stylesheet" href="/assets/vendor.css">
-    <link rel="stylesheet" href="/assets/bus-detective.css">
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/bus-detective.css">
 
     {{content-for 'head-footer'}}
   </head>
   <body>
     {{content-for 'body'}}
 
-    <script src="/assets/vendor.js"></script>
-    <script src="/assets/bus-detective.js"></script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/bus-detective.js"></script>
 
     <!--[if lt IE 9]>
       <h2>The web browser you're using is out of date and not supported by this site. <a href="update.html">Learn how to update your browser</a></h2>
     <![endif]-->
+
+    {{content-for 'body-footer'}}
   </body>
 </html>

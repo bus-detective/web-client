@@ -4,6 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'bus-detective',
     environment: environment,
+    baseURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
