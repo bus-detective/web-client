@@ -7,6 +7,10 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {},
+    segment: {
+      WRITE_KEY: process.env['SEGMENT_WRITE_KEY'] || '',
+      LOG_EVENT_TRACKING: true
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -17,10 +21,10 @@ module.exports = function(environment) {
 
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
-    'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com browser-update.org",
+    'script-src': "'self' 'unsafe-eval' 'unsafe-inline' *.googleapis.com maps.gstatic.com browser-update.org cdn.segment.com *.getclicky.com *.google-analytics.com",
     'font-src': "'self' fonts.gstatic.com",
-    'connect-src': "'self' *.busdetective.com maps.gstatic.com",
-    'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com browser-update.org",
+    'connect-src': "'self' *.busdetective.com maps.gstatic.com api.segment.io",
+    'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com browser-update.org *.google-analytics.com",
     'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
   };
 
