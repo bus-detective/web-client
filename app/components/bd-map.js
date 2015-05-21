@@ -2,6 +2,7 @@
 /* global L */
 
 import Ember from 'ember';
+import ENV from 'bus-detective/config/environment';
 
 export default Ember.Component.extend({
   map: null,
@@ -28,6 +29,7 @@ export default Ember.Component.extend({
     this.set('map', map);
     map.setView(center, zoom);
 
+    L.Icon.Default.imagePath = `//${ENV.cdnHost}/assets/images`;
     L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
     }).addTo(map);
