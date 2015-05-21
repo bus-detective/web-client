@@ -13,6 +13,7 @@ Router.map(function() {
     this.route('search');
     this.route('nearby');
     this.route('favorites');
+    this.route('no-location', { path: 'nearby/no-location' });
   });
 
   this.route('stop', { path: 'stops/:stop_id' }, function(){
