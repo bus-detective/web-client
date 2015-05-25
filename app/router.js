@@ -24,6 +24,10 @@ Router.map(function() {
     this.route('route-detail');
   });
 
+  this.route('errors', function() {
+    this.route('geolocation-error', { path: '/geolocation/:code' });
+  });
+
   this.route('500');
   this.route('404', { path: '/*path' });
 });
