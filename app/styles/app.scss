@@ -24,3 +24,11 @@
 @import 'components/timeline';
 @import 'components/toggle-favorite';
 @import 'components/well';
+
+html, body {
+  height: 100%;
+}
+
+body > div {
+  height: 100%;
+}
