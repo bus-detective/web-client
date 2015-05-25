@@ -6,14 +6,21 @@ export default Ember.Route.extend({
   currentPosition: inject.service(),
 
   model: function() {
-    var _this = this;
-    return this.get('currentPosition').fetch().then(function(position){
-      return searchStops({
-        latitude: position.coords.latitude, 
-        longitude: position.coords.longitude 
-      });
-    }, function() {
-      _this.transitionTo('stops.no-location');
+    return this.get('currentPosition').fetch().then(
+      Ember.run.bind(this, this.searchStopsByPosition),
+      Ember.run.bind(this, this.handlePositionError)
+    );
+  },
+
+  searchStopsByPosition: function(position) {
+    return searchStops({
+      latitude: position.coords.latitude, 
+      longitude: position.coords.longitude
     });
+  },
+
+  handlePositionError: function(err) {
+    Ember.Logger.error(err);
+    this.transitionTo('errors.geolocation-error', { code: err.code });
   }
 });

@@ -13,7 +13,6 @@ Router.map(function() {
     this.route('search');
     this.route('nearby');
     this.route('favorites');
-    this.route('no-location', { path: 'nearby/no-location' });
   });
 
   this.route('stop', { path: 'stops/:stop_id' }, function(){
@@ -23,6 +22,10 @@ Router.map(function() {
   // STATIC MOCKS
   this.route('mocks', function(){
     this.route('route-detail');
+  });
+
+  this.route('errors', function() {
+    this.route('geolocation-error', { path: '/geolocation/:code' });
   });
 
   this.route('500');

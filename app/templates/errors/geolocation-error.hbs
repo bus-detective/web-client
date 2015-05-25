@@ -1,0 +1,30 @@
+<section class="text--center push">
+  <div class="hero-header">
+    <div class="hero-header__logo">
+      <img class="" src="/images/500.png"/>
+    </div>
+  </div>
+
+  <h1>The Bus Detective is lost without his trusty GPS.</h1>
+
+  <p>
+    <span>Help him out. To use this feature,</span>
+
+    {{#if isGeolocationSupported}}
+      <span>switch to a device that supports geolocation.</span>
+    {{/if}}
+
+    {{#if isGeolocationDenied}}
+      <span>allow your device to access your current location.</span>
+    {{/if}}
+
+    {{#if isGeolocationError}}
+      <span>make sure your device is able to get a geolocation signal, then try again.</span>
+    {{/if}}
+  </p>
+
+  <p>In the meantime, go back to the {{#link-to 'home'}}homepage{{/link-to}} or your {{#link-to 'stops.favorites'}}favorites{{/link-to}}.</p>
+</section>
+
+  
+
