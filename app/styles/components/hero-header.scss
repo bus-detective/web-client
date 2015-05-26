@@ -1,12 +1,17 @@
 .hero-header {
   // based on the golden ratio
-  $hh-height: 43.75vh;
-  $hh-padding: 3.635vh;
+  $hh-height-unitless: 43.75;
+  $hh-padding-unitless: 3.635;
+
+  $hh-height: $hh-height-unitless + 0%;
+  $hh-padding: $hh-padding-unitless + 0vh;
+
   width: 100%;
   height: $hh-height;
   padding: $hh-padding;
+
   .hero-header__logo {
-    width: $hh-height - ($hh-padding * 2);
+    width: $hh-height-unitless - ($hh-padding-unitless * 2) + 0vh;
     height: 100%;
     margin: auto;
     background-color: $bd-lighter-gray;
@@ -14,7 +19,7 @@
     box-shadow: $box-shadow;
     // Pad the container 17.5% of its diameter
     // keeps the proportions of the logo to the container consistant accross all screen sizes
-    padding: ($hh-height - ($hh-padding * 2)) * 0.175;
+    padding: ($hh-height-unitless - ($hh-padding-unitless * 2)) * 0.175 + 0vh;
   }
 }
 
