@@ -21,6 +21,13 @@
     // keeps the proportions of the logo to the container consistant accross all screen sizes
     padding: ($hh-height-unitless - ($hh-padding-unitless * 2)) * 0.175 + 0vh;
   }
+
+  .hero-header__logo--no-circle {
+    width: $hh-height-unitless - ($hh-padding-unitless * 2) + 0vh;
+    height: 100%;
+    margin: auto;
+    padding: 0;
+  }
 }
 
 .hero-header__logo > img {
@@ -29,4 +36,11 @@
   // half the size of the amount that magnifying glass protrudes from the bus
   transform: translate(9.562%, 0);
   -webkit-transform: translate(9.562%, 0);
+}
+
+.hero-header__logo--no-circle > img {
+  width: 100%;
+  height: 100%;
+  ransform: translate(6.562%, 0);
+  -webkit-transform: translate(6.562%, 0);
 }
