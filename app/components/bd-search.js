@@ -5,12 +5,12 @@ var computed = Ember.computed;
 export default Ember.Component.extend({
   classNames: ['search'],
   searchQuery: inject.service(),
-  currentQuery: computed.oneWay('searchQuery.value'),
+  currentQuery: computed.oneWay('searchQuery.query'),
   autofocus: false,
 
   actions: {
     search() {
-      this.set('searchQuery.value', this.get('currentQuery'));
+      this.get('searchQuery').setQuery(this.get('currentQuery'));
       this.sendAction();
     }
   }
