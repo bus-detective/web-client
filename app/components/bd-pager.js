@@ -12,6 +12,9 @@ export default Ember.Component.extend({
   showNext: function() {
     return this.get('page') < this.get('totalPages');
   }.property('page', 'totalPages'),
+  isVisible: function() {
+    return this.get('showPrevious') || this.get('showNext');
+  }.property('showPrevious', 'showNext'),
 
   actions: {
     previousPage: function() {
