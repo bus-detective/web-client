@@ -5,12 +5,12 @@ moduleForComponent('bd-search', {
   needs: ['service:searchQuery']
 });
 
-test('sets the input value to the searchQuery.query', function(assert) {
+test('sets the input value to the searchQuery.value', function(assert) {
   assert.expect(1);
   var component = this.subject();
   var searchQuery = component.get('searchQuery');
   this.render();
-
+ 
   Ember.run(function() {
     searchQuery.set('value', "foo");
   });
