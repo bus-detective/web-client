@@ -15,11 +15,8 @@ export default Ember.Route.extend({
 
   model: function(params) {
     // Hydrate the searchQuery service if the user comes in via url
-    if (params.query !== this.get('searchQuery.query')) {
-      this.set('searchQuery.query', params.query);
-    }
-    if (params.page !== this.get('searchQuery.page')) {
-      this.set('searchQuery.page', params.page);
+    if (params.query !== this.get('searchQuery.value')) {
+      this.set('searchQuery.value', params.query);
     }
     return searchStops(params);
   }

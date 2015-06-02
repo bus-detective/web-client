@@ -10,9 +10,9 @@ test('sets the input value to the searchQuery.query', function(assert) {
   var component = this.subject();
   var searchQuery = component.get('searchQuery');
   this.render();
- 
+
   Ember.run(function() {
-    searchQuery.set('query', "foo");
+    searchQuery.set('value', "foo");
   });
 
   assert.equal(this.$('input').val(), "foo");
@@ -25,7 +25,7 @@ test('sets the searchQuery value when submitted', function(assert) {
   this.render();
 
   this.$('input').val("foo").trigger("change"); // Not sure why trigger is nessessary
-  assert.equal(searchQuery.get('query'), "");
+  assert.equal(searchQuery.get('value'), "");
   this.$('form').submit();
-  assert.equal(searchQuery.get('query'), "foo");
+  assert.equal(searchQuery.get('value'), "foo");
 });

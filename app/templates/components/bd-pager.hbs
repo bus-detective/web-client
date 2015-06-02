@@ -1,10 +1,10 @@
-{{#if showPrevious}}
-<a {{action 'previousPage'}} href="#" class='button button--previous'>
-  <i class="fa fa-step-backward"></i>
-</a>
+{{#if hasPrevious}}
+  <a {{action 'backward'}} href="#" class='button pager__previous'>
+    <i class="fa fa-step-backward"></i>
+  </a>
 {{/if}}
-{{#if showNext}}
-<a {{action 'nextPage'}} href="#" class='button button--next'>
-  <i class="fa fa-step-forward"></i>
-</a>
+{{#if hasNext}}
+  <a {{action 'forward'}} href="#" class='button pager__next'>
+    <i class="fa fa-step-forward"></i>
+  </a>
 {{/if}}

@@ -4,7 +4,7 @@
       <i class="bd-icon bd-icon--search"></i>
       Search results 
     </h2>
-    {{bd-pager action="search" page=model.page totalPages=model.total_pages}}
+    {{bd-pager forward="nextPage" backward="previousPage" page=model.page totalPages=model.total_pages}}
     {{#each model.results as |stop|}}
       {{bd-stop stop=stop}}
     {{else}}

@@ -1,29 +1,29 @@
 import Ember from 'ember';
-var inject = Ember.inject;
 
 export default Ember.Component.extend({
   classNames: ['pager'],
-  searchQuery: inject.service(),
   page: -1,
   totalPages: -1,
-  showPrevious: function() {
+
+  hasPrevious: function() {
     return this.get('page') > 1;
   }.property('page'),
-  showNext: function() {
+
+  hasNext: function() {
     return this.get('page') < this.get('totalPages');
   }.property('page', 'totalPages'),
+
   isVisible: function() {
     return this.get('showPrevious') || this.get('showNext');
   }.property('showPrevious', 'showNext'),
 
   actions: {
-    previousPage: function() {
-      this.get('searchQuery').previousPage();
-      this.sendAction();
+    backward: function() {
+      this.sendAction('backward');
     },
-    nextPage: function() {
-      this.get('searchQuery').nextPage();
-      this.sendAction();
+
+    forward: function() {
+      this.sendAction('forward');
     }
   }
 });

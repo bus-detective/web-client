@@ -26,7 +26,11 @@ export default Ember.Route.extend({
     },
 
     search: function() {
-      this.transitionTo('stops.search', { queryParams: this.get('searchQuery.asParams') });
+      var params = {
+        query: this.get('searchQuery.value'),
+        page: 1
+      };
+      this.transitionTo('stops.search', { queryParams: params });
     },
 
     error: function(error) {
