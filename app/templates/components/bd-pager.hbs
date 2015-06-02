@@ -1,0 +1,10 @@
+{{#if hasPrevious}}
+  <a {{action 'backward'}} href="#" class='button pager__previous'>
+    <i class="fa fa-step-backward"></i>
+  </a>
+{{/if}}
+{{#if hasNext}}
+  <a {{action 'forward'}} href="#" class='button pager__next'>
+    <i class="fa fa-step-forward"></i>
+  </a>
+{{/if}}
