@@ -1,4 +1,6 @@
-export function initialize(/* container, application */) {
+/*globals L */
+
+export function initialize() {
   L.Control.Attribution.prototype.options.prefix = ' Leaflet';
 }
 
