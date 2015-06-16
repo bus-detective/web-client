@@ -8,22 +8,16 @@ export default Ember.Route.extend({
   pendingRefresh: null,
   
   model: function() {
-    return this.update();
+    return this.fetch();
   },
 
-  update: function() {
-    this.controllerFor('stop.departures').set('isLoading', true);
-    return fetchDepartures(this.modelFor('stop').get('id')).then(run.bind(this, 'requestDidFinish'));
+  fetch: function() {
+    return fetchDepartures(this.modelFor('stop').get('id')).then(run.bind(this, 'handleFetchSuccess'));
   },
 
-  requestDidFinish: function(departure) {
-    this.controllerFor('stop.departures').setProperties({
-      model: departure, 
-      isLoading: false 
-    });
-
-    // Enqueue a refresh
-    this.set('pendingRefresh', run.later(this, this.update, POLL_INTERVAL));
+  handleFetchSuccess: function(departures) {
+    this.controllerFor('stop.departures').set('model', departures);
+    this.set('pendingRefresh', run.later(this, this.fetch, POLL_INTERVAL));
   },
 
   actions: {
