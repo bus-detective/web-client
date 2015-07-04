@@ -1,5 +1,5 @@
 <div class="timeline">
-  {{#each model.departures as |departure|}}
+  {{#each model as |departure|}}
     {{bd-departure departure=departure class="timeline__event"}}
   {{else}}
     <p class="text-center">No departures found</p>
