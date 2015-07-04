@@ -21,7 +21,7 @@ test('visiting the stop page', function(assert) {
   visit('/stops/' + stop.id);
 
   andThen(function() {
-    assert.equal( find('.qa-stop-name').text(), "8th and Walnut");
-    assert.equal( find('.qa-departure').size(), 3);
+    assert.equal(find('.qa-stop-name').text(), "8th and Walnut");
+    assert.equal(find('.qa-departure').size(), 3);
   });
 });
