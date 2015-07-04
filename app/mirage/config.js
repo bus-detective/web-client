@@ -12,5 +12,19 @@ export default function() {
       }
     };
   });
+
+  this.get('/stops/:id', function(db, request) {
+    return {
+      data: db.stops.find(request.params.id)
+    };
+  });
+
+  this.get('/departures', function(db) {
+    return {
+      data: {
+        departures: db.departures
+      }
+    };
+  });
 }
 
