@@ -19,7 +19,7 @@ test('visiting the search page', function(assert) {
   visit('/stops/search?query=walnut');
 
   andThen(function() {
-    assert.equal( find('.qa-stop').length, 3);
+    assert.equal( find('.qa-stop').size(), 3);
     assert.equal( find('.qa-search-query').val(), "walnut");
   });
 });
