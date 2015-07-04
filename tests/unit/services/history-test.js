@@ -4,6 +4,7 @@ moduleFor('service:history');
 
 test('captures a transition', function(assert) {
   var history = this.subject();
+  history.clear();
   var firstTransition = { name: "first" };
   var secondTransition = { name: "second" };
 
