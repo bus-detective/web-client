@@ -14,6 +14,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+html, body {
+  height: 100%;
+}
+
+body > div {
+  min-height: 100%;
+  position: relative;
+}
+
 h1 {
   font-weight: 600;
   font-size: 26.66px;

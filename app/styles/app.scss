@@ -13,7 +13,7 @@
 @import 'components/event';
 @import 'components/hero-header';
 @import 'components/input-group';
-@import 'components/landing-page';
+@import 'components/landing-container';
 @import 'components/list';
 @import 'components/map-header';
 @import 'components/messaging';
@@ -27,11 +27,3 @@
 @import 'components/timeline';
 @import 'components/toggle-favorite';
 @import 'components/well';
-
-html, body {
-  height: 100%;
-}
-
-body > div {
-  height: 100%;
-}
