@@ -1,22 +1,35 @@
 import Ember from 'ember';
 import { searchStops } from 'bus-detective/utils/api';
-var inject = Ember.inject;
+let inject = Ember.inject;
+let run = Ember.run;
 
 export default Ember.Route.extend({
-  currentPosition: inject.service(),
+  geolocation: inject.service(),
+  currentPosition: null,
 
-  model: function() {
-    return this.get('currentPosition').fetch().then(
-      Ember.run.bind(this, this.searchStopsByPosition),
-      Ember.run.bind(this, this.handlePositionError)
+  queryParams: {
+    page: {
+      refreshModel: true
+    }
+  },
+
+  beforeModel: function() {
+    return this.get('geolocation').fetchPosition().then(
+      run.bind(this, 'handlePositionSuccess'),
+      run.bind(this, 'handlePositionError')
     );
   },
 
-  searchStopsByPosition: function(position) {
+  model: function(params) {
     return searchStops({
-      latitude: position.coords.latitude, 
-      longitude: position.coords.longitude
+      latitude: this.get('currentPosition.coords.latitude'), 
+      longitude: this.get('currentPosition.coords.longitude'),
+      page: params.page
     });
+  },
+
+  handlePositionSuccess: function(position) {
+    this.set('currentPosition', position);
   },
 
   handlePositionError: function(err) {

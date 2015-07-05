@@ -19,11 +19,13 @@ export default Ember.Component.extend({
 
   actions: {
     backward: function() {
-      this.sendAction('backward');
+      let page = Math.max(this.get('page') - 1, 1);
+      this.sendAction('onPageChange', page);
     },
 
     forward: function() {
-      this.sendAction('forward');
+      let page = Math.min(this.get('page') + 1, this.get('totalPages'));
+      this.sendAction('onPageChange', page);
     }
   }
 });

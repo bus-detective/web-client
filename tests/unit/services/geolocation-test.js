@@ -1,10 +1,10 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('service:current-position');
+moduleFor('service:geolocation');
 
 test('fetches the current position', function(assert) {
   assert.expect(1);
-  var currentPosition = this.subject();
+  var geolocation = this.subject();
   
   var handleSuccess = function(position) {
     // the browser supports geolcoation so we expect to succeed when running in the browser
@@ -17,5 +17,5 @@ test('fetches the current position', function(assert) {
   };
 
   // return the promise so qunit waits for it to resolve
-  return currentPosition.fetch().then(handleSuccess, handleError);
+  return geolocation.fetchPosition().then(handleSuccess, handleError);
 });

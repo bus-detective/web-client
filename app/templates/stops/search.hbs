@@ -1,14 +1,11 @@
 <div class="list">
   <section class="section">
-    <h2 class="light">
-      <i class="bd-icon bd-icon--search"></i>
-      Search results 
-    </h2>
-    {{bd-pager forward="nextPage" backward="previousPage" page=model.page totalPages=model.total_pages}}
+    <h2 class="light"><i class="bd-icon bd-icon--search"></i> Search results</h2>
     {{#each model.results as |stop|}}
       {{bd-stop stop=stop}}
     {{else}}
       <p class="text-center">No stops found</p>
     {{/each}}
+    {{bd-pager onPageChange="updatePage" page=model.page totalPages=model.total_pages}}
   </section>
 </div>

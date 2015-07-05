@@ -10,7 +10,7 @@ class NotImplementedError extends Error {
 }
 
 export default Ember.Service.extend({
-  fetch: function() {
+  fetchPosition: function() {
     return new RSVP.Promise(function(resolve, reject) {
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(resolve, reject);

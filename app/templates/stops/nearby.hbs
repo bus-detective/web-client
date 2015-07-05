@@ -1,11 +1,9 @@
 <div class="list">
   <section class="section">
-    <h2 class="light">
-      <i class="bd-icon bd-icon--pin"></i>
-      Stops Near You
-    </h2>
+    <h2 class="light"><i class="bd-icon bd-icon--pin"></i>Stops Near You</h2>
     {{#each model.results as |stop|}}
       {{bd-stop stop=stop}}
     {{/each}}
+    {{bd-pager onPageChange="updatePage" page=model.page totalPages=model.total_pages}}
   </section>
 </div>
