@@ -31,7 +31,6 @@ export default Ember.Component.extend({
 
     L.Icon.Default.imagePath = `//${ENV.cdnHost}/assets/images`;
     L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA, Tiles courtesy of Humanitarian OpenStreetMap Team',
       detectRetina: true
     }).addTo(map);
 
