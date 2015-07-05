@@ -2,7 +2,6 @@
 /* global L */
 
 import Ember from 'ember';
-import ENV from 'bus-detective/config/environment';
 
 export default Ember.Component.extend({
   map: null,
@@ -29,7 +28,6 @@ export default Ember.Component.extend({
     this.set('map', map);
     map.setView(center, zoom);
 
-    L.Icon.Default.imagePath = `//${ENV.cdnHost}/assets/images`;
     L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
       detectRetina: true
     }).addTo(map);
