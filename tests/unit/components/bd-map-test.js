@@ -11,13 +11,7 @@ moduleForComponent('bd-map', {
 });
 
 test('it renders', function(assert) {
-  assert.expect(1);
-
-
-
-  // creates the component instance
   var component = this.subject({ lat: 123, lng: 456 });
-
   this.render();
   
   assert.equal(this.$().find('.leaflet-tile-pane').length, 1);
