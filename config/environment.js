@@ -7,25 +7,19 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {},
-    segment: {
-      WRITE_KEY: process.env['SEGMENT_WRITE_KEY'] || '',
-      LOG_EVENT_TRACKING: true
-    },
     cdnHost: process.env['CDN_HOST'],
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
-      SERVER: process.env['API_HOST'] || ''
+      SERVER: ''
     }
   };
 
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
-    'script-src': "'self' 'unsafe-eval' 'unsafe-inline' *.googleapis.com browser-update.org cdn.segment.com *.getclicky.com *.google-analytics.com",
+    'script-src': "'self' 'unsafe-eval' 'unsafe-inline' *.googleapis.com cdn.segment.com *.getclicky.com *.google-analytics.com",
     'font-src': "'self' fonts.gstatic.com",
-    'connect-src': "'self' *.busdetective.com api.segment.io",
-    'img-src': "'self' *.googleapis.com csi.gstatic.com browser-update.org *.google-analytics.com *.openstreetmap.fr " + process.env['CDN_HOST'],
+    'connect-src': "'self' localhost:3000 *.busdetective.com api.segment.io",
+    'img-src': "'self' *.googleapis.com csi.gstatic.com *.google-analytics.com *.openstreetmap.fr " + process.env['CDN_HOST'],
     'style-src': "'self' 'unsafe-inline' fonts.googleapis.com"
   };
 
@@ -34,13 +28,11 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    // ENV.APP.SERVER = 'http://localhost:5000'
+    ENV.APP.SERVER = process.env['API_HOST'] || '';
 
+    ENV['ember-cli-mirage'] = {
+      enabled: false
+    }
   }
 
   if (environment === 'test') {
@@ -56,7 +48,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.SERVER = '';
+    ENV['segment'] = {
+      WRITE_KEY: process.env['SEGMENT_WRITE_KEY'] || '',
+      LOG_EVENT_TRACKING: true
+    }
   }
 
   return ENV;

@@ -4,7 +4,7 @@ var inject = Ember.inject;
 
 export default Ember.Component.extend({
   clock: inject.service(),
-  classNames: ['event'],
+  classNames: ['event', 'qa-departure'],
   classNameBindings: ['isPast:event--past:event--future'],
 
   time: Ember.computed('departure.time', function() {

@@ -8,6 +8,10 @@ export default Ember.Object.extend({
     this.get('content').pushObject(transition);
   },
 
+  clear: function() {
+    this.get('content').clear();
+  },
+
   previous: computed('content.length', function() {
     return this.get('content').objectAt(this.get('content.length') - 2);
   })
