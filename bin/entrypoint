@@ -1,0 +1,15 @@
+#!/bin/bash
+
+_term() {
+  printf "%s\n" "Caught SIGTERM signal!"
+  kill -TERM $child 2>/dev/null
+}
+
+trap _term SIGTERM
+
+echo "Starting app..."
+ember $@ &
+
+child=$!
+wait "$child"
+
