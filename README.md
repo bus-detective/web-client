@@ -1,5 +1,5 @@
 ![Codeship Build Status](https://www.codeship.io/projects/f48023f0-b7ba-0132-eb99-46fe72d3122e/status)
-[![Code Climate](https://codeclimate.com/github/gaslight/bus-detective-web-client/badges/gpa.svg)](https://codeclimate.com/github/gaslight/bus-detective-web-client)
+[![Code Climate](https://codeclimate.com/github/bus-detective/web-client/badges/gpa.svg)](https://codeclimate.com/github/bus-detective/web-client)
 
 # Bus Detective - Web Client
 
