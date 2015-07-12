@@ -7,7 +7,7 @@ var app = new EmberApp({
     clientAllowedKeys: ['CDN_HOST']
   },
   fingerprint: {
-    prepend: 'http://drwikejswixhx.cloudfront.net/'
+    prepend: 'http://cdn.busdetective.com/'
   }
 });
 
