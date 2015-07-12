@@ -50,7 +50,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV['segment'] = {
       WRITE_KEY: process.env['SEGMENT_WRITE_KEY'] || '',
-      LOG_EVENT_TRACKING: true
+      LOG_EVENT_TRACKING: false
     }
   }
 
