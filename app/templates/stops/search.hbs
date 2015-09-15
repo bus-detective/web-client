@@ -9,3 +9,12 @@
     {{bd-pager onPageChange="updatePage" page=model.page totalPages=model.total_pages}}
   </section>
 </div>
+<div class="map">
+  {{bd-map
+    lat=39.103710
+    lng=-84.511860
+    zoom=16
+    class="map-header"
+    zoomControl=true
+    markers=model.results}}
+</div>
