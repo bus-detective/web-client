@@ -7,10 +7,10 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {},
-    cdnHost: process.env['CDN_HOST'],
+    cdnHost: 'localhost:4200',
 
     APP: {
-      SERVER: ''
+      SERVER: 'http://localhost:4200'
     }
   };
 
@@ -19,7 +19,7 @@ module.exports = function(environment) {
     'script-src': "'self' 'unsafe-eval' 'unsafe-inline' *.googleapis.com cdn.segment.com *.getclicky.com *.google-analytics.com",
     'font-src': "'self' fonts.gstatic.com",
     'connect-src': "'self' localhost:3000 *.busdetective.com api.segment.io",
-    'img-src': "'self' *.googleapis.com csi.gstatic.com *.google-analytics.com *.openstreetmap.fr " + process.env['CDN_HOST'],
+    'img-src': "'self' *.googleapis.com csi.gstatic.com *.google-analytics.com api.mapbox.com " + process.env['CDN_HOST'],
     'style-src': "'self' 'unsafe-inline' fonts.googleapis.com"
   };
 
