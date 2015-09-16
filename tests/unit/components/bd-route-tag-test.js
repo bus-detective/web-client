@@ -9,7 +9,7 @@ test('it renders', function(assert) {
   assert.expect(1);
 
   // creates the component instance
-  var component = this.subject({ route: { color: "eee", text_color: "fff"} });
+  this.subject({ route: { color: "eee", text_color: "fff"} });
 
   this.render();
   

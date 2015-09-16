@@ -15,7 +15,7 @@ module('Acceptance | Searching for stops', {
 });
 
 test('visiting the search page', function(assert) {
-  var stops = server.createList('stop', 3);
+  server.createList('stop', 3);
   visit('/stops/search?query=walnut');
 
   andThen(function() {

@@ -11,7 +11,7 @@ function inRange(actual) {
   QUnit.push(result, actual, actual, `${actual} is not between ${min} and ${max}`);
 }
 
-test('getting colors', function(assert) {
+test('getting colors', function() {
   inRange(stringToHue("11"));
   inRange(stringToHue("12x"));
   inRange(stringToHue("100"));
