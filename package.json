@@ -1,15 +1,15 @@
 {
   "name": "bus-detective",
   "version": "0.0.0",
-  "description": "Small description for realtime-metro-web-client goes here",
+  "description": "Small description for bus-detective goes here",
   "private": true,
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
   "scripts": {
-    "start": "ember server",
     "build": "ember build",
+    "start": "ember server",
     "test": "ember test"
   },
   "repository": "",
