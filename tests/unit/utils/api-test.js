@@ -1,5 +1,4 @@
 import { stringifyParams } from '../../../utils/api';
-import QUnit from 'qunit';
 import { module, test } from 'qunit';
 
 module('api');

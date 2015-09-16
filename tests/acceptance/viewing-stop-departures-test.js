@@ -16,7 +16,7 @@ module('Acceptance | Viewing stop departures', {
 
 test('visiting the stop page', function(assert) {
   var stop = server.create('stop', { name: "8th and Walnut" });
-  var departures = server.createList('departure', 3);
+  server.createList('departure', 3);
 
   visit('/stops/' + stop.id);
 
