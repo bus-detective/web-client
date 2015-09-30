@@ -2,26 +2,30 @@ import Ember from 'ember';
 import DepartureFetcher from 'bus-detective/utils/departure-fetcher';
 
 export default Ember.Route.extend({
+  departures: Ember.ArrayProxy.create({ content: [] }),
+
   beforeModel() {
-    this.set('departures', Ember.ArrayProxy.create({ content: [] }));
-
     this.set('fetcher', DepartureFetcher.create({
-      onFetchComplete: Ember.run.bind(this, 'updateDepartures'),
-      stopId: this.modelFor('stop').get('id')
+      stopId: this.modelFor('stop').get('id'),
+      onFetchComplete: Ember.run.bind(this, 'updateDepartures')
     }));
-
-    this.get('fetcher').startFetching();
   },
 
   model() {
-    return {
-      departures: this.get('departures'),
-      fetcher: this.get('fetcher')
-    };
+    return this.get('fetcher').startFetching().then(() => {
+      return {
+        departures: this.get('departures'),
+        fetcher: this.get('fetcher')
+      };
+    });
+  },
+
+  updateDepartures(response) {
+    this.get('departures').clear().pushObjects(response.get('departures'));
   },
 
   actions: {
-    willTransition: function() {
+    willTransition() {
       this.get('fetcher').stopFetching();
     },
 
@@ -29,9 +33,5 @@ export default Ember.Route.extend({
       this.get('fetcher').increaseDuration();
       this.get('fetcher').fetch();
     }
-  },
-
-  updateDepartures: function(response) {
-    this.get('departures').clear().pushObjects(response.get('departures'));
   }
 });
