@@ -22,6 +22,7 @@ export default Ember.Route.extend({
 
   updateDepartures(response) {
     this.get('departures').clear().pushObjects(response.get('departures'));
+    this.send('departuresDidUpdate', this.get('departures'));
   },
 
   actions: {

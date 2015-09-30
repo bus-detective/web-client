@@ -27,3 +27,9 @@ export function fetchDepartures(params) {
   });
   return request(`${ENV.APP.SERVER}/api/departures?${paramString}`).then(extractOne);
 }
+
+export function searchShapes(params) {
+  let paramString = stringifyParams(params);
+  return request(`${ENV.APP.SERVER}/api/shapes?${paramString}`).then(extractOne);
+}
+
