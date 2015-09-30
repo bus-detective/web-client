@@ -13,7 +13,6 @@ export default Ember.Object.extend({
   init() {
     this._super();
     this.setProperties({
-      departures: Ember.ArrayProxy.create({ content: [] }),
       pollInterval: this.get('pollInterval') || DEFAULT_POLL_INTERVAL,
       checkInterval: this.get('checkInterval') || DEFAULT_CHECK_INTERVAL
     });
@@ -21,7 +20,7 @@ export default Ember.Object.extend({
 
   fetch() {
     this.set('nextFetchTime', moment().add(this.get('pollInterval'), 'milliseconds'));
-    return fetchDepartures(this.get('stopId')).then(run.bind(this, 'handleFetchSuccess'));
+    return fetchDepartures(this.get('stopId')).then(this.onFetchComplete);
   },
 
   fetchIfNessessary() {
@@ -38,9 +37,5 @@ export default Ember.Object.extend({
 
   stopFetching() {
     clearInterval(this.get('intervalId'));
-  },
-
-  handleFetchSuccess(response) {
-    return this.get('departures').clear().pushObjects(response.get('departures'));
   }
 });
