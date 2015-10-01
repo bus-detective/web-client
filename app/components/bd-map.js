@@ -22,7 +22,7 @@ export default Ember.Component.extend({
     run.once(this, 'drawShapes');
   },
 
-  willRemoveElement() {
+  willDestroyElement() {
     var map = this.get('map');
     if (map) { map.remove(); }
   },
