@@ -1,10 +1,17 @@
+import Ember from 'ember';
 import request from 'ic-ajax';
 import ENV from 'bus-detective/config/environment';
 import { extractOne, wrap } from 'bus-detective/utils/deserializer';
+let { isArray } = Ember;
 
 export function stringifyParams(params) {
   return Object.keys(params).map(function(key) {
-    return `${key}=${encodeURIComponent(params[key])}`;
+    if (isArray(params[key])) {
+      let values = params[key].map( value => `ids[]=${encodeURIComponent(value)}`);
+      return values.join("&");
+    } else {
+      return `${key}=${encodeURIComponent(params[key])}`;
+    }
   }).join('&');
 }
 
@@ -27,3 +34,9 @@ export function fetchDepartures(params) {
   });
   return request(`${ENV.APP.SERVER}/api/departures?${paramString}`).then(extractOne);
 }
+
+export function searchTrips(params) {
+  let paramString = stringifyParams(params);
+  return request(`${ENV.APP.SERVER}/api/trips?${paramString}`).then(extractOne);
+}
+
