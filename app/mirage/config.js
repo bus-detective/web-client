@@ -26,5 +26,13 @@ export default function() {
       }
     };
   });
+
+  this.get('/trips', function(db) {
+    return {
+      data: {
+        results: db.trips
+      }
+    };
+  });
 }
 

@@ -8,13 +8,13 @@ export default Ember.Route.extend({
   },
 
   handleTripFetchSuccess(response) {
-    this.set('controller.trips', response.results)
+    this.set('controller.trips', response.results);
   },
 
   actions: {
     departuresDidUpdate(departures) {
       let tripIds = departures.mapBy('trip.id');
-      searchTrips({ ids: tripIds }).then(run.bind(this, 'handleTripFetchSuccess'))
+      searchTrips({ ids: tripIds }).then(run.bind(this, 'handleTripFetchSuccess'));
     }
   }
 });

@@ -4,7 +4,7 @@ let { run } = Ember;
 const TILE_URL = 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
 
 export default Ember.Component.extend({
-  shapes: null,
+  shapes: [],
   map: null,
   lat: null,
   lng: null,
@@ -40,7 +40,7 @@ export default Ember.Component.extend({
     this.get('shapeLayer').clearLayers();
 
     let shapes = this.get('shapes').map((shape) => {
-      return Leaflet.polyline(shape.get('coordinates'), { color: `#${shape.get('color')}` })
+      return Leaflet.polyline(shape.get('coordinates'), { color: `#${shape.get('color')}` });
     });
 
     this.get('shapeLayer').addLayer(Leaflet.layerGroup(shapes));
