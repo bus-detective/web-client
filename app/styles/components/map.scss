@@ -1,0 +1,30 @@
+.map {
+  position: relative;
+  width: 100%;
+  // based on the golden ratio
+  // 30.52% of the web view on iPhone 6
+  height: 30.52vh;
+  // size of the action banner that overlays the map
+  min-height: 60px;
+  max-height: 195px;
+  background-color: $bd-light-gray;
+  overflow: hidden;
+}
+
+.map--expanded {
+  height: 100vh;
+  max-height: 999999px;
+}
+
+.map__toggle-expanded {
+  position: absolute;
+  display: block;
+  width: 80px;
+  margin-left: -40px;
+  left: 50%;
+  height: 30px;
+  background-color: transparentize(#fff, 0.15);
+  border-radius-top: $border-radius;
+  bottom: 0;
+  z-index: 100;
+}

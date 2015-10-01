@@ -4,14 +4,23 @@ let { run } = Ember;
 const TILE_URL = 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
 
 export default Ember.Component.extend({
+  // Required
   shapes: [],
-  map: null,
   lat: null,
   lng: null,
-  zoom: null,
-  zoomControl: false,
+
+  // Optional
+  zoom: 16, 
+
+  classNames: ["map"],
+  classNameBindings: ["isExpanded:map--expanded"],
+
+  isExpanded: false,
+  map: null,
+  shapeLayer: null,
   mapOptions: {
-    scrollWheelZoom: false
+    scrollWheelZoom: false,
+    zoomControl: false
   },
 
   didInsertElement() {
@@ -44,5 +53,12 @@ export default Ember.Component.extend({
     });
 
     this.get('shapeLayer').addLayer(Leaflet.layerGroup(shapes));
+  },
+
+  actions: {
+    toggleExpanded() {
+      this.toggleProperty('isExpanded');
+      run.next(() => this.get('map').invalidateSize());
+    }
   }
 });
