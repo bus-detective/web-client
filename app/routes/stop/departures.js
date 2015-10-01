@@ -26,7 +26,7 @@ export default Ember.Route.extend({
     },
 
     loadMore: function() {
-      this.get('fetcher').increaseEndTimeOffset();
+      this.get('fetcher').increaseDuration();
       this.get('fetcher').fetch();
     }
   },

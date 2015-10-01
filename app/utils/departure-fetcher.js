@@ -5,7 +5,7 @@ var run = Ember.run;
 
 const DEFAULT_POLL_INTERVAL = 15 * 1000;
 const DEFAULT_CHECK_INTERVAL = 0.5 * 1000;
-const DEFAULT_END_TIME_OFFSET = 1;
+const DEFAULT_DURATION_IN_HOURS = 1;
 
 export default Ember.Object.extend({
   stopId: null,
@@ -16,13 +16,13 @@ export default Ember.Object.extend({
     this.setProperties({
       pollInterval: this.get('pollInterval') || DEFAULT_POLL_INTERVAL,
       checkInterval: this.get('checkInterval') || DEFAULT_CHECK_INTERVAL,
-      endTimeOffset: this.get('endTimeOffset') || DEFAULT_END_TIME_OFFSET
+      duration: this.get('duration') || DEFAULT_DURATION_IN_HOURS
     });
   },
 
   fetch() {
     this.set('nextFetchTime', moment().add(this.get('pollInterval'), 'milliseconds'));
-    return fetchDepartures({ stopId: this.get('stopId'), endTimeOffset: this.get('endTimeOffset') }).then(this.onFetchComplete);
+    return fetchDepartures({ stopId: this.get('stopId'), duration: this.get('duration') }).then(this.onFetchComplete);
   },
 
   fetchIfNessessary() {
@@ -41,7 +41,7 @@ export default Ember.Object.extend({
     clearInterval(this.get('intervalId'));
   },
 
-  increaseEndTimeOffset() {
-    this.set('endTimeOffset', this.get('endTimeOffset') + 3);
+  increaseDuration() {
+    this.set('duration', this.get('duration') + 3);
   }
 });

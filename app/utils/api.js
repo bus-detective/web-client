@@ -23,7 +23,7 @@ export function fetchStop(stopId, params) {
 export function fetchDepartures(params) {
   var paramString = stringifyParams({
     stop_id: params.stopId,
-    end_time_offset: params.endTimeOffset
+    duration: params.duration
   });
   return request(`${ENV.APP.SERVER}/api/departures?${paramString}`).then(extractOne);
 }
