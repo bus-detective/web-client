@@ -1,5 +1,4 @@
-/* jshint undef: true, unused: true */
-/* global L */
+import Leaflet from 'bd-pro/utils/leaflet';
 
 import Ember from 'ember';
 let { run } = Ember;
