@@ -16,7 +16,7 @@ export function searchStops(params) {
   });
 }
 
-export function fetchStop(stopId, params) {
+export function fetchStop(stopId) {
   return request(`${ENV.APP.SERVER}/api/stops/${stopId}`).then(extractOne);
 }
 
