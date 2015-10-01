@@ -1,10 +1,16 @@
+import Ember from 'ember';
 import request from 'ic-ajax';
 import ENV from 'bus-detective/config/environment';
 import { extractOne, wrap } from 'bus-detective/utils/deserializer';
+let { isArray } = Ember;
 
 export function stringifyParams(params) {
   return Object.keys(params).map(function(key) {
-    return `${key}=${encodeURIComponent(params[key])}`;
+    if (isArray(params[key])) {
+      return params[key].map( value => `ids[]=${value}`).join("&");
+    } else {
+      return `${key}=${encodeURIComponent(params[key])}`;
+    }
   }).join('&');
 }
 
