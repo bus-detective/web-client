@@ -7,7 +7,8 @@ let { isArray } = Ember;
 export function stringifyParams(params) {
   return Object.keys(params).map(function(key) {
     if (isArray(params[key])) {
-      return params[key].map( value => `ids[]=${value}`).join("&");
+      let values = params[key].map( value => `ids[]=${encodeURIComponent(value)}`);
+      return values.join("&");
     } else {
       return `${key}=${encodeURIComponent(params[key])}`;
     }
@@ -34,8 +35,8 @@ export function fetchDepartures(params) {
   return request(`${ENV.APP.SERVER}/api/departures?${paramString}`).then(extractOne);
 }
 
-export function searchShapes(params) {
+export function searchTrips(params) {
   let paramString = stringifyParams(params);
-  return request(`${ENV.APP.SERVER}/api/shapes?${paramString}`).then(extractOne);
+  return request(`${ENV.APP.SERVER}/api/trips?${paramString}`).then(extractOne);
 }
 

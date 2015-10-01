@@ -40,7 +40,7 @@ export default Ember.Component.extend({
     this.get('shapeLayer').clearLayers();
 
     let shapes = this.get('shapes').map((shape) => {
-      return Leaflet.polyline(shape.coordinates, { color: 'red' })
+      return Leaflet.polyline(shape.get('coordinates'), { color: `#${shape.get('color')}` })
     });
 
     this.get('shapeLayer').addLayer(Leaflet.layerGroup(shapes));

@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { fetchStop, searchShapes } from 'bus-detective/utils/api';
+import { fetchStop, searchTrips } from 'bus-detective/utils/api';
 let { run } = Ember;
 
 export default Ember.Route.extend({
@@ -7,14 +7,14 @@ export default Ember.Route.extend({
     return fetchStop(params.stop_id);
   },
 
-  handleShapeFetchSuccess(response) {
-    this.set('controller.shapes', response.results)
+  handleTripFetchSuccess(response) {
+    this.set('controller.trips', response.results)
   },
 
   actions: {
     departuresDidUpdate(departures) {
-      let shapeIds = departures.mapBy('trip.shape_id').uniq();
-      searchShapes({ ids: shapeIds }).then(run.bind(this, 'handleShapeFetchSuccess'))
+      let tripIds = departures.mapBy('trip.id');
+      searchTrips({ ids: tripIds }).then(run.bind(this, 'handleTripFetchSuccess'))
     }
   }
 });
