@@ -14,12 +14,20 @@ export default Ember.Route.extend({
   },
 
   model() {
-    return this.get('departures');
+    return {
+      departures: this.get('departures'),
+      fetcher: this.get('fetcher')
+    };
   },
 
   actions: {
     willTransition: function() {
       this.get('fetcher').stopFetching();
+    },
+
+    loadMore: function() {
+      this.get('fetcher').increaseEndTimeOffset();
+      this.get('fetcher').fetch();
     }
   },
 
