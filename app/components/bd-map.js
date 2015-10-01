@@ -1,7 +1,7 @@
-import Leaflet from 'bd-pro/utils/leaflet';
-
+import Leaflet from 'bus-detective/utils/leaflet';
 import Ember from 'ember';
 let { run } = Ember;
+const TILE_URL = 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
 
 export default Ember.Component.extend({
   shapes: null,
@@ -10,13 +10,16 @@ export default Ember.Component.extend({
   lng: null,
   zoom: null,
   zoomControl: false,
+  mapOptions: {
+    scrollWheelZoom: false
+  },
 
   didInsertElement() {
-    this._configureMap();
+    this.configureMap();
   },
 
   didUpdateAttrs() {
-    run.once(this, '_drawShapes');
+    run.once(this, 'drawShapes');
   },
 
   willRemoveElement() {
@@ -24,25 +27,22 @@ export default Ember.Component.extend({
     if (map) { map.remove(); }
   },
 
-  _configureMap() {
-    var el = this.get('element');
-    var map = L.map(el, { zoomControl: this.get('zoomControl') });
-    var center = [this.get('lat'), this.get('lng')];
-    var zoom = this.get('zoom');
-
-    this.set('map', map);
-    map.setView(center, zoom);
-
-    L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-      detectRetina: true
-    }).addTo(map);
-
-    L.marker(center).addTo(map);
+  configureMap() {
+    let center = [this.get('lat'), this.get('lng')];
+    this.set('map', Leaflet.map(this.get('element'), this.get('mapOptions')));
+    this.get('map').setView(center, this.get('zoom'));
+    this.get('map').addLayer(Leaflet.tileLayer(TILE_URL, { detectRetina: true}));
+    this.set('shapeLayer', Leaflet.layerGroup().addTo(this.get('map')));
+    Leaflet.marker(center).addTo(this.get('map'));
   },
 
-  _drawShapes() {
-    this.get('shapes').forEach((shape) => {
-      let line = L.polyline(shape.coordinates, { color: 'red' }).addTo(this.get('map'));
-    })
+  drawShapes() {
+    this.get('shapeLayer').clearLayers();
+
+    let shapes = this.get('shapes').map((shape) => {
+      return Leaflet.polyline(shape.coordinates, { color: 'red' })
+    });
+
+    this.get('shapeLayer').addLayer(Leaflet.layerGroup(shapes));
   }
 });
