@@ -1,7 +1,9 @@
 .list {
-  padding: 83px $padding $padding;
+  padding: 73px $padding $padding;
   background-color: $bd-lighter-gray;
   min-height: 100vh;
+  width: 25%;
+  float: left;
 }
 
 .list-item {
