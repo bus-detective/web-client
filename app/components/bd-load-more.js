@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['load-more'],
+  classNames: ['button', 'button--load-more'],
   tagName: 'button',
 
   click() {
