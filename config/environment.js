@@ -11,14 +11,15 @@ module.exports = function(environment) {
 
     APP: {
       SERVER: ''
-    }
+    },
+    SocketURI: "wss://localhost:4000"
   };
 
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
     'script-src': "'self' 'unsafe-eval' 'unsafe-inline' *.googleapis.com cdn.segment.com *.getclicky.com *.google-analytics.com",
     'font-src': "'self' fonts.gstatic.com",
-    'connect-src': "'self' localhost:3000 *.busdetective.com api.segment.io",
+    'connect-src': "'self' *",
     'img-src': "'self' *.googleapis.com csi.gstatic.com *.google-analytics.com *.openstreetmap.fr " + process.env['CDN_HOST'],
     'style-src': "'self' 'unsafe-inline' fonts.googleapis.com"
   };

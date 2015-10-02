@@ -25,6 +25,7 @@ export default Ember.Controller.extend({
     departuresDidLoad(departures) {
       let tripIds = departures.mapBy('trip.id');
       searchTrips({ ids: tripIds }).then(run.bind(this, 'handleTripsFetch'));
+      this.get('store').query('vehiclePosition', { trip_ids: tripIds }).then(run.bind(this, 'handleVehiclePositonFetchSuccess'));
     }
   } 
 });
