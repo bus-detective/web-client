@@ -52,23 +52,24 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 [ember-cli-deploy](https://github.com/ember-cli/ember-cli-deploy) is used to deploy assets to S3 and
 manage revisions of built `index.html` files (served through Redis). Make sure environment variables
-are set in `.env` for S3 and Redis.
+are set in `.env.deploy.production` for S3 and Redis.
 
-    ember deploy --environment production
+    ember deploy --environment=production (--activate=true)
 
 The deploy command does the following:
 
   1. Builds and fingerprints assets
   2. Uploads built assets to S3
   3. Pushes a version of `index.html` to the Redis instance running on Heroku
+  4. If used with the option `--activate=true`, automatically activate the current revision
 
 To update the current revision of `index.html` served from the rails `IndexController`
 
-    ember deploy:list --environment production
+    ember deploy:list --environment=production
 
 This will list each revision of `index.html` stored in Redis. To deploy a revision, run:
 
-    ember deploy:activate --revision bus-detective:<REVISION KEY> --environment production
+    ember deploy:activate <revision-key> --environment=production
 
 ## Further Reading / Useful Links
 

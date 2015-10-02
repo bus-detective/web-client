@@ -1,34 +1,41 @@
-var dotenv = require('dotenv');
-dotenv.load();
+/* jshint node: true */
 
-module.exports = {
-  development: {
-    buildEnv: 'development', // Override the environment passed to the ember asset build. Defaults to 'production'
-    store: {
-      type: 'redis', // the default store is 'redis'
-      host: 'localhost',
-      port: 6379
-    },
-    assets: {
-      type: 's3', // default asset-adapter is 's3'
-      gzip: false, // if undefined or set to true, files are gziped
-      gzipExtensions: ['js', 'css', 'svg'], // if undefined, js, css & svg files are gziped
+module.exports = function(deployTarget) {
+  var ENV = {
+    build: {},
+
+    s3: {
       accessKeyId: process.env['S3_KEY'],
       secretAccessKey: process.env['S3_SECRET'],
-      bucket: process.env['S3_BUCKET']
-    }
-  },
-  production: {
-    store: {
+      bucket: process.env['S3_BUCKET'],
+      region: 'us-east-1'
+    },
+
+    redis: {
       host: process.env['REDIS_HOST'],
       port: process.env['REDIS_PORT'],
       password: process.env['REDIS_PASSWORD']
     },
-    assets: {
-      accessKeyId: process.env['S3_KEY'],
-      secretAccessKey: process.env['S3_SECRET'],
-      bucket: process.env['S3_BUCKET']
-    }
+  };
+
+  if (deployTarget === 'development') {
+    ENV.build.environment = 'development';
+    // configure other plugins for development deploy target here
   }
+
+  if (deployTarget === 'staging') {
+    ENV.build.environment = 'production';
+    // configure other plugins for staging deploy target here
+  }
+
+  if (deployTarget === 'production') {
+    ENV.build.environment = 'production';
+    // configure other plugins for production deploy target here
+  }
+
+  // Note: if you need to build some configuration asynchronously, you can return
+  // a promise that resolves with the ENV object instead of returning the
+  // ENV object synchronously.
+  return ENV;
 };
 
