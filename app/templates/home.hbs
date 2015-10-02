@@ -12,6 +12,8 @@
   <div class="nav nav--fixed-bottom">
     {{#link-to 'stops.nearby' class="nav__button button"}}<i class="bd-icon bd-icon--pin"></i>Nearest Stops{{/link-to}}<!--
     -->{{#link-to 'stops.favorites' class="nav__button button"}}<i class="bd-icon bd-icon--heart"></i>Favorite Stops{{/link-to}}
-    <div class="nav__attribution"><img src="/images/gaslight-icon.png"/><span>Made with love by Gaslight</span></div>
+    {{#link-to 'about' class='nav__attribution'}}
+      <img src="/images/gaslight-icon.png"/><span>Made with love by Gaslight</span>
+    {{/link-to}}
   </div>
 </div>
