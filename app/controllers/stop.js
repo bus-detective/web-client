@@ -18,13 +18,13 @@ export default Ember.Controller.extend({
   }),
 
   handleTripsFetch(response) {
-    this.set('trips', response.results) 
+    this.set('trips', response.results);
   },
 
   actions: {
     departuresDidLoad(departures) {
-      let tripIds = departures.mapBy('trip.id')
-      searchTrips({ ids: tripIds }).then(run.bind(this, 'handleTripsFetch'))
+      let tripIds = departures.mapBy('trip.id');
+      searchTrips({ ids: tripIds }).then(run.bind(this, 'handleTripsFetch'));
     }
   } 
 });

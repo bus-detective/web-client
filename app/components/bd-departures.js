@@ -13,7 +13,7 @@ export default Ember.Component.extend({
   init() {
     this._super(...arguments);
     this.set('fetcher', DepartureFetcher.create({ stopId: this.get('stop.id') }));
-    this.get('fetcher').on('didFetch', run.bind(this, 'updateDepartures'))
+    this.get('fetcher').on('didFetch', run.bind(this, 'updateDepartures'));
   },
 
   didInsertElement() {
