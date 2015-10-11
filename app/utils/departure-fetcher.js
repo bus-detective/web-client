@@ -43,5 +43,6 @@ export default Ember.Object.extend({
 
   increaseDuration() {
     this.set('duration', this.get('duration') + 3);
+    this.fetch();
   }
 });

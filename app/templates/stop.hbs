@@ -1,7 +1,4 @@
-{{bd-map
-  lat=model.latitude
-  lng=model.longitude
-  shapes=shapes}}
+{{bd-map lat=model.latitude lng=model.longitude shapes=shapes}}
 
 <div class="action-banner">
   <a {{action 'goBack'}} href="" title="back" class="button button--return">
@@ -19,7 +16,7 @@
   </div>
 </div>
 
-{{outlet}}
+{{bd-departures stop=model onLoad="departuresDidLoad"}}
 
 <div class="attribution">
   <p>&copy; OpenStreetMap contributors, CC-BY-SA, Tiles courtesy of Humanitarian OpenStreetMap Team</p>
