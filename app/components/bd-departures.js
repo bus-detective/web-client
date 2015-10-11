@@ -12,7 +12,6 @@ export default Ember.Component.extend({
 
   init() {
     this._super(...arguments);
-    this.set('departures', Ember.ArrayProxy.create({ content: [] }));
     this.set('fetcher', DepartureFetcher.create({ stopId: this.get('stop.id') }));
     this.get('fetcher').on('didFetch', run.bind(this, 'updateDepartures'))
   },
@@ -26,8 +25,8 @@ export default Ember.Component.extend({
   },
 
   updateDepartures(departures) {
-    this.get('departures').clear().pushObjects(departures);
-    this.sendAction('onLoad', this.get('departures'))
+    this.set('departures', departures);
+    this.sendAction('onLoad', departures);
   },
 
   actions: {
