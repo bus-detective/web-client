@@ -7,7 +7,7 @@ const DEFAULT_POLL_INTERVAL = 15 * 1000;
 const DEFAULT_CHECK_INTERVAL = 0.5 * 1000;
 const DEFAULT_DURATION_IN_HOURS = 1;
 
-export default Ember.Object.extend({
+export default Ember.Object.extend(Ember.Evented, {
   stopId: null,
   intervalId: null,
   hasFetched: false,
@@ -28,7 +28,7 @@ export default Ember.Object.extend({
 
   handleFetchSuccess(response) {
     this.set('hasFetched', true);
-    this.onFetchComplete(response.get('departures'));
+    this.trigger('didFetch', response.get('departures'));
   },
 
   fetchIfNessessary() {
