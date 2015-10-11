@@ -11,15 +11,9 @@ export default Ember.Object.extend(Ember.Evented, {
   stopId: null,
   intervalId: null,
   hasFetched: false,
-
-  init() {
-    this._super();
-    this.setProperties({
-      pollInterval: this.get('pollInterval') || DEFAULT_POLL_INTERVAL,
-      checkInterval: this.get('checkInterval') || DEFAULT_CHECK_INTERVAL,
-      duration: this.get('duration') || DEFAULT_DURATION_IN_HOURS
-    });
-  },
+  pollInterval: DEFAULT_POLL_INTERVAL,
+  checkInterval: DEFAULT_CHECK_INTERVAL,
+  duration: DEFAULT_DURATION_IN_HOURS,
 
   fetch() {
     this.set('nextFetchTime', moment().add(this.get('pollInterval'), 'milliseconds'));
