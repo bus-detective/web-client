@@ -1,10 +1,14 @@
 <div class="timeline">
-  {{#each departures as |departure|}}
-    {{bd-departure departure=departure class="timeline__event"}}
+  {{#if hasFetched}}
+    {{#each departures as |departure|}}
+      {{bd-departure departure=departure class="timeline__event"}}
+    {{else}}
+      <p class="text-center">No departures found</p>
+    {{/each}}
+    {{bd-load-more action='loadMore' isVisible=canLoadMore}}
   {{else}}
-    <p class="text-center">No departures found</p>
-  {{/each}}
+    <p class="text-center">Loading departures...</p>
+  {{/if}}
 </div>
 
-{{bd-load-more action='loadMore' isVisible=canLoadMore}}
 

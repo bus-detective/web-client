@@ -10,6 +10,7 @@ const DEFAULT_DURATION_IN_HOURS = 1;
 export default Ember.Object.extend({
   stopId: null,
   intervalId: null,
+  hasFetched: false,
 
   init() {
     this._super();
@@ -22,7 +23,12 @@ export default Ember.Object.extend({
 
   fetch() {
     this.set('nextFetchTime', moment().add(this.get('pollInterval'), 'milliseconds'));
-    return fetchDepartures({ stopId: this.get('stopId'), duration: this.get('duration') }).then(this.onFetchComplete);
+    return fetchDepartures({ stopId: this.get('stopId'), duration: this.get('duration') }).then(run.bind(this, 'handleFetchSuccess'))
+  },
+
+  handleFetchSuccess(response) {
+    this.set('hasFetched', true);
+    this.onFetchComplete(response.get('departures'));
   },
 
   fetchIfNessessary() {

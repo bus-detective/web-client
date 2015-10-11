@@ -8,13 +8,14 @@ export default Ember.Component.extend({
   departures: null,
   fetcher: null,
   canLoadMore: computed.lt('fetcher.duration', MAXIMUM_DURATION_IN_HOURS),
+  hasFetched: computed.alias('fetcher.hasFetched'),
 
   init() {
     this._super(...arguments);
     this.set('departures', Ember.ArrayProxy.create({ content: [] }));
     this.set('fetcher', DepartureFetcher.create({
       stopId: this.get('stop').get('id'),
-      onFetchComplete: Ember.run.bind(this, 'updateDepartures')
+      onFetchComplete: run.bind(this, 'updateDepartures')
     }));
   },
 
@@ -26,8 +27,8 @@ export default Ember.Component.extend({
     this.get('fetcher').stopFetching();
   },
 
-  updateDepartures(response) {
-    this.get('departures').clear().pushObjects(response.get('departures'));
+  updateDepartures(departures) {
+    this.get('departures').clear().pushObjects(departures);
     this.sendAction('onLoad', this.get('departures'))
   },
 
