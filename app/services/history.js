@@ -1,7 +1,7 @@
 import Ember from 'ember';
 var computed = Ember.computed;
 
-export default Ember.Object.extend({
+export default Ember.Service.extend({
   content: Ember.A(),
 
   capture: function(transition) {

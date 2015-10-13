@@ -45,7 +45,6 @@
     "ember-cli-dotenv": "^1.0.3"
   },
   "dependencies": {
-    "ember-cli-ember-leaflet": "^0.1.0",
     "ember-cli-font-awesome": "^0.1.1",
     "ember-cli-google-analytics": "^1.4.0",
     "ember-cli-sass": "^4.2.0",
