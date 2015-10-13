@@ -1,7 +1,6 @@
 import Leaflet from 'bus-detective/utils/leaflet';
 import Ember from 'ember';
 let { run } = Ember;
-const TILE_URL = 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
 
 export default Ember.Component.extend({
   shapes: [],
@@ -28,11 +27,16 @@ export default Ember.Component.extend({
   },
 
   configureMap() {
-    let center = L.latLng(this.get('lat'), this.get('lng'));
+    let center = Leaflet.latLng(this.get('lat'), this.get('lng'));
 
-    let tileLayer = L.tileLayer(TILE_URL, { detectRetina: true });
-    let shapeLayer = L.layerGroup();
-    let markerLayer = L.marker(center);
+    let tileLayer = Leaflet.tileLayer('https://api.mapbox.com/v4/{style}/{z}/{x}/{y}{format}?access_token={token}', {
+      detectRetina: true,
+      format: '@2x.png',
+      style: 'mapbox.emerald',
+      token: 'pk.eyJ1IjoiY2Rtd2VicyIsImEiOiJjaWZvcmg2NnE1M293czNrcW5jMXZyend0In0.Evu7AuaMSVBQIvN7j1QtnQ'
+    });
+    let shapeLayer = Leaflet.layerGroup();
+    let markerLayer = Leaflet.marker(center);
 
     let mapOptions = {
       scrollWheelZoom: false,
@@ -41,7 +45,7 @@ export default Ember.Component.extend({
       zoom: 16
     };
 
-    let map = L.map(this.get('element'), mapOptions);
+    let map = Leaflet.map(this.get('element'), mapOptions);
 
     map
       .addLayer(tileLayer)
