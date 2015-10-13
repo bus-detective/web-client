@@ -2,7 +2,6 @@
 
 import Ember from 'ember';
 let { run } = Ember;
-const TILE_URL = 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
 
 export default Ember.Component.extend({
   shapes: [],
@@ -31,7 +30,12 @@ export default Ember.Component.extend({
   configureMap() {
     let center = L.latLng(this.get('lat'), this.get('lng'));
 
-    let tileLayer = L.tileLayer(TILE_URL, { detectRetina: true });
+    let tileLayer = L.tileLayer('https://api.mapbox.com/v4/{style}/{z}/{x}/{y}{format}?access_token={token}', {
+      detectRetina: true,
+      format: '@2x.png',
+      style: 'mapbox.emerald',
+      token: 'pk.eyJ1IjoiY2Rtd2VicyIsImEiOiJjaWZvcmg2NnE1M293czNrcW5jMXZyend0In0.Evu7AuaMSVBQIvN7j1QtnQ'
+    });
     let shapeLayer = L.layerGroup();
     let markerLayer = L.marker(center);
 
