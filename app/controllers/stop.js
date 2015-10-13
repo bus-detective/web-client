@@ -1,5 +1,6 @@
 import Ember from 'ember';
-const { computed, ObjectProxy } = Ember;
+import { searchTrips } from 'bus-detective/utils/api';
+const { run, computed, ObjectProxy } = Ember;
 
 export default Ember.Controller.extend({
   trips: [],
@@ -14,5 +15,16 @@ export default Ember.Controller.extend({
 
   shapes: computed.map('trips', function(trip) {
     return ObjectProxy.create({ content: trip.shape, color: trip.route.color });
-  })
+  }),
+
+  handleTripsFetch(response) {
+    this.set('trips', response.results);
+  },
+
+  actions: {
+    departuresDidLoad(departures) {
+      let tripIds = departures.mapBy('trip.id');
+      searchTrips({ ids: tripIds }).then(run.bind(this, 'handleTripsFetch'));
+    }
+  } 
 });

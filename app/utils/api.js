@@ -7,7 +7,7 @@ let { isArray } = Ember;
 export function stringifyParams(params) {
   return Object.keys(params).map(function(key) {
     if (isArray(params[key])) {
-      let values = params[key].map( value => `ids[]=${encodeURIComponent(value)}`);
+      let values = params[key].map( value => `${key}[]=${encodeURIComponent(value)}`);
       return values.join("&");
     } else {
       return `${key}=${encodeURIComponent(params[key])}`;
