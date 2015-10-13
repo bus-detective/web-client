@@ -5,24 +5,15 @@ let { run } = Ember;
 const TILE_URL = 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
 
 export default Ember.Component.extend({
-  // Required
   shapes: [],
   lat: null,
   lng: null,
-
-  // Optional
-  zoom: 16, 
-
-  classNames: ["map"],
-  classNameBindings: ["isExpanded:map--expanded"],
-
   isExpanded: false,
   map: null,
   shapeLayer: null,
-  mapOptions: {
-    scrollWheelZoom: false,
-    zoomControl: false
-  },
+
+  classNames: ["map"],
+  classNameBindings: ["isExpanded:map--expanded"],
 
   didInsertElement() {
     this.configureMap();
@@ -38,12 +29,28 @@ export default Ember.Component.extend({
   },
 
   configureMap() {
-    let center = [this.get('lat'), this.get('lng')];
-    this.set('map', L.map(this.get('element'), this.get('mapOptions')));
-    this.get('map').setView(center, this.get('zoom'));
-    this.get('map').addLayer(L.tileLayer(TILE_URL, { detectRetina: true}));
-    this.set('shapeLayer', L.layerGroup().addTo(this.get('map')));
-    L.marker(center).addTo(this.get('map'));
+    let center = L.latLng(this.get('lat'), this.get('lng'));
+
+    let tileLayer = L.tileLayer(TILE_URL, { detectRetina: true });
+    let shapeLayer = L.layerGroup();
+    let markerLayer = L.marker(center);
+
+    let mapOptions = {
+      scrollWheelZoom: false,
+      zoomControl: false,
+      center: center,
+      zoom: 16
+    };
+
+    let map = L.map(this.get('element'), mapOptions);
+
+    map
+      .addLayer(tileLayer)
+      .addLayer(shapeLayer)
+      .addLayer(markerLayer);
+
+    this.set('map', map);
+    this.set('shapeLayer', shapeLayer);
   },
 
   drawShapes() {
