@@ -46,7 +46,11 @@
   box-shadow: 0 0 0 2px #fff;
 }
 
-.event-details__metadata {
+.event__title {
+  margin: $padding 0;
+}
+
+.event__relative-time {
   color: $bd-gray;
 }
 
