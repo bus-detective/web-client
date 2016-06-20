@@ -1,12 +1,12 @@
 <div class="event__time">{{time}}</div>
 <div class="event__event-details">
   <div class="event__marker"></div>
-  <p>
+  <div>
     {{bd-route-tag route=departure.route}}
     <span class="event__relative-time">
-      {{timeFromNow}}
-      {{#unless departure.realtime}}(scheduled){{/unless}}
+      {{#unless departure.realtime}}scheduled{{/unless}} {{timeFromNow}}
     </span>
     <p class="event__title">{{departure.trip.headsign}}</p>
-  </p>
+    
+  </div>
 </div>
