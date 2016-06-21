@@ -1,7 +1,7 @@
-<button class="map__toggle-expanded qa-toggle-expanded" {{action 'toggleExpanded'}}>
+<button class="map__toggle-expanded button qa-toggle-expanded" {{action 'toggleExpanded'}}>
   {{#if isExpanded}}
-    &uArr;
+    <i class="bd-icon bd-icon--contract"></i>
   {{else}}
-    &dArr;
+    <i class="bd-icon bd-icon--expand"></i>
   {{/if}}
 </button>
