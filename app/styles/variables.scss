@@ -12,6 +12,31 @@ $bd-gray: #78909C;
 $bd-light-gray: #CFD8DC;
 $bd-lighter-gray: #EDF0F2;
 
+$primary-color: #0094BA;
+$secondary-color: #FF7B00;
+
+$link-color: $bd-dark-gray;
+
+
+// ------------------ \\
+// --- FONT SIZES --- \\
+// ------------------ \\
+
+// font sizes based on minor third ratio/golden ratio compound modular scale
+// golden ratio = 1.618
+// minor third ratio = 1.2
+// base font size = 16px
+
+$base-font-size: 16px;
+
+$ms3: 1.618rem;
+$ms2: 1.44rem;
+$ms1: 1.2rem;
+$ms0: 1rem;
+$ms-1: 0.833rem;
+$ms-2: 0.694rem;
+$ms-3: 0.618rem;
+
 
 // --------------- \\
 // --- DISPLAY --- \\
@@ -27,10 +52,3 @@ $box-shadow: 0px 1px 2px transparentize($bd-dark-gray, 0.75);
 // ------------------- \\
 
 $ease: cubic-bezier(0.455, 0.030, 0.515, 0.955);
-
-
-// --- ORIGINAL --- \\
-$primary-color: #0094BA;
-$secondary-color: #FF7B00;
-
-$link-color: $bd-dark-gray;
