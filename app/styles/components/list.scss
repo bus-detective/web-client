@@ -32,6 +32,10 @@
   padding-right: $padding;
 }
 
+.list-item__title small {
+  font-weight: 400;
+}
+
 .list-item__title .tag {
     position: relative;
     top: -4px;
