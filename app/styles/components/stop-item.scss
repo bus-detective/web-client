@@ -29,6 +29,17 @@
 
 .stop-item__toggle-favorite {
   float: right;
-  color: $bd-red;
+  color: $bd-light-gray;
   background-color: #fff;
+  // same height as the stop-item title
+  line-height: 38px;
+  // make the hit area square
+  width: 38px;
+  // align line item favorite icon with search icon in the control bar at the top of the screen
+  margin-right: -10px;
+  text-align: center;
+}
+
+.stop-item__toggle-favorite.toggle-favorite--favorite {
+  color: $bd-red;
 }
