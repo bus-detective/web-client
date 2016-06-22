@@ -21,10 +21,6 @@
   top: 0;
   cursor: pointer;
   background-color: white;
-
-  .fa {
-    color: $secondary-color;
-  }
 }
 
 .stop-item__toggle-favorite {
@@ -36,7 +32,7 @@
   // make the hit area square
   width: 38px;
   // align line item favorite icon with search icon in the control bar at the top of the screen
-  margin-right: -10px;
+  margin-right: -$padding;
   text-align: center;
 }
 

@@ -7,16 +7,16 @@
 }
 
 .push {
-  margin: 15px;
+  margin: $padding * 1.5;
 }
 
 .push-bottom {
-  margin-bottom: 15px;
+  margin-bottom: $padding * 1.5;
 }
 
 .push-sides {
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: $padding * 1.5;
+  margin-right: $padding * 1.5;
 }
 
 .flush-top, .flush--top {
@@ -29,12 +29,12 @@
 }
 
 .soft-sides {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: $padding * 1.5;
+  padding-right: $padding * 1.5;
 }
 
 .pull-top {
-  margin-top: -15px;
+  margin-top: -$padding * 1.5;
 }
 
 .text-center, .text--center {

@@ -26,12 +26,12 @@ body > div {
 
 h1 {
   font-weight: 600;
-  font-size: 26.66px;
+  font-size: $ms3;
 }
 
 h2 {
   font-weight: 700;
-  font-size: 10px;
+  font-size: $ms-2;
   color: $bd-gray;
   text-transform: uppercase;
   letter-spacing: 0.066em;

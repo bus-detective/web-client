@@ -21,19 +21,21 @@
 }
 
 .list-item__title, .list-item__button {
-  font-size: 18px;
+  font-size: $ms1;
+  line-height: 2;
   margin: 0;
 }
 
 .list-item__title {
-  // 36px is equal to double the font size
   line-height: 1.25;
-  width: calc(100% - 36px);
   padding-right: $padding;
+  width: calc(100% - 1.5em);
 }
 
 .list-item__title small {
+  font-size: $ms-1;
   font-weight: 400;
+  margin-left : $padding / 2;
 }
 
 .list-item__title .tag {
@@ -46,23 +48,24 @@
   }
 
 .list-item__details {
-  margin-top: 10px;
+  @include clearfix;
+  margin-top: $padding / 2;
 }
 
 .list-item__details .tag{
   width: 15.82%;
-  height: 14px;
-  font-size: 10px;
-  line-height: 14px;
+  height: $ms0;
+  font-size: $ms-3;
+  line-height: $ms0;
 }
 
 .list-item__distance, .list-item__location {
-  margin-top: 5px;
-  line-height: 14px;
+  margin-top: $padding / 5;
+  line-height: $ms0;
   color: $bd-gray;
 }
 
 .list-item__distance {
   float: right;
-  font-size: 12px;
+  font-size: $ms-2;
 }

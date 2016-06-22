@@ -6,7 +6,7 @@
   float: left;
   width: 23.6%;
   padding-right: ($padding * 2);
-  font-size: 17px;
+  font-size: $ms0;
   text-align: right;
   color: $bd-gray;
 }
@@ -19,7 +19,7 @@
   padding-bottom: ($padding * 3.33);
   border-left: 3px solid $bd-light-gray;
   & > p {
-    font-size: 17px;
+    font-size: $ms0;
     line-height: 20px;
     margin-top: 0;
     margin-bottom: ($padding * 0.75);

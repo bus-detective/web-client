@@ -6,7 +6,7 @@
 }
 
 .detail-header__title {
-  font-size: 26.66px;
+  font-size: $ms3;
   line-height: 1.2;
   margin: 10px 0 15px 0;
   .tag {
@@ -14,7 +14,7 @@
     top: -4px;
     width: 66px;
     height: 30px;
-    font-size: 18px;
+    font-size: $ms1;
     line-height: 30px;
   }
 }
