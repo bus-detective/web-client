@@ -17,17 +17,17 @@
 .list-item__button {
   float: right;
   color: $bd-light-gray;
+  line-height: 2.15;
 }
 
 .list-item__title, .list-item__button {
   font-size: 18px;
-  line-height: 2.15;
   margin: 0;
 }
 
 .list-item__title {
-  @extend .truncate;
   // 36px is equal to double the font size
+  line-height: 1.25;
   width: calc(100% - 36px);
   padding-right: $padding;
 }
@@ -40,6 +40,10 @@
     font-size: 14px;
     line-height: 20px;
   }
+
+.list-item__details {
+  margin-top: 10px;
+}
 
 .list-item__details .tag{
   width: 15.82%;
