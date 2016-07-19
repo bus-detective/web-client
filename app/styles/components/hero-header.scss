@@ -22,6 +22,18 @@
     padding: ($hh-height-unitless - ($hh-padding-unitless * 2)) * 0.175 + 0vh;
   }
 
+  .hero-header__image {
+    width: $hh-height-unitless - ($hh-padding-unitless * 2) + 0vh;
+    height: 100%;
+    margin: auto;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: $box-shadow;
+    // Pad the container 17.5% of its diameter
+    // keeps the proportions of the logo to the container consistant accross all screen sizes
+    padding: ($hh-height-unitless - ($hh-padding-unitless * 2)) * 0.175 + 0vh;
+  }
+
   .hero-header__logo--no-circle {
     width: $hh-height-unitless - ($hh-padding-unitless * 2) + 0vh;
     height: 100%;
@@ -36,6 +48,11 @@
   // half the size of the amount that the magnifying glass protrudes from the bus
   transform: translate(9.562%, 0);
   -webkit-transform: translate(9.562%, 0);
+}
+
+.hero-header__image > img {
+  width: 100%;
+  height: 100%;
 }
 
 .hero-header__logo--no-circle > img {

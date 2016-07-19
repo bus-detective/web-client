@@ -34,3 +34,14 @@
   color: #fff;
   background-color: transparentize($bd-blue, 0.15);
 }
+
+.button-large {
+  display: inline-block;
+  color: $bd-blue;
+  text-align: center;
+  line-height: 40px;
+  padding: 0 10px;
+  background-color: transparentize(#fff, 0.15);
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
