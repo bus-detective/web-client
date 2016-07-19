@@ -10,6 +10,10 @@
   margin: $padding * 1.5;
 }
 
+.push-10 {
+  margin: 10px;
+}
+
 .push-bottom {
   margin-bottom: $padding * 1.5;
 }
@@ -17,6 +21,10 @@
 .push-sides {
   margin-left: $padding * 1.5;
   margin-right: $padding * 1.5;
+}
+
+.pad {
+  padding: 15px;
 }
 
 .flush-top, .flush--top {
@@ -37,8 +45,16 @@
   margin-top: -$padding * 1.5;
 }
 
+.pull-bottom {
+  margin-bottom: -15px;
+}
+
 .text-center, .text--center {
   text-align: center;
+}
+
+.height-full {
+  min-height: 100vh;
 }
 
 .text--invert {
@@ -81,4 +97,8 @@
 
 .clearfix {
   @include clearfix()
+}
+
+.clear {
+  clear: both;
 }
