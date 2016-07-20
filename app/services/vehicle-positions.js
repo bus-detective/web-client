@@ -20,7 +20,7 @@ export default Ember.Service.extend(Ember.Evented, {
       }
     });
   },
-  
+
   subscribe(tripId) {
     let key = this.getKey(tripId);
     let chan = this.get('channel').connect('vehiclePosition:agency', key);
@@ -56,10 +56,9 @@ export default Ember.Service.extend(Ember.Evented, {
   emitPositions() {
     this.trigger('update', this.get('vehiclePositions'));
   },
-  
+
   updateVehiclePosition(positionData) {
     let vehicleId = positionData.vehicle_remote_id;
     this.get('vehiclePositions')[vehicleId] = positionData;
   }
-  
 });
