@@ -26,7 +26,7 @@ export default Ember.Component.extend({
 
   updateDepartures(departures) {
     this.set('departures', departures);
-    this.sendAction('onLoad', departures);
+    this.attrs.onLoad(departures);
   },
 
   actions: {

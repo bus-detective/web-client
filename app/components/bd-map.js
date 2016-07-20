@@ -8,6 +8,8 @@ export default Ember.Component.extend({
   shapes: [],
   lat: null,
   lng: null,
+  vehiclePositions: {},
+  vehicleMarkers: {},
 
   // Optional
   zoom: 16, 
@@ -29,6 +31,7 @@ export default Ember.Component.extend({
 
   didUpdateAttrs() {
     run.once(this, 'drawShapes');
+    run.once(this, 'drawVehicles');
   },
 
   willDestroyElement() {
@@ -45,6 +48,24 @@ export default Ember.Component.extend({
     Leaflet.marker(center).addTo(this.get('map'));
   },
 
+  drawVehicles() {
+    let positions = this.get('vehiclePositions');
+    let markers = this.get('vehicleMarkers');
+    Object.keys(positions).forEach((remoteVehicleId) => {
+      let vehicle = positions[remoteVehicleId];
+      let vehicleMarker = markers[remoteVehicleId];
+      if (!vehicleMarker) {
+        vehicleMarker = this.createVehicleMarker(vehicle);
+        markers[remoteVehicleId] = vehicleMarker;
+        vehicleMarker.addTo(this.get('map'));
+      } else {
+        let coords = Leaflet.latLng(vehicle.lat, vehicle.lng);
+        vehicleMarker.setLatLng(coords);
+      }
+      vehicleMarker.update();
+    });
+  },
+
   drawShapes() {
     this.get('shapeLayer').clearLayers();
 
@@ -53,6 +74,14 @@ export default Ember.Component.extend({
     });
 
     this.get('shapeLayer').addLayer(Leaflet.layerGroup(shapes));
+  },
+
+  createVehicleMarker(vehicle) {
+    let vehicleIcon = Leaflet.icon({
+      iconUrl: 'images/bus-detective-icon.png',
+      iconSize: [50,50]
+    });
+    return Leaflet.marker([vehicle.lat, vehicle.lng], {icon: vehicleIcon});
   },
 
   actions: {
