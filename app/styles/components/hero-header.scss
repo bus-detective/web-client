@@ -10,9 +10,13 @@
   height: $hh-height;
   padding: $hh-padding;
 
+  @media screen and (max-width: 568px) {
+    padding-bottom: $hh-padding / 4;
+  }
+
   .hero-header__logo {
     width: $hh-height-unitless - ($hh-padding-unitless * 2) + 0vh;
-    height: 100%;
+    //height: 100%;
     margin: auto;
     background-color: $bd-lighter-gray;
     border-radius: 50%;
