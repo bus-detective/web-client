@@ -24,6 +24,16 @@
 .button--fav {
   color: #fff;
   background-color: transparentize($bd-red, 0.15);
+  position: absolute;
+  top: 55px;
+  right:10px;
+}
+
+.button--home {
+  background-image: url(/images/bd-mustache-icon.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
   float: right;
 }
 
