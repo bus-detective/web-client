@@ -29,4 +29,14 @@
   .button {
     box-shadow: none;
   }
+
+  .button--home {
+    background-size: 55%;
+    border-left: 1px solid $bd-light-gray;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60px;
+  }
 }
