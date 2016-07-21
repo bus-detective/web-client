@@ -27,6 +27,19 @@
   float: right;
 }
 
+.button--home {
+  background-image: url(/images/bd-mustache-icon.png);
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+  border-left: 1px solid $bd-light-gray;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+}
+
 .button--load-more {
   display: block;
   width: 66.66%;
