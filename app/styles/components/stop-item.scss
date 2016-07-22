@@ -35,6 +35,12 @@
   margin-right: -$padding;
   margin-top: -$padding;
   text-align: center;
+
+  .list--home & {
+    @media screen and (max-width: 520px) {
+      line-height: 30px;
+    }
+  }
 }
 
 .stop-item__toggle-favorite.toggle-favorite--favorite {

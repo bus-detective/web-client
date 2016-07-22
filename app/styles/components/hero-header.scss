@@ -15,15 +15,15 @@
   }
 
   .hero-header__logo {
-    width: $hh-height-unitless - ($hh-padding-unitless * 2) + 0vh;
-    //height: 100%;
+    width: 20vh;
+    //width: $hh-height-unitless - ($hh-padding-unitless * 2) + 0vh;
     margin: auto;
     background-color: $bd-lighter-gray;
     border-radius: 50%;
     box-shadow: $box-shadow;
-    // Pad the container 17.5% of its diameter
+    // Pad the container 12% of its diameter
     // keeps the proportions of the logo to the container consistant accross all screen sizes
-    padding: ($hh-height-unitless - ($hh-padding-unitless * 2)) * 0.175 + 0vh;
+    padding: ($hh-height-unitless - ($hh-padding-unitless * 2)) * 0.12 + 0vh;
   }
 
   .hero-header__image {

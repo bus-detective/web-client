@@ -9,9 +9,49 @@
     {{bd-search action="search"}}
   </div>
 
+  <div class="list--home  push-sides">
+    <section class="section">
+      <h2 class="white">
+        <i class="bd-icon bd-icon--heart"></i>
+        Top Favorites
+      </h2>
+
+      <div class="unstyled  list-item">
+        <button class="stop-item__toggle-favorite toggle-favorite toggle-favorite--favorite">
+          <i class="bd-icon bd-icon--heart"></i>
+        </button>
+        <h1 class="list-item__title  truncate">Walnut St & 8th St This is a really long stop name</h1>
+      </div>
+
+      <div class="unstyled  list-item">
+        <button class="stop-item__toggle-favorite toggle-favorite toggle-favorite--favorite">
+          <i class="bd-icon bd-icon--heart"></i>
+        </button>
+        <h1 class="list-item__title  truncate">Walnut St & 8th St</h1>
+      </div>
+
+      <div class="unstyled  list-item">
+        <button class="stop-item__toggle-favorite toggle-favorite toggle-favorite--favorite">
+          <i class="bd-icon bd-icon--heart"></i>
+        </button>
+        <h1 class="list-item__title  truncate">Walnut St & 8th St</h1>
+      </div>
+
+      <!-- {{#link-to 'stop' stop class="unstyled list-item"}}
+        {{bd-toggle-favorite stop=stop class="stop-item__toggle-favorite"}}
+        <h1 class="list-item__title">{{stop.name}} <small class="light">{{stop.direction}}</small></h1>
+        <div class="list-item__details">
+          {{#each stop.routes as |route|}}
+            {{bd-route-tag route=route}}
+          {{/each}}
+        </div>
+      {{/link-to}} -->
+    </section>
+  </div>
+
   <div class="nav nav--fixed-bottom">
-    {{#link-to 'stops.nearby' class="nav__button button"}}<i class="bd-icon bd-icon--pin"></i>Nearest Stops{{/link-to}}<!--
-    -->{{#link-to 'stops.favorites' class="nav__button button"}}<i class="bd-icon bd-icon--heart"></i>Favorite Stops{{/link-to}}
+    {{#link-to 'stops.nearby' class="nav__button button"}}<i class="bd-icon bd-icon--pin"></i>Nearby{{/link-to}}<!--
+    -->{{#link-to 'stops.favorites' class="nav__button button"}}<i class="bd-icon bd-icon--heart"></i>Favorites{{/link-to}}
     {{#link-to 'about' class='nav__attribution'}}
       <img src="/images/gaslight-icon.png"/><span>Made with love by Gaslight</span>
     {{/link-to}}
