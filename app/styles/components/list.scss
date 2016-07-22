@@ -5,6 +5,11 @@
 
   &--home {
     background-color: none;
+
+    & .list-item__container {
+      height: calc(80vh - 250px);
+      overflow: scroll;
+    }
   }
 }
 
