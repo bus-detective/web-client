@@ -7,8 +7,12 @@
     background-color: none;
 
     & .list-item__container {
-      height: calc(80vh - 250px);
+      height: calc(75vh - 260px);
       overflow: scroll;
+
+      @media screen and (max-width: 480px) {
+        height: calc(75vh - 200px);
+      }
     }
   }
 }
