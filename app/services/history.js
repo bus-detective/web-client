@@ -13,6 +13,7 @@ export default Ember.Object.extend({
   },
 
   previous: computed('content.length', function() {
-    return this.get('content').objectAt(this.get('content.length') - 2);
+    this.get('content').popObject();
+    return this.get('content').popObject();
   })
 });
