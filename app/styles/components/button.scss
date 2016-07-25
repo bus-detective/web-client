@@ -55,3 +55,14 @@
   border-radius: $border-radius;
   box-shadow: $box-shadow;
 }
+
+.button--small {
+  display: inline-block;
+  padding: 5px;
+  color: $bd-blue;
+  font-size: $ms-2;
+  text-align: center;
+  background-color: transparentize(#fff, 0.15);
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
