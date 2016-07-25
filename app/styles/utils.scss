@@ -6,6 +6,10 @@
   color: $bd-gray;
 }
 
+.white {
+  color: #fff;
+}
+
 .push {
   margin: $padding * 1.5;
 }
@@ -18,6 +22,14 @@
   margin-bottom: $padding * 1.5;
 }
 
+.push-top {
+  margin-top: $padding * 1.5;
+}
+
+.push-top-5 {
+  margin-top: 5px;
+}
+
 .push-sides {
   margin-left: $padding * 1.5;
   margin-right: $padding * 1.5;
@@ -25,6 +37,10 @@
 
 .pad {
   padding: 15px;
+
+  &--small {
+    padding: 8px;
+  }
 }
 
 .flush-top, .flush--top {
@@ -74,7 +90,7 @@
 }
 
 .truncate {
-  width: 100%;
+  width: calc(100% - 50px);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

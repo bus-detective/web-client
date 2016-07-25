@@ -7,11 +7,30 @@
 
   <div class="action-banner">
     {{bd-search action="search"}}
+    {{#link-to 'stops.nearby' class="nav__button button  push-top"}}<i class="bd-icon bd-icon--pin"></i>Nearby{{/link-to}}
+  </div>
+
+
+  <div class="list--home  push-sides">
+    <section class="section">
+      <h2 class="white pull--left">
+        <i class="bd-icon bd-icon--heart"></i>
+        Favorites
+      </h2>
+      {{#link-to 'stops.favorites'}}
+      <h2 class="pull--right button--small push-top-5">View All</h2>
+      {{/link-to}}
+      <div class="clear">
+        <div class="list-item__container">
+          {{#each topFavorites as |stop|}}
+            {{ bd-quick-favorite stop=stop }}
+          {{/each}}
+        </div>
+      </div>
+    </section>
   </div>
 
   <div class="nav nav--fixed-bottom">
-    {{#link-to 'stops.nearby' class="nav__button button"}}<i class="bd-icon bd-icon--pin"></i>Nearest Stops{{/link-to}}<!--
-    -->{{#link-to 'stops.favorites' class="nav__button button"}}<i class="bd-icon bd-icon--heart"></i>Favorite Stops{{/link-to}}
     {{#link-to 'about' class='nav__attribution'}}
       <img src="/images/gaslight-icon.png"/><span>Made with love by Gaslight</span>
     {{/link-to}}

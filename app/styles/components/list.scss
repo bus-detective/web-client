@@ -2,6 +2,19 @@
   padding: 83px $padding $padding;
   background-color: $bd-lighter-gray;
   min-height: 100vh;
+
+  &--home {
+    background-color: none;
+
+    & .list-item__container {
+      height: calc(75vh - 260px);
+      overflow: scroll;
+
+      @media screen and (max-width: 480px) {
+        height: calc(75vh - 200px);
+      }
+    }
+  }
 }
 
 .list-item {
@@ -29,7 +42,15 @@
 .list-item__title {
   line-height: 1.25;
   padding-right: $padding;
-  width: calc(100% - 1.5em);
+  width: calc(100% - 2.1em);
+
+  .list--home & {
+    @media screen and (max-width: 520px) {
+      font-size: $ms-1;
+      font-weight: 400;
+      margin-left: $padding / 2;
+    }
+  }
 }
 
 .list-item__title small {
