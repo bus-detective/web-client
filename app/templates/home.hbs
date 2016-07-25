@@ -18,12 +18,14 @@
         Favorites
       </h2>
       {{#link-to 'stops.favorites'}}
-      <h2 class="pull--right button--small push-top-5">View all</h2>
+      <h2 class="pull--right button--small push-top-5">View All</h2>
       {{/link-to}}
-      <div class="list-item__container">
-        {{#each topFavorites as |stop|}}
-          {{ bd-quick-favorite stop=stop }}
-        {{/each}}
+      <div class="clear">
+        <div class="list-item__container">
+          {{#each topFavorites as |stop|}}
+            {{ bd-quick-favorite stop=stop }}
+          {{/each}}
+        </div>
       </div>
     </section>
   </div>
