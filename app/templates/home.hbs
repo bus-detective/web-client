@@ -12,7 +12,7 @@
 
 
   <div class="list--home  push-sides">
-    <section class="section">
+    <section class="section push-top">
       <h2 class="white pull--left">
         <i class="bd-icon bd-icon--heart"></i>
         Favorites
@@ -25,6 +25,10 @@
           {{#each topFavorites as |stop|}}
             {{ bd-quick-favorite stop=stop }}
           {{/each}}
+          {{#unless topFavorites }}
+            <div class="text-center white shove-top">Hit the heart icon on your favorite bus stops, and they’ll show up right here.
+            </div>
+          {{/unless}}
         </div>
       </div>
     </section>
