@@ -40,3 +40,6 @@ export function searchTrips(params) {
   return request(`${ENV.APP.SERVER}/api/trips?${paramString}`).then(extractOne);
 }
 
+export function getRoutes() {
+  return request(`${ENV.APP.SERVER}/api/routes`).then(wrap);
+}

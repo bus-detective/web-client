@@ -10,6 +10,8 @@ Router.map(function() {
   this.route('home', { path: '/' });
   this.route('about', { path: '/about' });
 
+  this.route('routes', function() {});
+
   this.route('stops', function() {
     this.route('search');
     this.route('nearby');
