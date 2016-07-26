@@ -7,6 +7,7 @@ module.exports = function(defaults) {
       clientAllowedKeys: ['CDN_HOST']
     },
     fingerprint: {
+      extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map', 'woff', 'eot', 'svg', 'ttf', 'woff2', 'otf'],
       prepend: 'http://cdn.busdetective.com/'
     }
   });
