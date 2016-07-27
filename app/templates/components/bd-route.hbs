@@ -1,5 +1,7 @@
 <div class="unstyled list-item">
-  {{bd-route-tag route=route}}
-  {{route.long_name}}
-  {{route.agency_name}}
+  <div class="list-item__details">
+    {{bd-route-tag route=route}}
+  </div>
+  <h1 class="list-item__title list-item__title--route">{{route.long_name}}
+  <small>{{route.agency_name}}</small></h1>
 </div>
