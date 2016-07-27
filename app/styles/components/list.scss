@@ -53,6 +53,10 @@
   }
 }
 
+.list-item__title--route {
+  font-size: $ms0;
+}
+
 .list-item__title small {
   font-size: $ms-1;
   font-weight: 400;
@@ -73,8 +77,9 @@
   margin-top: $padding / 2;
 }
 
-.list-item__details .tag{
-  width: 15.82%;
+.list-item__details .tag {
+  min-width: 15.82%;
+  width: auto;
   height: $ms0;
   font-size: $ms-3;
   line-height: $ms0;
