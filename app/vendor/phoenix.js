@@ -1,3 +1,4 @@
+/*jshint ignore:start*/
 // Phoenix Channels JavaScript client
 //
 // ## Socket Connection
@@ -699,3 +700,4 @@ class Timer {
     }, this.timerCalc(this.tries + 1))
   }
 }
+/*jshint ignore:end*/
