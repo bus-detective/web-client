@@ -1,9 +1,10 @@
 import Ember from 'ember';
-import { Socket } from '../vendor/phoenix';
+import ENV from 'bus-detective/config/environment';
+import { Socket } from 'bus-detective/vendor/phoenix';
 
 export default Ember.Service.extend({
   socket: function(){
-    return new Socket("ws://10.20.30.23:4000/ws");
+    return new Socket(ENV.APP.REALTIME_SERVER);
   },
 
   connect: function(channel, topic, initialPayload={}){

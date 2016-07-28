@@ -30,6 +30,7 @@ module.exports = function(environment) {
 
   if (environment === 'development') {
     ENV.APP.SERVER = process.env['API_HOST'] || '';
+    ENV.APP.REALTIME_SERVER = process.env['REALTIME_API_HOST'] || '';
 
     ENV['ember-cli-mirage'] = {
       enabled: false
