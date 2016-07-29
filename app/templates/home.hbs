@@ -22,9 +22,14 @@
       {{/link-to}}
       <div class="clear">
         <div>
-          {{#each topFavorites as |stop|}}
-            {{ bd-quick-favorite stop=stop }}
-          {{/each}}
+          {{#sortable-group tagName="div" onChange="reorderFavorites" as |group|}}
+            {{#each topFavorites as |stop|}}
+              {{#sortable-item tagName="div" model=stop group=group handle=".handle"}}
+                {{ bd-quick-favorite stop=stop }}
+              {{/sortable-item}}
+            {{/each}}
+          {{/sortable-group}}
+          
           {{#unless topFavorites }}
             <div class="text-center white shove-top">Hit the heart icon on your favorite bus stops, and they’ll show up right here.
             </div>
