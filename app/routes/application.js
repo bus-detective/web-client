@@ -39,7 +39,8 @@ export default Ember.Route.extend({
           this.transitionTo('404');
           break;
         default:
-          this.transitionTo('500');
+          console.log(error);
+          //this.transitionTo('500');
       }
     }
   }

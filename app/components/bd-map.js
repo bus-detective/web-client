@@ -2,10 +2,11 @@ import Leaflet from 'bus-detective/utils/leaflet';
 import Ember from 'ember';
 let { run } = Ember;
 const TILE_URL = 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
+const { ObjectProxy } = Ember;
 
 export default Ember.Component.extend({
   // Required
-  shapes: [],
+  trips: [],
   lat: null,
   lng: null,
   vehiclePositions: {},
@@ -60,7 +61,7 @@ export default Ember.Component.extend({
         vehicleMarker.addTo(this.get('map'));
       } else {
         let coords = Leaflet.latLng(vehicle.lat, vehicle.lng);
-        vehicleMarker.setLatLng(coords);
+        vehicleMarker.addDestination(coords);
       }
       vehicleMarker.update();
     });
@@ -69,19 +70,35 @@ export default Ember.Component.extend({
   drawShapes() {
     this.get('shapeLayer').clearLayers();
 
-    let shapes = this.get('shapes').map((shape) => {
+    let shapes = this.get('trips').map((trip) => {
+      return ObjectProxy.create({ 
+        content: trip.shape,
+        color: trip.route.color,
+        trip_remote_id: trip.remote_id,
+        headsign: trip.headsign
+      });
+    });
+
+    let mapShapes = shapes.map((shape) => {
       return Leaflet.polyline(shape.get('coordinates'), { color: `#${shape.get('color')}` });
     });
 
-    this.get('shapeLayer').addLayer(Leaflet.layerGroup(shapes));
+    this.get('shapeLayer').addLayer(Leaflet.layerGroup(mapShapes));
   },
 
   createVehicleMarker(vehicle) {
+    let trip = this.get('trips').findBy('remote_id', vehicle.trip_remote_id);
+    let coordinates = trip ? trip.shape.coordinates : [];
+    let headsign = trip ? trip.headsign : "";
     let vehicleIcon = Leaflet.icon({
       iconUrl: 'images/bus-detective-icon.png',
       iconSize: [50,50]
     });
-    return Leaflet.marker([vehicle.lat, vehicle.lng], {icon: vehicleIcon});
+    return Leaflet.vehicleMarker([vehicle.lat, vehicle.lng], {
+      shape: coordinates,
+      icon: vehicleIcon,
+      title: headsign
+    });
   },
 
   actions: {

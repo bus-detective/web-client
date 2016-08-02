@@ -6,6 +6,11 @@ export default Ember.Controller.extend({
   vehiclePositions: {},
 
   shapes: computed.map('trips', function(trip) {
-    return ObjectProxy.create({ content: trip.shape, color: trip.route.color });
+    return ObjectProxy.create({ 
+      content: trip.shape,
+      color: trip.route.color,
+      trip_remote_id: trip.remote_id,
+      headsign: trip.headsign
+    });
   })
 });
