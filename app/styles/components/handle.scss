@@ -2,5 +2,7 @@
   float:left;
   height: 100%;
   padding: 5px;
-  background-color: pink;
+  background-color: #fff;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
 }
