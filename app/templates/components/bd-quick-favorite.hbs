@@ -1,4 +1,10 @@
-{{#link-to 'stop' stop class="unstyled list-item__container"}}
-  {{ bd-toggle-favorite stop=stop class="stop-item__toggle-favorite" }}
-  <h1 class="list-item__title truncate">{{stop.name}}<small class="light">{{stop.direction}}</small></h1>
-{{/link-to}}
+<div class="handle flex__cell flex__cell--small">
+  <i class="bd-icon bd-icon--reorder"></i>
+</div>
+
+<div class="flex__cell flex__cell--large">
+  {{#link-to 'stop' stop class="unstyled"}}
+    {{bd-toggle-favorite stop=stop class="stop-item__toggle-favorite"}}
+    <h1 class="list-item__title">{{stop.name}} <small class="light">{{stop.direction}}</small></h1>
+  {{/link-to}}
+</div>

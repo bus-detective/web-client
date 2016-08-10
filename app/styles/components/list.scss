@@ -11,7 +11,7 @@
       overflow: scroll;
 
       @media screen and (max-width: 480px) {
-        height: calc(75vh - 200px);
+        height: calc(75vh - 215px);
       }
     }
   }
@@ -25,6 +25,7 @@
   background-color: #fff;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+  width: 100%;
 }
 
 .list-item__button {

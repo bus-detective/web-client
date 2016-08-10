@@ -8,13 +8,11 @@ export default Ember.Service.extend({
   add: function(stop) {
     var newStops = this.get('all').concat(stop);
     this.replaceStops(newStops);
-    this.notifyPropertyChange('all');
   },
 
   remove: function(stop) {
     var newStops = this.get('all').rejectBy('id', stop.id);
     this.replaceStops(newStops);
-    this.notifyPropertyChange('all');
   },
 
   hasStop: function(stop) {
@@ -28,5 +26,6 @@ export default Ember.Service.extend({
 
   replaceStops: function(stops) {
     this.store[this.storeKey] = JSON.stringify(stops);
+    this.notifyPropertyChange('all');
   }
 });

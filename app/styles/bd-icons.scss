@@ -25,41 +25,45 @@
 }
 
 .bd-icon--arrow-left:before {
-	content: "\e800";
+	content: "\e807";
 }
 
 .bd-icon--bus:before {
-	content: "\e601";
-}
-
-.bd-icon--clock:before {
-	content: "\e602";
-}
-
-.bd-icon--heart-o:before {
-	content: "\e603";
-}
-
-.bd-icon--heart:before {
-	content: "\e604";
-}
-
-.bd-icon--pin:before {
-	content: "\e605";
-}
-
-.bd-icon--search:before {
-	content: "\e606";
-}
-
-.bd-icon--walk:before {
-	content: "\e607";
-}
-
-.bd-icon--expand:before {
 	content: "\e808";
 }
 
+.bd-icon--clock:before {
+	content: "\e809";
+}
+
+.bd-icon--heart-o:before {
+	content: "\e801";
+}
+
+.bd-icon--heart:before {
+	content: "\e802";
+}
+
+.bd-icon--pin:before {
+	content: "\e803";
+}
+
+.bd-icon--search:before {
+	content: "\e804";
+}
+
+.bd-icon--walk:before {
+	content: "\e805";
+}
+
+.bd-icon--expand:before {
+	content: "\e80A";
+}
+
 .bd-icon--contract:before {
-	content: "\e609";
+	content: "\e806";
+}
+
+.bd-icon--reorder:before {
+	content: "\e800";
 }

@@ -4,8 +4,13 @@
       <i class="bd-icon bd-icon--heart"></i>
       Favorite Stops
     </h2>
-    {{#each model as |stop|}}
-      {{bd-stop stop=stop}}
-    {{/each}}
+
+    {{#sortable-group tagName="div" onChange="reorderFavorites" as |group|}}
+      {{#each model.all as |stop|}}
+        {{#sortable-item tagName="div" model=stop group=group handle=".handle"}}
+          {{bd-stop stop=stop draggable=true}}
+        {{/sortable-item}}
+      {{/each}}
+    {{/sortable-group}}
   </section>
 </div>
