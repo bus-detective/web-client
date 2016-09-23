@@ -8,7 +8,7 @@ module.exports = function(defaults) {
     },
     fingerprint: {
       extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map', 'woff', 'eot', 'svg', 'ttf', 'woff2', 'otf'],
-      prepend: 'https://drwikejswixhx.cloudfront.net/'
+      prepend: 'https://cdn.busdetective.com/'
     }
   });
 
