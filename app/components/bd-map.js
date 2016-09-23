@@ -1,7 +1,7 @@
 import Leaflet from 'bus-detective/utils/leaflet';
 import Ember from 'ember';
 let { run } = Ember;
-const TILE_URL = 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
+const TILE_URL = 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
 
 export default Ember.Component.extend({
   // Required
@@ -10,7 +10,7 @@ export default Ember.Component.extend({
   lng: null,
 
   // Optional
-  zoom: 16, 
+  zoom: 16,
 
   classNames: ["map"],
   classNameBindings: ["isExpanded:map--expanded"],
