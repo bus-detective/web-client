@@ -1,4 +1,5 @@
 /* jshint node: true */
+/* globals process, module */
 
 module.exports = function(environment) {
   var ENV = {
