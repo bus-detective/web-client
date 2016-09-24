@@ -4,14 +4,15 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'bus-detective',
     environment: environment,
-    baseURL: '/',
+    rootURL: '/',
     locationType: 'auto',
-    EmberENV: {},
-    cdnHost: process.env['CDN_HOST'],
-
+    EmberENV: {
+      FEATURES: {}
+    },
     APP: {
       SERVER: ''
-    }
+    },
+    cdnHost: process.env['CDN_HOST']
   };
 
   ENV.contentSecurityPolicy = {
@@ -42,7 +43,7 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.baseURL = '/';
+    ENV.rootURL = '/';
     ENV.locationType = 'none';
 
     // keep test console output quieter
