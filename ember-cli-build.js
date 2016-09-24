@@ -8,7 +8,7 @@ module.exports = function(defaults) {
     },
     fingerprint: {
       extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map', 'woff', 'eot', 'svg', 'ttf', 'woff2', 'otf'],
-      prepend: 'https://cdn.busdetective.com/',
+      prepend: `https://${process.env['CDN_HOST']}/`,
       fingerprint: {
         exclude: [
           'images/layers-2x.png',
