@@ -8,7 +8,16 @@ module.exports = function(defaults) {
     },
     fingerprint: {
       extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map', 'woff', 'eot', 'svg', 'ttf', 'woff2', 'otf'],
-      prepend: 'https://cdn.busdetective.com/'
+      prepend: 'https://cdn.busdetective.com/',
+      fingerprint: {
+        exclude: [
+          'images/layers-2x.png',
+          'images/layers.png',
+          'images/marker-icon-2x.png',
+          'images/marker-icon.png',
+          'images/marker-shadow.png'
+        ]
+      }
     }
   });
 
