@@ -8,13 +8,13 @@ test('showing/hiding the page buttons', function(assert) {
   component.setProperties({ page: 1, totalPages: 2 });
   this.render();
 
-  assert.equal(component.$('.qa-pager-prev').size(), 0);
-  assert.equal(component.$('.qa-pager-next').size(), 1);
+  assert.equal(component.$('.qa-pager-prev').length, 0);
+  assert.equal(component.$('.qa-pager-next').length, 1);
 
   Ember.run(() => component.set('page', 2));
 
-  assert.equal(component.$('.qa-pager-prev').size(), 1);
-  assert.equal(component.$('.qa-pager-next').size(), 0);
+  assert.equal(component.$('.qa-pager-prev').length, 1);
+  assert.equal(component.$('.qa-pager-next').length, 0);
 });
 
 test('clicking the next page button', function(assert) {

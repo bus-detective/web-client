@@ -12,4 +12,4 @@ export function bdIcon(name, options={}) {
   return Ember.String.htmlSafe(html);
 }
 
-export default Ember.Handlebars.makeBoundHelper(bdIcon);
+export default Ember.Helper.helper(bdIcon);
