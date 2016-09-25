@@ -19,7 +19,7 @@ module.exports = function(environment) {
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
     'script-src': "'self' 'unsafe-eval' 'unsafe-inline' *.googleapis.com cdn.segment.com *.getclicky.com *.google-analytics.com",
-    'font-src': "'self' fonts.gstatic.com",
+    'font-src': "'self' fonts.gstatic.com" + process.env['CDN_HOST'],
     'connect-src': "'self' localhost:3000 *.busdetective.com api.segment.io",
     'img-src': "'self' *.googleapis.com csi.gstatic.com *.google-analytics.com *.openstreetmap.fr " + process.env['CDN_HOST'],
     'style-src': "'self' 'unsafe-inline' fonts.googleapis.com"
