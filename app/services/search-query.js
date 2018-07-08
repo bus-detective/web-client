@@ -1,5 +1,5 @@
-import Ember from 'ember';
+import EmberService from '@ember/service';
 
-export default Ember.Object.extend({
+export default EmberService.extend({
   value: ""
 });

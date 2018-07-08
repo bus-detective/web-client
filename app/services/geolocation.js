@@ -1,5 +1,5 @@
-import Ember from 'ember';
-var RSVP = Ember.RSVP;
+import Service from '@ember/service';
+import RSVP from 'rsvp';
 
 class NotImplementedError extends Error {
   constructor(message, code) {
@@ -9,7 +9,7 @@ class NotImplementedError extends Error {
   }
 }
 
-export default Ember.Service.extend({
+export default Service.extend({
   fetchPosition: function() {
     return new RSVP.Promise(function(resolve, reject) {
       if ("geolocation" in navigator) {

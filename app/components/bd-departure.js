@@ -1,23 +1,23 @@
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import moment from 'moment';
-var inject = Ember.inject;
 
-export default Ember.Component.extend({
-  clock: inject.service(),
+export default Component.extend({
+  clock: service(),
   classNames: ['event', 'qa-departure'],
   classNameBindings: ['isPast:event--past:event--future'],
 
-  time: Ember.computed('departure.time', function() {
+  time: computed('departure.time', function() {
     var time = moment(this.get('departure.time'));
     return time.format('h:mm') + time.format('a')[0];
   }),
 
-  timeFromNow: Ember.computed('clock.time', function() {
+  timeFromNow: computed('clock.time', function() {
     return moment(this.get('departure.time')).fromNow();
   }),
 
-  isPast: Ember.computed('clock.time', function() {
+  isPast: computed('clock.time', function() {
     return new Date(this.get('departure.time')) < new Date();
   })
 });
-

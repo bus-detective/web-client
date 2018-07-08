@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import Route from '@ember/routing/route';
 import { searchStops } from 'bus-detective/utils/api';
-let inject = Ember.inject;
 
-export default Ember.Route.extend({
-  searchQuery: inject.service(),
+export default Route.extend({
+  searchQuery: service(),
   queryParams: {
     query: {
       refreshModel: true

@@ -1,9 +1,9 @@
-import Ember from 'ember';
-var inject = Ember.inject;
+import { inject as service } from '@ember/service';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
-  searchQuery: inject.service(),
-  history: inject.service(),
+export default Route.extend({
+  searchQuery: service(),
+  history: service(),
 
   beforeModel: function(transition) {
     // capture the first page load
@@ -25,7 +25,7 @@ export default Ember.Route.extend({
       }
     },
 
-    search: function() {
+    search() {
       var params = {
         query: this.get('searchQuery.value'),
         page: 1

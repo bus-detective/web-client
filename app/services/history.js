@@ -1,8 +1,9 @@
-import Ember from 'ember';
-var computed = Ember.computed;
+import { A } from '@ember/array';
+import { computed } from '@ember/object';
+import EmberService from '@ember/service';
 
-export default Ember.Object.extend({
-  content: Ember.A(),
+export default EmberService.extend({
+  content: A(),
 
   capture: function(transition) {
     this.get('content').pushObject(transition);

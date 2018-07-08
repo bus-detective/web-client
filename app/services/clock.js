@@ -1,13 +1,15 @@
-import Ember from 'ember';
+import { run } from '@ember/runloop';
+import { on } from '@ember/object/evented';
+import Service from '@ember/service';
 
-export default Ember.Service.extend({
+export default Service.extend({
   time: new Date(),
 
-  setup: Ember.on('init', function() {
+  setup: on('init', function() {
     var service = this;
 
     setInterval(function() {
-      Ember.run(function() {
+      run(function() {
         service.set('time', new Date());
       });
     }, 1000);

@@ -1,14 +1,15 @@
-import Ember from 'ember';
+import { lt, alias } from '@ember/object/computed';
+import Component from '@ember/component';
+import { run } from '@ember/runloop';
 import DepartureFetcher from 'bus-detective/utils/departure-fetcher';
-let { run, computed } = Ember;
 const MAXIMUM_DURATION_IN_HOURS = 12;
 
-export default Ember.Component.extend({
+export default Component.extend({
   stop: null,
   departures: null,
   fetcher: null,
-  canLoadMore: computed.lt('fetcher.duration', MAXIMUM_DURATION_IN_HOURS),
-  hasFetched: computed.alias('fetcher.hasFetched'),
+  canLoadMore: lt('fetcher.duration', MAXIMUM_DURATION_IN_HOURS),
+  hasFetched: alias('fetcher.hasFetched'),
 
   init() {
     this._super(...arguments);

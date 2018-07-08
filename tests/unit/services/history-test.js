@@ -19,7 +19,6 @@ test('returns null when no history', function(assert) {
   var transition = { name: "first" };
 
   history.capture(transition);
-  console.log(history);
   let previous = history.get('previous');
   assert.equal(previous, null);
 });
