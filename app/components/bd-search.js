@@ -1,13 +1,13 @@
-import Ember from 'ember';
-var inject = Ember.inject;
-var computed = Ember.computed;
+import { inject as service } from '@ember/service';
+import { oneWay, notEmpty } from '@ember/object/computed';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['search'],
-  searchQuery: inject.service(),
-  currentQuery: computed.oneWay('searchQuery.value'),
+  searchQuery: service(),
+  currentQuery: oneWay('searchQuery.value'),
   autofocus: false,
-  hasSearchValue: computed.notEmpty('currentQuery'),
+  hasSearchValue: notEmpty('currentQuery'),
 
   actions: {
     search() {

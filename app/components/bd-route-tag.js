@@ -1,10 +1,11 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   attributeBindings: ['style'],
   tagName: 'span',
   classNames: ['tag'],
-  style: Ember.computed('route.id', function() {
+  style: computed('route.id', function() {
     return (`background-color: #${this.get('route.color')}; color: #${this.get('route.text_color')}`).htmlSafe();
   })
 });

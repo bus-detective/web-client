@@ -1,10 +1,11 @@
-import Ember from 'ember';
-var inject = Ember.inject;
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'button',
   classNameBindings: [':toggle-favorite', 'isFavorite:toggle-favorite--favorite'],
-  favoriteStops: inject.service(),
+  favoriteStops: service(),
 
   click: function() {
     var favoriteStops = this.get('favoriteStops');
@@ -17,7 +18,7 @@ export default Ember.Component.extend({
     return false;
   },
 
-  isFavorite: Ember.computed('favoriteStops.all', function() {
+  isFavorite: computed('favoriteStops.all', function() {
     return this.get('favoriteStops').hasStop(this.get('stop'));
   })
 });

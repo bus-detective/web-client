@@ -1,8 +1,8 @@
-import Ember from 'ember';
-var inject = Ember.inject;
+import { inject as service } from '@ember/service';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
-  favoriteStops: inject.service(),
+export default Route.extend({
+  favoriteStops: service(),
 
   model() {
     return this.get('favoriteStops');

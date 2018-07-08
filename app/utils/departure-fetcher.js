@@ -1,13 +1,14 @@
-import Ember from 'ember';
+import Evented from '@ember/object/evented';
+import EmberObject from '@ember/object';
+import { run } from '@ember/runloop';
 import moment from 'moment';
 import { fetchDepartures } from 'bus-detective/utils/api';
-let { run } = Ember;
 
 const DEFAULT_POLL_INTERVAL = 15 * 1000;
 const DEFAULT_CHECK_INTERVAL = 0.5 * 1000;
 const DEFAULT_DURATION_IN_HOURS = 1;
 
-export default Ember.Object.extend(Ember.Evented, {
+export default EmberObject.extend(Evented, {
   stopId: null,
   intervalId: null,
   hasFetched: false,

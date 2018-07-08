@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { helper as buildHelper } from '@ember/component/helper';
+import { htmlSafe } from '@ember/template';
 
 export function bdIcon(name, options={}) {
   var params = options.hash || {};
@@ -9,7 +10,7 @@ export function bdIcon(name, options={}) {
 
   var html = `<${params.tagName || 'i'} class="${classNames.join(' ')}"></${params.tagName || 'i'}>`;
 
-  return Ember.String.htmlSafe(html);
+  return htmlSafe(html);
 }
 
-export default Ember.Helper.helper(bdIcon);
+export default buildHelper(bdIcon);

@@ -1,10 +1,11 @@
+import { inject as service } from '@ember/service';
+import Route from '@ember/routing/route';
+import { run } from '@ember/runloop';
 import Ember from 'ember';
 import { searchStops } from 'bus-detective/utils/api';
-let inject = Ember.inject;
-let run = Ember.run;
 
-export default Ember.Route.extend({
-  geolocation: inject.service(),
+export default Route.extend({
+  geolocation: service(),
   currentPosition: null,
 
   queryParams: {
@@ -22,7 +23,7 @@ export default Ember.Route.extend({
 
   model: function(params) {
     return searchStops({
-      latitude: this.get('currentPosition.coords.latitude'), 
+      latitude: this.get('currentPosition.coords.latitude'),
       longitude: this.get('currentPosition.coords.longitude'),
       page: params.page
     });

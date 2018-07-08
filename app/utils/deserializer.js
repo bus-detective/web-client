@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
 
 export function wrap(obj) {
-  return Ember.Object.create(obj);
+  return EmberObject.create(obj);
 }
 
 export function extractOne(response) {

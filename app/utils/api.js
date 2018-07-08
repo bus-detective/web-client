@@ -1,8 +1,7 @@
-import Ember from 'ember';
+import { isArray } from '@ember/array';
 import request from 'ic-ajax';
 import ENV from 'bus-detective/config/environment';
 import { extractOne, wrap } from 'bus-detective/utils/deserializer';
-let { isArray } = Ember;
 
 export function stringifyParams(params) {
   return Object.keys(params).map(function(key) {

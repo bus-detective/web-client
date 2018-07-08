@@ -1,10 +1,10 @@
-import Ember from 'ember';
-const { inject } = Ember;
+import { inject as service } from '@ember/service';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
+export default Route.extend({
   bodyClass: 'bg-primary',
-  favoriteStops: inject.service(),
-  
+  favoriteStops: service(),
+
   setupController(controller, model) {
     this._super(controller, model);
     let favoriteStops = this.get('favoriteStops');

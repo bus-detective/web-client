@@ -1,19 +1,22 @@
-import Ember from 'ember';
+import { map } from '@ember/object/computed';
+import Controller from '@ember/controller';
+import { run } from '@ember/runloop';
+import { computed } from '@ember/object';
+import ObjectProxy from '@ember/object/proxy';
 import { searchTrips } from 'bus-detective/utils/api';
-const { run, computed, ObjectProxy } = Ember;
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   trips: [],
 
   markers: computed('model', function() {
-    return [{ 
+    return [{
       title: this.get('model.name'),
       lat: this.get('model.latitude'),
       lng: this.get('model.longitude')
     }];
   }),
 
-  shapes: computed.map('trips', function(trip) {
+  shapes: map('trips', function(trip) {
     return ObjectProxy.create({ content: trip.shape, color: trip.route.color });
   }),
 
@@ -26,5 +29,5 @@ export default Ember.Controller.extend({
       let tripIds = departures.mapBy('trip.id');
       searchTrips({ ids: tripIds }).then(run.bind(this, 'handleTripsFetch'));
     }
-  } 
+  }
 });

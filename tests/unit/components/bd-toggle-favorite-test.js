@@ -1,5 +1,5 @@
+import EmberObject from '@ember/object';
 import { moduleForComponent, test } from 'ember-qunit';
-import Ember from 'ember';
 
 moduleForComponent('bd-toggle-favorite', {
   needs: ['service:favoriteStops', 'helper:bd-icon']
@@ -9,7 +9,7 @@ test('it toggles stop favorite', function(assert) {
   assert.expect(4);
   var component = this.subject();
   var favoriteStops = this.container.lookup('service:favoriteStops');
-  var stop = Ember.Object.create({ id: Math.random(), name: "Fake stop" });
+  var stop = EmberObject.create({ id: Math.random(), name: "Fake stop" });
 
   component.set('stop', stop);
   this.render();

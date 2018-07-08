@@ -1,9 +1,9 @@
+import Component from '@ember/component';
+import { run } from '@ember/runloop';
 import Leaflet from 'bus-detective/utils/leaflet';
-import Ember from 'ember';
-let { run } = Ember;
 const TILE_URL = 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
 
-export default Ember.Component.extend({
+export default Component.extend({
   // Required
   shapes: [],
   lat: null,

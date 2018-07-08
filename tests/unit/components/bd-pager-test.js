@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { run } from '@ember/runloop';
 import { moduleForComponent, test } from 'ember-qunit';
 
 moduleForComponent('bd-pager');
@@ -11,7 +11,7 @@ test('showing/hiding the page buttons', function(assert) {
   assert.equal(component.$('.qa-pager-prev').length, 0);
   assert.equal(component.$('.qa-pager-next').length, 1);
 
-  Ember.run(() => component.set('page', 2));
+  run(() => component.set('page', 2));
 
   assert.equal(component.$('.qa-pager-prev').length, 1);
   assert.equal(component.$('.qa-pager-next').length, 0);
@@ -27,7 +27,7 @@ test('clicking the next page button', function(assert) {
   component.setProperties({ page: 1, totalPages: 2, targetObject: targetObject });
   this.render();
 
-  Ember.run(() => component.set('onPageChange', 'assertPage2'));
+  run(() => component.set('onPageChange', 'assertPage2'));
   component.$('.qa-pager-next').click();
 });
 
@@ -41,6 +41,6 @@ test('clicking the previous page button', function(assert) {
   component.setProperties({ page: 2, totalPages: 2, targetObject: targetObject });
   this.render();
 
-  Ember.run(() => component.set('onPageChange', 'assertPage1'));
+  run(() => component.set('onPageChange', 'assertPage1'));
   component.$('.qa-pager-prev').click();
 });

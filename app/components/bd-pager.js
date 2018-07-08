@@ -1,21 +1,22 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['pager'],
   page: -1,
   totalPages: -1,
 
-  hasPrevious: function() {
+  hasPrevious: computed('page', function() {
     return this.get('page') > 1;
-  }.property('page'),
+  }),
 
-  hasNext: function() {
+  hasNext: computed('page', 'totalPages', function() {
     return this.get('page') < this.get('totalPages');
-  }.property('page', 'totalPages'),
+  }),
 
-  isVisible: function() {
+  isVisible: computed('showPrevious', 'showNext', function() {
     return this.get('showPrevious') || this.get('showNext');
-  }.property('showPrevious', 'showNext'),
+  }),
 
   actions: {
     backward: function() {

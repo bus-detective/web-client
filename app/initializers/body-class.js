@@ -1,16 +1,17 @@
-import Ember from 'ember';
+import $ from 'jquery';
+import Route from '@ember/routing/route';
 
 export function initialize() {
-  Ember.Route.reopen({
+  Route.reopen({
     activate: function() {
       if (this.get('bodyClass')) {
-        Ember.$('body').addClass(this.get('bodyClass'));
+        $('body').addClass(this.get('bodyClass'));
       }
     },
 
     deactivate: function() {
       if (this.get('bodyClass')) {
-        Ember.$('body').removeClass(this.get('bodyClass'));
+        $('body').removeClass(this.get('bodyClass'));
       }
     }
   });

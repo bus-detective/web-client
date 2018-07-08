@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { run } from '@ember/runloop';
 import { moduleForComponent, test } from 'ember-qunit';
 
 moduleForComponent('bd-search', {
@@ -11,7 +11,7 @@ test('sets the input value to the searchQuery.value', function(assert) {
   var searchQuery = component.get('searchQuery');
   this.render();
  
-  Ember.run(function() {
+  run(function() {
     searchQuery.set('value', "foo");
   });
 
